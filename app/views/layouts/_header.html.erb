@@ -1,31 +1,40 @@
 <nav class="navbar navbar-expand-md bg-primary navbar-dark">
-  <a class="navbar-brand" href="#">旅行プラン</a>
-  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <% if user_signed_in? %>
-      <div class="navbar-nav">
+  <%= link_to "旅行プラン", root_path, class: 'navbar-brand' %>
+  <div id="Navbar">
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
         <%# ログイン時 %>
-        <%= link_to "編集", edit_user_registration_path, class: "nav-item nav-link" %>
-        <%= link_to "ログアウト", destroy_user_session_path, class:"nav-item nav-link", method: :delete, data: { confirm: "ログアウトしますか？" } %>
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">プラン</a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to "サブメニュー１", href="#", class: "dropdown-item" %>
-            <%= link_to "サブメニュー２", href="#", class: "dropdown-item" %>
-            <%= link_to "サブメニュー３", href="#", class: "dropdown-item" %>
+        <li class="nav-item active">
+          <%= link_to "編集", edit_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+        <%= link_to "ログアウト", destroy_user_session_path, class:"nav-link", method: :delete, data: { confirm: "ログアウトしますか？" } %>
+        </li>
+        <li class="nav-item active">
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">プラン</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to "サブメニュー１", href="#", class: "dropdown-item" %>
+              <%= link_to "サブメニュー２", href="#", class: "dropdown-item" %>
+              <%= link_to "サブメニュー３", href="#", class: "dropdown-item" %>
+            </div>
           </div>
-        </div>
-      </div>
+        </li>
+        <li class="nav-item active">
         <%= "【ログイン中のアドレス】#{current_user.email} " %>
-    <% else %>
-      <div class="navbar-nav">
+        </li>
+      <% else %>
         <%# 非ログイン時 %>
-        <%= link_to "新規登録", new_user_registration_path, class: "nav-item nav-link" %>
-        <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link" %>
-        <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "nav-item nav-link", method: :post %>
-      </div>
-    <% end %>
+        <li class="nav-item active">
+          <%= link_to "新規登録", new_user_registration_path, class: "nav-item nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "nav-item nav-link", method: :post %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </nav>

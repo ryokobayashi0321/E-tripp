@@ -15,3 +15,23 @@
  */
 
 @import "bootstrap/scss/bootstrap";
+
+// devise関連
+.mw-md {
+  max-width: 576px;
+}
+
+// それ以外
+.mw-xl {
+  max-width: 1200px;
+}
+
+// 「ログインしました」などのフラッシュ用スタイル
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
