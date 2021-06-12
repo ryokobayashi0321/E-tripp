@@ -4,32 +4,46 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="from-group">
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name, autofocus: true, autocomplete: "ユーザー名", class: "form-control" %>
+  </div>
+
+  <br class="my-5">
+
+  <div class="from-group">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
-
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
   <% end %>
 
+  <br class="my-5">
+
   <div class="from-group">
-    <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
+    <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i>
     <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
     <% if @minimum_password_length %>
-      <br />
       <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
     <% end %>
   </div>
+
+  <br class="my-5">
 
   <div class="from-group">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
   </div>
 
+
+  <br class="my-5">
+
   <div class="from-group">
     <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
   </div>
+
+  <br class="my-5">
 
   <div class="from-group">
     <%= f.file_field :avatar %>
@@ -38,7 +52,7 @@
   <br class="my-5">
 
   <div class="from-group">
-    <%= f.submit t('.update'), class: 'form-control btn btn-primary'%>
+    <%= link_to "マイページ", @user, class: 'form-control btn btn-primary'%>
   </div>
 
   <hr class="devise-link my-5">

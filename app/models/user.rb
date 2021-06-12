@@ -13,4 +13,7 @@ class User < ApplicationRecord
 
   # AvatarUploaderとavatarカラムの連携
   mount_uploader :avatar, AvatarUploader
+
+  validates :user_name, presence: true
+  validates :avatar, length: { maximum: 200 }
 end
