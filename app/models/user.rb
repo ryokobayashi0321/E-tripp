@@ -10,4 +10,7 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
     end
   end
+
+  # AvatarUploaderとavatarカラムの連携
+  mount_uploader :avatar, AvatarUploader
 end
