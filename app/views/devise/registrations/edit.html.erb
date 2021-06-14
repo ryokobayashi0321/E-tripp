@@ -1,6 +1,6 @@
 <%# ユーザー情報変更画面 %>
 <h1>アカウント編集</h1>
-
+<div class="container"></div>
 <%= form_with model: @user, url: user_registration_path, id: "new_user", class: "new_user", local: true  do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -47,11 +47,10 @@
     <%= f.label :avatar, "【アイコン】" %>
     <%= f.file_field :avatar %>
   </div>
-
   <br class="my-5">
 
   <div class="from-group">
-    <%= f.submit "変更する", class: 'form-control btn btn-primary'%>
+    <%= link_to "変更する", user_path(@user), class: 'form-control btn btn-primary'%>
   </div>
 
   <hr class="devise-link my-5">
@@ -60,5 +59,6 @@
     <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete, class: 'btn btn-danger btn-block' %>
   </div>
 <% end %>
+</div>
 
 

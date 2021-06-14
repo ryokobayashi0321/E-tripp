@@ -8,7 +8,7 @@
   <% if @user.avatar? %>
     <p><%= image_tag @user.avatar.url %></p>
   <% else %>
-    <%= image_tag ("noavatar.png") %>
+    <%= image_tag src="/assets/default.png" %>
   <% end %>
 </div>
 <h3>ユーザー名</h3>
