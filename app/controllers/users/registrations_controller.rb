@@ -12,7 +12,7 @@ module Users
     end
 
     def update
-      if current_user.update(user_params)
+      if @user.update(user_params)
         redirect_to user_path(current_user)
       else
         redirect_to edit_user_path(current_user)
@@ -30,10 +30,6 @@ module Users
                  :email, :password, :password_confirmation, :current_password)
       end
     end
-
-    # def after_update_path_for(_resource)
-    #   user_path(current_user)
-    # end
 
     def user_params
       params.require(:user).permit(:user_name, :avatar)

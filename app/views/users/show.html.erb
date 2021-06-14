@@ -1,15 +1,36 @@
-<% if user_signed_in? && @user == current_user %>
-  <h1>マイページ</h1>
-    <%= link_to "編集", edit_user_registration_path, class: 'btn btn-primary' %>
-<% else %>
-  <h1>ユーザーページ</h1>
-<% end %>
+<div class="container ">
+  <% if user_signed_in? && @user == current_user %>
+    <h2 class="text-warning font-weight-bold">マイページ</h2>
+  <% else %>
+    <h2 class="text-warning font-weight-bold">ユーザーページ</h2>
+  <% end %>
+  <div class="card mb-3 mx-auto" style="max-width: 70%;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <div class="circle-avatar">
+          <% if @user.avatar? %>
+            <p><%= image_tag @user.avatar.url %></p>
+          <% else %>
+            <%= image_tag src="/assets/default.png" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-tite border-bottom">プロフィール</h3><br>
+            <p class="card-text">【ユーザー名】<%= @user.user_name %></p>
+            <p class="card-text">【メールアドレス】<%= @user.email %></p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row float-right">
+          <% if user_signed_in? && @user == current_user %>
+              <%= link_to "編集", edit_user_registration_path, class: 'btn btn-primary btn-lg' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h3>ユーザー名</h3>
-<%= @user.user_name %>
-<h3>メールアドレス</h3>
-<%= @user.email %>
-<h3>プロフィール</h3>
-<% if @user.avatar? %>
-  <p><%= image_tag @user.avatar.url %></p>
-<% end %>
+
