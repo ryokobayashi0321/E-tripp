@@ -1,8 +1,8 @@
 <%# ユーザー情報変更画面 %>
-<div class="container"></div>
+<div class="container">
   <div class="row">
-    <h1 class="text-center text-warning font-weight-bold">アカウント編集</h1>
-    <div class="card">
+    <h2 class="text-center text-warning font-weight-bold">アカウント編集</h2>
+    <div class="card mx-auto w-100">
       <div class="card-body">
         <%= form_with model: @user, url: user_registration_path, id: "new_user", class: "new_user", local: true  do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>

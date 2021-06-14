@@ -1,21 +1,23 @@
-<% if user_signed_in? && @user == current_user %>
-  <h1>マイページ</h1>
-<% else %>
-  <h1>ユーザーページ</h1>
-<% end %>
-
-<div class="circle-avatar"><h3>プロフィール</h3>
-  <% if @user.avatar? %>
-    <p><%= image_tag @user.avatar.url %></p>
+<div class="container">
+  <% if user_signed_in? && @user == current_user %>
+    <h1>マイページ</h1>
   <% else %>
-    <%= image_tag src="/assets/default.png" %>
+    <h1>ユーザーページ</h1>
+  <% end %>
+  
+  <div class="circle-avatar"><h3>プロフィール</h3>
+    <% if @user.avatar? %>
+      <p><%= image_tag @user.avatar.url %></p>
+    <% else %>
+      <%= image_tag src="/assets/default.png" %>
+    <% end %>
+  </div>
+  <h3>ユーザー名</h3>
+  <%= @user.user_name %>
+  <h3>メールアドレス</h3>
+  <%= @user.email %>
+  
+  <% if user_signed_in? && @user == current_user %>
+      <%= link_to "編集", edit_user_registration_path, class: 'btn btn-primary' %>
   <% end %>
 </div>
-<h3>ユーザー名</h3>
-<%= @user.user_name %>
-<h3>メールアドレス</h3>
-<%= @user.email %>
-
-<% if user_signed_in? && @user == current_user %>
-    <%= link_to "編集", edit_user_registration_path, class: 'btn btn-primary' %>
-<% end %>
