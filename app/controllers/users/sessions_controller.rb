@@ -5,24 +5,6 @@ module Users
       redirect_to root_path, notice: "ゲストユーザーとしてログインしました。"
     end
 
-    def new
-      @user = User.new
-    end
-
-    def create
-      @user = User.new(user_params)
-      flash[:success] = "User already exists." unless (@user = User.find_by(email: params[:email]))
-      if @user.save
-        redirect_to root_path
-      else
-        redirect_to new_user_session_path
-      end
-    end
-
-    private
-
-    def post_params
-      params.require(:user).permit(:user_name, :avatar)
-    end
+    def create; end
   end
 end
