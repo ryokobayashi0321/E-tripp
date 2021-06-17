@@ -1,0 +1,11 @@
+<%= link_to "投稿画面へ", new_plan_path %>
+<% @plans.each do |plan| %>
+  <p>
+    <!-- 以下の2行のコードを追加 -->
+    <%= plan.title %>
+    <%= plan.day %>
+    <%= plan.note %>追加 -->
+    <%= link_to "削除", plan_path(plan), method: :delete, data: {confirm: "削除しますか?"} %>
+    <%= link_to "編集", edit_plan_path(plan) %>
+  </p>
+<% end %>

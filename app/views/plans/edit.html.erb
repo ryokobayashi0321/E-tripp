@@ -1,0 +1,6 @@
+<p>更新</p>
+<%= form_with model: @plan, local: true do |f| %>
+  <p>タイトル：<%= f.text_field :title %></p>
+  <p>日にち：<%= f.text_field :day %></p>
+  <%= f.submit "送信" %>
+<% end %>
