@@ -1,9 +1,14 @@
-<h1>投稿詳細</h1>
-<p>【メールアドレス】 <%= @plan.title %></p>
-<p>【内容】 <%= @plan.day %></p>
-<p>【作成日時】 <%= l @plan.note %></p>
-<p>
-  <%= link_to "編集", edit_plan_path(@plan) %>
-  <%= link_to "削除", plan_path(@plan), method: :delete, data: { confirm: "削除しますか？" } %>
-</p>
-<p><%= link_to "投稿一覧へ", plans_path %></p>
+<h1>プラン詳細</h1>
+
+<p>【タイトル】<%= @plan.title %></p>
+<p>【日付】<%= @plan.day %></p>
+<p>【メモ】<%= @plan.note %></p>
+<p>【作成日時】 <%= l @plan.created_at %></p>
+<% if current_user.id == @plan.user_id %>
+  <p>
+    <%= link_to "編集", edit_plan_path(@plan) %>
+    <%= link_to "削除", plan_path(@plan), method: :delete, data: { confirm: "削除しますか？" } %>
+  </p>
+<% end %>
+<p><%= link_to "プラン一覧へ", plans_path %></p>
+

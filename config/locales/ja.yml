@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      plan: プラン
+    attributes:
+      plan:
+        title: タイトル
+        day: 日付
+        note: メモ
+        user: ユーザー
+  time:
+    formats:
+      default: '%Y年%-m月%-d日(%a) %-H時%-M分%-S秒'

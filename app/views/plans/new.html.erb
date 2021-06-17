@@ -1,5 +1,2 @@
-<p>新規登録</p>
-<%= form_with model: @plan, local: true do |f| %>
-  <p>お名前：<%= f.text_field :name %></p>
-  <%= f.submit "送信" %>
-<% end %>
+<h1>新規投稿</h1>
+<%= render "form" %>
