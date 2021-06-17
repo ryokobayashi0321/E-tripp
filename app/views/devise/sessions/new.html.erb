@@ -1,10 +1,10 @@
 <%# ログイン画面 %>
 <div class="container">
-  <h2 class="text-center text-warning font-weight-bold"><%= t('.sign_in') %></h2>
+  <h1 class="text-center text-warning font-weight-bold"><%= t('.sign_in') %></h1>
   <div class="row">
     <div class="card mx-auto w-100">
       <div class="card-body">
-        <%= form_with model: @user, url: user_session_path, id: "new_user", class: "new_user", local: true  do |f| %>
+        <%= form_with(model: resource, scope: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="from-group">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
@@ -23,13 +23,13 @@
           <br class="my-5">
           <div class="row justify-content-center">
             <div class="col-lg-6 col-md-6">
-              <div class="form-group">
-                <%= link_to "新規登録", new_user_registration_path, class: 'form-control btn btn-warning text-white' %>
+              <div class="from-group">
+                <%= link_to "新規登録", new_registration_path(resource_name), class: 'form-control btn btn-warning text-white' %>
               </div>
             </div>
             <div class="col-lg-6 col-md-6">
               <div class="form-group">
-                <%= link_to "ログイン", root_path, class: 'form-control btn btn-primary' %>
+                <%= f.submit t('.sign_in'), class: 'form-control btn btn-primary' %>
               </div>
             </div>
           </div>
