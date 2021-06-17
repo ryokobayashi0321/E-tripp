@@ -4,7 +4,5 @@ module Users
       sign_in User.guest
       redirect_to root_path, notice: "ゲストユーザーとしてログインしました。"
     end
-
-    def create; end
   end
 end
