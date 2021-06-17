@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   end
 
   resource :users, only: [:show]
+  resources :plans
 end
