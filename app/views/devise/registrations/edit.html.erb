@@ -29,14 +29,14 @@
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "再度ご入力ください" %>
           </div>
           <br class="my-5">
-          <div class="from-group">
-            <%= f.label :current_password, "変更にはパスワードが必要です", class: "text-danger" %><br />
-            <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "必須項目です" %>
-          </div>
-          <br class="my-5">
           <div class="field">
             <%= f.label :avatar, "【アイコン】" %>
             <%= f.file_field :avatar %>
+          </div>
+          <br class="my-5">
+          <div class="from-group">
+            <%= f.label :current_password, "変更にはパスワードが必要です", class: "text-danger" %><br />
+            <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "必須項目です" %>
           </div>
           <br class="my-5">
           <div class="from-group">

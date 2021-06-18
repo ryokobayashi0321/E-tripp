@@ -1,3 +1,4 @@
+<%# マイページ %>
 <div class="container ">
   <% if user_signed_in? && @user == current_user %>
     <h2 class="text-warning font-weight-bold">マイページ</h2>
@@ -32,5 +33,10 @@
     </div>
   </div>
 </div>
+<p><%= link_to "プラン作成へ", new_plan_path %></p>
+<p><%= link_to "プラン詳細へ", plan_path %></p>
+<p><%= link_to "プラン一覧へ", plans_path %></p>
+<p><%= link_to "ユーザーリスト", users_path %></p>
+<p><%= link_to "トップページ", root_path %></p>
 
 

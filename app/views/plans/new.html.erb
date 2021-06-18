@@ -1,2 +1,6 @@
+<%# プラン作成 %>
 <h1>新規投稿</h1>
 <%= render "form" %>
+<p><%= link_to "マイページへ", user_path(current_user.id) %></p>
+<p><%= link_to "トップページ", root_path %></p>
+

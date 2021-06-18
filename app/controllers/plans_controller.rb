@@ -30,7 +30,7 @@ class PlansController < ApplicationController
 
   def destroy
     @plan.destroy!
-    redirect_to root_path
+    redirect_to user_path
   end
 
   private

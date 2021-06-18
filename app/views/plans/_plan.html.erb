@@ -1,13 +1,11 @@
+<%# プラン一覧の部分テンプレ %>
 <div>
+  <p>【ユーザー名】<%= plan.user.email %></p>
   <p>【タイトル】<%= plan.title %></p>
   <p>【日付】<%= plan.day %></p>
   <p>【メモ】<%= plan.note %></p>
   <p>
     <%= link_to "詳細", plan %>
-    <% if current_user.id == plan.user_id %>
-      <%= link_to "編集", edit_plan_path(plan) %>
-      <%= link_to "削除", plan_path(plan), method: :delete, data: { confirm: "削除しますか？" } %>
-    <% end %>
   </p>
 </div>
 <hr>

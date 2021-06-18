@@ -1,5 +1,6 @@
+<%# プラン詳細 %>
 <h1>プラン詳細</h1>
-
+<p>【ユーザー名】<%= @plan.user.user_name %></p>
 <p>【タイトル】<%= @plan.title %></p>
 <p>【日付】<%= @plan.day %></p>
 <p>【メモ】<%= @plan.note %></p>
@@ -11,4 +12,7 @@
   </p>
 <% end %>
 <p><%= link_to "プラン一覧へ", plans_path %></p>
+<p><%= link_to "プラン作成へ", new_plan_path %></p>
+<p><%= link_to "マイページへ", user_path(current_user.id) %></p>
+
 

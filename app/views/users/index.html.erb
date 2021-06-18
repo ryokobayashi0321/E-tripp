@@ -1,4 +1,5 @@
-<h1>ユーザー一覧</h1>
+<%# ユーザー一覧 %>
+<h1>ユーザーリスト</h1>
 <p>Find me in app/views/users/index.html.erb</p>
 
 <% @users.each do |user| %>
@@ -7,3 +8,5 @@
   <p><span>ユーザー名: </span><%=link_to user.user_name, user_path(user.id) %></p>
   <p><span>メールアドレス: </span><%=link_to user.email, user_path(user.id) %></p>
 <% end %>
+<p><%= link_to "マイページへ", user_path(current_user.id) %></p>
+<p><%= link_to "プラン作成へ", new_plan_path %></p>
