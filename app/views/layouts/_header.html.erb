@@ -17,12 +17,12 @@
             </li>
             <li class="nav-item active">
               <div class="nav-item dropdown">
-                <a link_to new_plan_path, class="nav-link dropdown-toggle", id="navbarDropdownMenuLink" data-toggle="dropdown">プラン</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <%= link_to "プラン作成", new_plan_path, class: "dropdown-item" %>
-                  <%= link_to "プラン一覧", plans_path, class: "dropdown-item" %>
-                  <%= link_to "ユーザー一覧", users_path, class: "dropdown-item" %>
-                </div>
+                <a href="#" class="btn btn-primary dropdown-toggle", id="navbarDropdownMenuLink" data-toggle="dropdown">プラン</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><%= link_to "プラン作成", new_plan_path, class: "dropdown-item" %></li>
+                  <li><%= link_to "プラン一覧", plans_path, class: "dropdown-item" %></li>
+                  <li><%= link_to "ユーザー一覧", users_path, class: "dropdown-item" %></li>
+                </ul>
               </div>
             </li>
             <li class="nav-item active">
