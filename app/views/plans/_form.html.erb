@@ -1,0 +1,16 @@
+<%# プラン編集の部分テンプレ %>
+<%= form_with model: @plan, local: true do |f| %>
+  <p>
+    <%= f.label :title,"タイトル" %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :day,"日付" %>
+    <%= f.text_field :day %>
+  </p>
+  <p>
+    <%= f.label :note,"メモ" %>
+    <%= f.text_field :note %>
+  </p>
+  <%= f.submit %>
+<% end %>
