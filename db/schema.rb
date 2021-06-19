@@ -10,20 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_034642) do
+ActiveRecord::Schema.define(version: 2021_06_19_055523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "members", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
-    t.string "password_confirmation"
-    t.string "avatar"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   create_table "plans", force: :cascade do |t|
     t.string "title", null: false
@@ -33,6 +23,22 @@ ActiveRecord::Schema.define(version: 2021_06_17_034642) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_plans_on_user_id"
+  end
+
+  create_table "prefectures", force: :cascade do |t|
+    t.string "prefecture_name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "spots", force: :cascade do |t|
+    t.string "spot_name", null: false
+    t.text "content", null: false
+    t.string "photo", null: false
+    t.bigint "prefecture_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["prefecture_id"], name: "index_spots_on_prefecture_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,4 +56,5 @@ ActiveRecord::Schema.define(version: 2021_06_17_034642) do
   end
 
   add_foreign_key "plans", "users"
+  add_foreign_key "spots", "prefectures"
 end
