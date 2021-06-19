@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  specified_time: 2021-06-19 16:23:43
+  plan: one
+  spot: one
+
+two:
+  specified_time: 2021-06-19 16:23:43
+  plan: two
+  spot: two

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_19_055523) do
+ActiveRecord::Schema.define(version: 2021_06_19_072342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 2021_06_19_055523) do
     t.string "prefecture_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.time "specified_time"
+    t.bigint "plan_id", null: false
+    t.bigint "spot_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plan_id", "spot_id"], name: "index_schedules_on_plan_id_and_spot_id", unique: true
+    t.index ["plan_id"], name: "index_schedules_on_plan_id"
+    t.index ["spot_id"], name: "index_schedules_on_spot_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -56,5 +67,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_055523) do
   end
 
   add_foreign_key "plans", "users"
+  add_foreign_key "schedules", "plans"
+  add_foreign_key "schedules", "spots"
   add_foreign_key "spots", "prefectures"
 end
