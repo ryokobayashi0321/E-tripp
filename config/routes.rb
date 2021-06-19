@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   resources :plans
   resources :users
+  resources :spots do
+    resources :prefectures
+  end
 end
