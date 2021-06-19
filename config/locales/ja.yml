@@ -2,12 +2,16 @@ ja:
   activerecord:
     models:
       plan: プラン
+      schedule: 予定時間
     attributes:
       plan:
         title: タイトル
         day: 日付
         note: メモ
         user: ユーザー
+      schedule:
+        plan: プラン
+        spot: スポット
   time:
     formats:
       default: '%Y年%-m月%-d日(%a) %-H時%-M分%-S秒'
