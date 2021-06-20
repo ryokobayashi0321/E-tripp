@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   def index
-    @spots = Spot.all
+    @spots = Spot.includes(:user, :likes).order(:created_at)
     @prefectures = Prefecture.all
   end
 

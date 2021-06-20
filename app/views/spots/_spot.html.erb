@@ -1,0 +1,18 @@
+<div>
+  <p>【スポット名】<%= spot.spot_name %></p>
+  <p>【説明】<%= spot.content %></p>
+  <p>【写真】<%= spot.photo %></p>
+
+  <%# いいねの pタグ に id 属性を追加 / %>
+  <p id="spot-<%= spot.id %>">
+    <% if spot.liked_by?(current_user) %>
+      <%= render "like", post: spot %>
+    <% else %>
+      <%= render "dislike", post: spot %>
+    <% end %>
+  </p>
+</div>
+<p><%= link_to "プラン作成へ", new_plan_path %></>
+<p><%= link_to "マイページへ", user_path(current_user.id) %></p>
+<p><%= link_to "トップページ", root_path %></p>
+<p>スポット詳細</p>
