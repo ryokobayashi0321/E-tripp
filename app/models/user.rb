@@ -2,6 +2,9 @@ class User < ApplicationRecord
   has_many :plans, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+  # user.liked_spots で user が「いいね!」しているメッセージの一覧を取得できるようになる
+  has_many :liked_spots, through: :likes, source: :spot
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
