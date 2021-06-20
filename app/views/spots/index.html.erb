@@ -1,5 +1,2 @@
 <h1>スポットリスト</h1>
-<p><%= link_to "プラン作成へ", new_plan_path %></>
-<p><%= link_to "マイページへ", user_path(current_user.id) %></p>
-<p><%= link_to "トップページ", root_path %></p>
-<p>スポット詳細</p>
+<%= render @spots %>

@@ -7,13 +7,14 @@ class Spot < ApplicationRecord
   has_many :scheduled_plans, through: :schedules, source: :plan
 
   # spot.liked_users で post を「いいね!」しているユーザーの一覧を取得できるようになる
-  sas_many :liked_users, thorugh: :likes, source: :user
+  has_many :liked_users, through: :likes, source: :user
 
   validates :spot_name, presence: true
   validates :content, presence: true
   validates :photo, presence:
 
+  # spot を user が「いいね！」しているときは「true」，「いいね」していないときは「false」
   def liked_by?(user)
-    likes.exists?(user_id: user.id)
+    likes.any? { |like| like.user_id == user.id }
   end
 end
