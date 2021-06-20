@@ -11,5 +11,9 @@ class Spot < ApplicationRecord
 
   validates :spot_name, presence: true
   validates :content, presence: true
-  validates :photo, presence: true
+  validates :photo, presence:
+
+  def liked_by?(user)
+    likes.exists?(user_id: user.id)
+  end
 end

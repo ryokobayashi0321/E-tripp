@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   resources :plans
   resources :users
+  # likes を spots にネストさせることで， 「いいね！」にしたいスポット の id を params[:post_id] で受け取れる
   resources :spots do
-    resources :prefectures
+    resource :likes, only: [:create, :destroy]
   end
+  resources :prefectures
 end
