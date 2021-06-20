@@ -3,6 +3,7 @@ ja:
     models:
       plan: プラン
       schedule: 予定時間
+      like: いいね
     attributes:
       plan:
         title: タイトル
@@ -11,6 +12,9 @@ ja:
         user: ユーザー
       schedule:
         plan: プラン
+        spot: スポット
+      like:
+        user: ユーザー
         spot: スポット
   time:
     formats:
