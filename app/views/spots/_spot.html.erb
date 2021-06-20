@@ -2,7 +2,9 @@
   <p>【スポット名】<%= spot.spot_name %></p>
   <p>【説明】<%= spot.content %></p>
   <p>【写真】<%= spot.photo %></p>
-  <p>
+
+  <%# いいねの pタグ に id 属性を追加 / %>
+  <p id="spot-<%= spot.id %>">
     <% if spot.liked_by?(current_user) %>
       <%= render "like", post: spot %>
     <% else %>

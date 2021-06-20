@@ -3,7 +3,8 @@
 <p><%= link_to "プラン作成へ", new_plan_path %></p>
 <p><%= link_to "スポット一覧へ", spots_path %></p>
 
-<p>
+<%# いいねの pタグ に id 属性を追加 %>
+<p id="spot-<%= spot.id %>">
   <% if @spot.liked_by?(current_user) %>
     <%= render "like", post: @spot %>
   <% else %>
