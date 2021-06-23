@@ -1,8 +1,8 @@
 <div>
 <% @spots.each do |spot| %>
-  <p scope="col">【スポット名】<%= spot.spot_name %></p>
-  <p scope="col">【説明】<%= spot.content %></p>
-  <p scope="col">【写真】<%= spot.photo %></p>
+  <p>【スポット名】<%= spot.spot_name %></p>
+  <p>【説明】<%= spot.content %></p>
+  <p>【写真】<%= spot.photo %></p>
   <%= link_to "詳細", spot %>
 <% end %>
 
