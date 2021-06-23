@@ -1,3 +1,5 @@
+require "csv"
+CSV_COLUMNS = %w[spot_name content photo].freeze
 class Spot < ApplicationRecord
   belongs_to :prefecture
   has_many :schedules, dependent: :destroy
@@ -13,6 +15,14 @@ class Spot < ApplicationRecord
   validates :content, presence: true
   validates :photo, presence:
 
+  def self.generate_csv
+    CSV.generate do |csv|
+      csv << CSV_COLUMNS
+      all.find_each do |spot|
+        csv << CSV_COLUMNS.map { |col| spot.send(col) }
+      end
+    end
+  end
   # spot を user が「いいね！」しているときは「true」，「いいね」していないときは「false」
   def liked_by?(user)
     likes.any? { |like| like.user_id == user.id }
