@@ -9,14 +9,18 @@ class PlansController < ApplicationController
     @plan = Plan.find(params[:id])
   end
 
-  # 新規投稿用の空のインスタンス
   def new
     @plan = Plan.new
+    @plan.schedules.new
   end
 
   def create
-    @plan = current_user.plans.create!(plan_params)
-    redirect_to plans_path
+    @plan = Plan.new(plan_params)
+    if @plan.save
+      redirect_to plans_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -30,13 +34,13 @@ class PlansController < ApplicationController
 
   def destroy
     @plan.destroy!
-    redirect_to user_path
+    redirect_to plans_path
   end
 
   private
 
   def plan_params
-    params.require(:plan).permit(:title, :day, :note)
+    params.require(:plan).permit(:title, :day, :note, schedules_attributes: [:id, :specified_time, :spot_id]).merge(user_id: current_user.id)
   end
 
   # 「自分のプラン」の中から URL の :id に対応するプランを探す

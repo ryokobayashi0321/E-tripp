@@ -1,13 +1,20 @@
-<%# プラン編集の部分テンプレ %>
+<%# プラン作成の部分テンプレ %>
 <%= form_with model: @plan, local: true do |f| %>
   <p>
     <%= f.label :title,"タイトル" %>
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :day,"日付" %>
-    <%= f.text_field :day %>
+    <%= f.label :day,"日付", class: "control-label" %>
+    <%= f.date_field :day, class: 'form-control' %>
   </p>
+    <p>
+    <%= f.fields_for :schedules do |sf| %>
+      <%= sf.label :specified_time,"予定時刻", class: "control-label" %>
+      <%= sf.time_field :specified_time, class: 'form-control' %>
+    <% end %>
+  </p>
+
   <p>
     <%= f.label :note,"メモ" %>
     <%= f.text_field :note %>

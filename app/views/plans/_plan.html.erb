@@ -3,6 +3,11 @@
   <p>【ユーザー名】<%= plan.user.email %></p>
   <p>【タイトル】<%= plan.title %></p>
   <p>【日付】<%= plan.day %></p>
+  <p>【予定時刻】
+  <%= plan.schedules.each do |schedule| %>
+    <%= schedule.specified_time %>
+  <% end %>
+  </p>
   <p>【メモ】<%= plan.note %></p>
   <p>
     <%= link_to "詳細", plan %>
