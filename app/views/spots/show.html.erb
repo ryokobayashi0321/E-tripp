@@ -1,7 +1,7 @@
 <h1>スポット詳細</h1>
 <p>【スポット名】 <%= @spot.spot_name %></p>
 <p>【説明】 <%= @spot.content %></p>
-<p>【写真】 <%= @spot.photo %></p>
+<p>【写真】 <%= image_tag @spot.photo %></p>
 <p>【作成日時】 <%= l @spot.created_at %></p>
 
 <p><%= link_to "プラン作成へ", new_plan_path %></p>

@@ -1,6 +1,8 @@
 class SpotsController < ApplicationController
+  before_action :set_spot, only: %w[show edit update destroy]
   def index
     @spots = Spot.includes(:likes).order(:created_at)
+    # csvデータ表示
     respond_to do |format|
       format.html
       format.csv do
@@ -18,11 +20,34 @@ class SpotsController < ApplicationController
   end
 
   def create
-    @spot = Spot.cleate!(spot_params)
-    redirect_to spot
+    @spot = Spot.new(spot_params)
+    if @spot.save
+      redirect_to @spot
+    else
+      render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @spot.update(spot_params)
+      redirect_to @spot
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @spot.destroy
+    redirect_to spots_url
   end
 
   private
+
+  def set_spot
+    @spot = Spot.find(params[:id])
+  end
 
   def spot_params
     params.require(:spot).permit(:spot_name, :content, :photo)

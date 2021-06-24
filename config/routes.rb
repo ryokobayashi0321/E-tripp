@@ -12,11 +12,11 @@ Rails.application.routes.draw do
     post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
   end
 
-  resources :plans
   resources :users
   # likes を spots にネストさせることで， 「いいね！」にしたいスポット の id を params[:post_id] で受け取れる
   resources :spots do
     resource :likes, only: [:create, :destroy]
   end
   resources :prefectures
+  resources :plans
 end

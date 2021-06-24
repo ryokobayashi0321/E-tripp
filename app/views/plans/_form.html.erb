@@ -10,10 +10,13 @@
   </p>
     <p>
     <%= f.fields_for :schedules do |sf| %>
-      <%= sf.label :specified_time,"予定時刻", class: "control-label" %>
-      <%= sf.time_field :specified_time, class: 'form-control' %>
+      <div class="field">
+        <%= render "schedules_fields", f: sf %>
+    </div>
     <% end %>
-  </p>
+    <div class="links">
+      <%= link_to spot_path "スポット追加", f, :schedules %>
+    </div>
 
   <p>
     <%= f.label :note,"メモ" %>

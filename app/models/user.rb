@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :plans, dependent: :destroy
+  accepts_nested_attributes_for :plans
   has_many :likes, dependent: :destroy
 
   # user.liked_spots で user が「いいね!」しているメッセージの一覧を取得できるようになる
@@ -19,4 +20,9 @@ class User < ApplicationRecord
 
   # AvatarUploaderとavatarカラムの連携
   mount_uploader :avatar, AvatarUploader
+
+  # plan作成の準備
+  def prepare_plan
+    plan || create_plan
+  end
 end

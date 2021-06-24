@@ -1,0 +1,19 @@
+<%= form_with model: @spot, local: true do |f| %>
+
+  <div>
+    <%= f.label :spot_name, "スポット名" %>
+    <%= f.text_field :spot_name %>
+  </div>
+  <div>
+    <%= f.label :content, "内容" %>
+    <%= f.text_field :content %>
+  </div>
+    <div>
+    <%= f.label :photo, "写真" %>
+    <%= f.file_field :photo %>
+  </div>
+
+  <div>
+    <%= f.submit "送信" %>
+  </div>
+<% end %>

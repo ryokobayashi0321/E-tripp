@@ -1,6 +1,4 @@
 class PlansController < ApplicationController
-  before_action :set_plan, only: %i[edit update destroy]
-
   def index
     @plans = Plan.includes(:user).order(:created_at)
   end
@@ -11,7 +9,8 @@ class PlansController < ApplicationController
 
   def new
     @plan = Plan.new
-    @plan.schedules.new
+    @plan.schedules.build
+    @plan.spots.build
   end
 
   def create
@@ -23,16 +22,13 @@ class PlansController < ApplicationController
     end
   end
 
-  def edit
-    @plan = Plan.find(params[:id])
-  end
-
-  def update
-    @plan.update!(plan_params)
+  def update_spot
+    @schedule.update!(plan_params)
     redirect_to @plan
   end
 
   def destroy
+    @plan = Plan.find(params[:id])
     @plan.destroy!
     redirect_to plans_path
   end
@@ -40,12 +36,9 @@ class PlansController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:title, :day, :note, schedules_attributes: [:id, :specified_time, :spot_id]).merge(user_id: current_user.id)
-  end
-
-  # 「自分のプラン」の中から URL の :id に対応するプランを探す
-  # 「他人のプラン」の場合はエラーを出す
-  def set_plan
-    @plan = current_user.plans.find(params[:id])
+    params.require(:plan).permit(:title, :day, :note,
+                                 schedules_attributes: [:id, :specified_time, :spot_id, :spot_name, :_destroy, {
+                                   spots_attributes: [:spot_name, :content, :photo]
+                                 }]).merge(user_id: current_user.id)
   end
 end

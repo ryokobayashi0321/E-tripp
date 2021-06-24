@@ -6,6 +6,7 @@
   <p>【予定時刻】
   <%= plan.schedules.each do |schedule| %>
     <%= schedule.specified_time %>
+    【スポット】<%= schedule.spot_id %>
   <% end %>
   </p>
   <p>【メモ】<%= plan.note %></p>

@@ -3,6 +3,7 @@ CSV_COLUMNS = %w[spot_name content photo].freeze
 class Spot < ApplicationRecord
   belongs_to :prefecture
   has_many :schedules, dependent: :destroy
+  has_many :plans, through: :schedules
   has_many :likes, dependent: :destroy
 
   # spot.scheduled_plansで spot を「指定した時間」のplanの一覧を取得できるようになる
@@ -15,6 +16,7 @@ class Spot < ApplicationRecord
   validates :content, presence: true
   validates :photo, presence:
 
+  # csv
   def self.generate_csv
     CSV.generate do |csv|
       csv << CSV_COLUMNS
@@ -23,6 +25,7 @@ class Spot < ApplicationRecord
       end
     end
   end
+
   # spot を user が「いいね！」しているときは「true」，「いいね」していないときは「false」
   def liked_by?(user)
     likes.any? { |like| like.user_id == user.id }
