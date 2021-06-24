@@ -4,7 +4,7 @@
     <%= f.label :title,"タイトル" %>
     <%= f.text_field :title %>
   </p>
-  <p>
+  <p class="col-md-6">
     <%= f.label :day,"日付", class: "control-label" %>
     <%= f.date_field :day, class: 'form-control' %>
   </p>
@@ -15,7 +15,6 @@
     </div>
     <% end %>
     <div class="links">
-      <%= link_to spot_path "スポット追加", f, :schedules %>
     </div>
 
   <p>

@@ -18,5 +18,8 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
   end
   resources :prefectures
+
+  post "/add_spot" => "plans#add_spot"
+  delete "/delete_spot" => "plans#delete_spot"
   resources :plans
 end
