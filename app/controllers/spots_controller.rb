@@ -1,7 +1,6 @@
 class SpotsController < ApplicationController
   before_action :set_spot, only: %w[show edit update destroy]
   def index
-    @spots = Spot.includes(:likes).order(:created_at)
     # csvデータ表示
     respond_to do |format|
       format.html
@@ -9,6 +8,9 @@ class SpotsController < ApplicationController
         send_data(@spots.generate_csv, filename: "spot_data.csv")
       end
     end
+    @prefectures = Prefecture.all
+    @q = Spot.ransack(params[:q])
+    @spots = Spot.includes(:likes).order(:created_at)
   end
 
   def show

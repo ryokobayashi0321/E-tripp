@@ -1,4 +1,16 @@
-<h1>スポットリスト</h1>
-<%= render "spot" %>
+<div class="container">
+  <h1 class="text-center text-warning font-weight-bold">スポットリスト</h1>
+  <div class="text-right">
+    <%= search_form_for @q do |f| %>
+      <%= f.label :spot_name_cont, "キーワード" %>
+      <%= f.search_field :spot_name_cont %>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
+  <br class="my-5">
+  <%= render "prefecture" %>
+  <br class="my-5">
+  <%= render "spot" %>
+</div>
 
 
