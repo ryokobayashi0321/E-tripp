@@ -13,13 +13,13 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  post "/add_spot" => "plans#add_spot"
+  delete "/delete_spot" => "plans#delete_spot"
+  resources :plans
+
   # likes を spots にネストさせることで， 「いいね！」にしたいスポット の id を params[:post_id] で受け取れる
   resources :spots do
     resource :likes, only: [:create, :destroy]
   end
   resources :prefectures
-
-  post "/add_spot" => "plans#add_spot"
-  delete "/delete_spot" => "plans#delete_spot"
-  resources :plans
 end

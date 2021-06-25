@@ -1,24 +1,22 @@
-<div>
-<% @spots.each do |spot| %>
-  <p>【No.】<%= spot.id %></p>
-  <p>【スポット名】<%= spot.spot_name %></p>
-  <p>【説明】<%= spot.content %></p>
-  <p>【写真】<%= spot.photo %></p>
-  <%= link_to "詳細", spot %>
-  <%= button_to '登録',"#", class: 'fbtn' %>
-<% end %>
-
-
-
-  <%# いいねの pタグ に id 属性を追加 / %>
-  <%# <p id="spot-<%= @spot.id %>
-    <%# <% if @spot.liked_by?(current_user) %>
-      <%# <%= render "like", post: @spot %>
-    <%# <% else %>
-      <%# <%= render "dislike", post: @spot %>
-    <%# <% end %>
-  <%# </p> %>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @spots.each do |spot| %>
+  <div class="col">
+    <div class="card h-100">
+      <img src=<% spot.photo %> alt="defaul.png" class="card-img-top">
+      <div class="card-body">
+      <h5 class="card-title text-center"><span><%= spot.id %>.</span><%= spot.spot_name %></h5>
+      <p class="card-text"><%= spot.content %></p>
+      </div>
+      <div class="card-footer">
+      <%= button_to "詳細", spot, class: 'form-control btn btn-primary' %>
+      <br class="my-5">
+      <%= button_to '登録',"#", class: 'form-control btn btn-warning text-white' %>
+      </div>
+    </div>
+  </div>
+    <% end %>
 </div>
+
 <p><%= link_to "プラン作成へ", new_plan_path %></>
 <p><%= link_to "マイページへ", user_path(current_user.id) %></p>
 <p><%= link_to "トップページ", root_path %></p>
