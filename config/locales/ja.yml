@@ -10,17 +10,22 @@ ja:
     plans: プラン
     likes: いいね！
     liked_users: いいね！したユーザー
+    liked_spots: いいね！したスポット
     scheduled_plans: 指定時刻のプラン
     created_at: 作成日時
     updated_at: 更新日時
   activerecord:
     models:
+      user: ユーザー
       plan: プラン
       spot: スポット
       prefecture: 都道府県
       schedule: 予定時間
       like: いいね！
     attributes:
+      user:
+        user_name: ユーザー名
+        avatar: プロフィール画像
       plan:
         title: タイトル
         day: 日付
