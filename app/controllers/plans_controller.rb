@@ -44,7 +44,7 @@ class PlansController < ApplicationController
 
   def plan_params
     params.require(:plan).permit(:title, :day, :note,
-                                 schedules_attributes: [:id, :specified_time, :spot_id, :spot_name, :_destroy, {
+                                 schedules_attributes: [:specified_time, {
                                    spots_attributes: [:spot_name, :content, :photo]
                                  }]).merge(user_id: current_user.id)
   end

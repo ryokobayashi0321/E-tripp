@@ -10,7 +10,7 @@
           <% if user_signed_in? %>
             <%# ログイン時 %>
             <li class="nav-item active">
-              <h6 class="text-warning">ログイン中のアドレス<br><%= current_user.email %></h6>
+              <h6 class="text-warning mx-5">ログイン中のアドレス<br><%= current_user.email %></h6>
             </li>
             <li class="nav-item active">
               <%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %>

@@ -10,39 +10,30 @@ class SpotsController < ApplicationController
     end
     @prefectures = Prefecture.all
     @q = Spot.ransack(params[:q])
-    @spots = Spot.includes(:likes).order(:created_at)
+    @spots = Spot.includes(:likes).order(id: :asc)
   end
 
-  def show
-    @spot = Spot.find(params[:id])
-  end
+  def show; end
 
   def new
     @spot = Spot.new
   end
 
   def create
-    @spot = Spot.new(spot_params)
-    if @spot.save
-      redirect_to @spot
-    else
-      render :new
-    end
+    @spot = Spot.create!(spot_params)
+    redirect_to spot
   end
 
   def edit; end
 
   def update
-    if @spot.update(spot_params)
-      redirect_to @spot
-    else
-      render :edit
-    end
+    @spot = Spot.update!(spot_params)
+    redirect_to post
   end
 
   def destroy
-    @spot.destroy
-    redirect_to spots_url
+    @spot.destroy!
+    redirect_to root_path
   end
 
   private
