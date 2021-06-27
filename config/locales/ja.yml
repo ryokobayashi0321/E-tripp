@@ -17,6 +17,7 @@ ja:
     models:
       plan: プラン
       spot: スポット
+      prefecture: 都道府県
       schedule: 予定時間
       like: いいね！
     attributes:
