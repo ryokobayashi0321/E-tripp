@@ -1,16 +1,45 @@
 ja:
+  attributes:
+    id: ID
+    namespace: 名前空間
+    resource_type: リソースタイプ
+    resource_id: リソースID
+    author_type: 著者タイプ
+    author_id: 著者ID
+    schedules: 指定時刻
+    plans: プラン
+    likes: いいね！
+    liked_users: いいね！したユーザー
+    liked_spots: いいね！したスポット
+    scheduled_plans: 指定時刻のプラン
+    created_at: 作成日時
+    updated_at: 更新日時
   activerecord:
     models:
+      user: ユーザー
       plan: プラン
+      spot: スポット
+      prefecture: 都道府県
       schedule: 予定時間
-      like: いいね
+      like: いいね！
     attributes:
+      user:
+        user_name: ユーザー名
+        avatar: プロフィール画像
       plan:
         title: タイトル
         day: 日付
         note: メモ
         user: ユーザー
+      spot:
+        spot_name: スポット名
+        content: 内容
+        photo: 写真
+        prefecture: 都道府県
+      prefecture:
+        prefecture_name: 都道府県
       schedule:
+        specified_time: 指定時刻
         plan: プラン
         spot: スポット
       like:
@@ -18,4 +47,4 @@ ja:
         spot: スポット
   time:
     formats:
-      default: '%Y年%-m月%-d日(%a) %-H時%-M分%-S秒'
+      default: '%Y年%-m月%-d日(%a)'
