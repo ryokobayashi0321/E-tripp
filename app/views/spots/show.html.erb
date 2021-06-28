@@ -17,15 +17,17 @@
         <p class="text-right">【作成日時】 <%= l @spot.created_at %></p>
 
         <div class="card-footer">
-        <%= link_to '登録',"#", class: 'form-control btn btn-warning text-white btn-block' %>
-        <br class="my-7">
-        <p><%= link_to "スポット一覧へ", spots_path, class: 'form-control btn btn-primary btn-block' %></p>
+          <%= link_to '登録',"#", class: 'form-control btn btn-warning text-white btn-block' %>
+          <br class="my-7">
+          <p><%= link_to "スポット一覧へ", spots_path, class: 'form-control btn btn-primary btn-block' %></p>
         </div>
-
-
+        <br class="my-7">
       </div>
     </div>
   </div>
+
+  <h2>コメント</h2>
+  <%= render "comment" %>
 </div>
 
 <%= link_to "プラン作成へ", new_plan_path %>

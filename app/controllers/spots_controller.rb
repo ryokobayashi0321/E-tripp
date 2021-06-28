@@ -13,7 +13,10 @@ class SpotsController < ApplicationController
     @spots = Spot.includes(:likes).order(id: :asc)
   end
 
-  def show; end
+  def show
+    @comment = current_user.comments.build
+    @comments = @spot.comments
+  end
 
   def new
     @spot = Spot.new

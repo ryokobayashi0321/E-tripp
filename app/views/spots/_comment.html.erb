@@ -1,0 +1,17 @@
+<% @spot.comments.each do |com| %>
+  <p class="card-body">
+    <%= com.comment %>
+  </p>
+<% end %>
+
+<h2>コメント記入</h2>
+<%= form_with model: [ @spot, @spot.comments.build ] do |f| %>
+  <p class="mb-3">
+    <%=f.label :comment, class: "form-label" %>
+    <%=f.text_area :comment, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+  <%= link_to "削除", spot_comments_path(@spot.id), method: :delete, data: { confirm: "コメントを削除しますか？" } %>
