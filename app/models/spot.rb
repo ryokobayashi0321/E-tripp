@@ -10,6 +10,9 @@ class Spot < ApplicationRecord
   # spot.scheduled_plansで spot を「指定した時間」のplanの一覧を取得できるようになる
   has_many :scheduled_plans, through: :schedules, source: :plan
 
+  # spot.commented_usersで spot を「コメント」したスポットの一覧を取得できるようになる
+  has_many :commented_users, through: :comments, source: :user
+
   # spot.liked_users で post を「いいね!」しているユーザーの一覧を取得できるようになる
   has_many :liked_users, through: :likes, source: :user
 
