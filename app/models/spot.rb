@@ -4,6 +4,7 @@ class Spot < ApplicationRecord
   belongs_to :prefecture
   has_many :schedules, dependent: :destroy
   has_many :plans, through: :schedules
+  has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
   # spot.scheduled_plansで spot を「指定した時間」のplanの一覧を取得できるようになる

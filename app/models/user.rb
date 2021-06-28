@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :plans, dependent: :destroy
   accepts_nested_attributes_for :plans
+  has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
   # user.liked_spots で user が「いいね!」しているメッセージの一覧を取得できるようになる

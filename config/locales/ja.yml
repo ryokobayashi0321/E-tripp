@@ -21,6 +21,7 @@ ja:
       spot: スポット
       prefecture: 都道府県
       schedule: 予定時間
+      comment: コメント
       like: いいね！
     attributes:
       user:
@@ -41,6 +42,10 @@ ja:
       schedule:
         specified_time: 指定時刻
         plan: プラン
+        spot: スポット
+      comment:
+        comment: コメント
+        user: ユーザー
         spot: スポット
       like:
         user: ユーザー
