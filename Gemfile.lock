@@ -336,7 +336,6 @@ DEPENDENCIES
   devise-bootstrap-views (~> 1.0)
   devise-i18n
   jbuilder (~> 2.7)
-  jquery-rails
   listen (~> 3.3)
   pg (~> 1.1)
   pry-byebug

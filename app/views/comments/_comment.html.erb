@@ -3,7 +3,7 @@
 <h6 class="more" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">もっと見る....</h6>
 <% @comments.first(2).each do |com| %>
   <% unless com.id.nil? %>
-    <li class="comment-container">
+    <div class="comment-container">
       <div class="comment-box">
         <div class="comment-text">
           <p><%= link_to "#{com.user.user_name}さん", users_path(com.user.id) %></p>
@@ -20,7 +20,7 @@
           </span>
         </div>
       </div>
-    </li>
+    </div>
   <% end %>
 <% end %>
 
@@ -28,7 +28,7 @@
 <div class="collapse" id="collapseExample">
   <% @comments.offset(2).each do |com| %>
     <% unless com.id.nil? %>
-      <li class="comment-container">
+      <div class="comment-container">
         <div class="comment-box">
           <div class="comment-text">
             <p><%= link_to "#{com.user.use_name}さん", users_path(com.user.id) %></p>
@@ -45,7 +45,7 @@
             </span>
           </div>
         </div>
-      </li>
+      </div>
     <% end %>
   <% end %>
 </div>

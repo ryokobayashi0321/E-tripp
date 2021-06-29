@@ -3,13 +3,12 @@ class CommentsController < ApplicationController
     @spot = Spot.find(params[:spot_id])
     @comment = @spot.comments.build(comment_params)
     @comment.user_id = current_user.id
-    render :index if @comment.save
+    @comment.save
   end
 
   def destroy
     comment = Comment.find_by(spot_id: params[:spot_id], user_id: current_user.id)
     comment.destroy
-    render :index
   end
 
   private

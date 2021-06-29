@@ -26,14 +26,14 @@
     </div>
 <%# コメント %>
     <div class="card mb-3 w-100">
-      <ul>
-        <li class="comment-create">
+      <div>
+        <div class="comment-create">
           <h3 class="text-left title">コメント</h3>
-        </li>
-        <li id="comments_area">
+        </div>
+        <div id="comments_area">
           <%= render partial: "comments/comment", local: { comments: @comments } %>
-        </li>
-      </ul>
+        </div>
+      </div>
       <hr>
       <div class="comment-create">
         <% if user_signed_in? %>
