@@ -1,4 +1,4 @@
-<div class="container w-75">
+<div class="container w-50">
   <div class="row">
     <h1 class="text-center text-warning font-weight-bold">スポット詳細</h1>
     <div class="card mb-3">
@@ -17,15 +17,32 @@
         <p class="text-right">【作成日時】 <%= l @spot.created_at %></p>
 
         <div class="card-footer">
-        <%= link_to '登録',"#", class: 'form-control btn btn-warning text-white btn-block' %>
-        <br class="my-7">
-        <p><%= link_to "スポット一覧へ", spots_path, class: 'form-control btn btn-primary btn-block' %></p>
+          <%= link_to '登録',"#", class: 'form-control btn btn-warning text-white btn-block' %>
+          <br class="my-7">
+          <p><%= link_to "スポット一覧へ", spots_path, class: 'form-control btn btn-primary btn-block' %></p>
         </div>
-
-
+        <br class="my-7">
+      </div>
+    </div>
+<%# コメント %>
+    <div class="card mb-3 w-100">
+      <div>
+        <div class="comment-create">
+          <h3 class="text-left title">コメント</h3>
+        </div>
+        <div id="comments_area">
+          <%= render partial: "comments/comment", local: { comments: @comments } %>
+        </div>
+      </div>
+      <hr>
+      <div class="comment-create">
+        <% if user_signed_in? %>
+          <%= render partial: "comments/form", loacl: { comments: @comments, spot: @spot } %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
 
 <%= link_to "プラン作成へ", new_plan_path %>
