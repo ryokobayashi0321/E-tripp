@@ -3,17 +3,13 @@ class CommentsController < ApplicationController
     @spot = Spot.find(params[:spot_id])
     @comment = @spot.comments.build(comment_params)
     @comment.user_id = current_user.id
-    if @comment.save
-      redirect_to spot_path(@spot.id)
-    else
-      redirect_to spot_path(@spot)
-    end
+    render :index if @comment.save
   end
 
   def destroy
     comment = Comment.find_by(spot_id: params[:spot_id], user_id: current_user.id)
     comment.destroy
-    redirect_to spots_path
+    render :index
   end
 
   private

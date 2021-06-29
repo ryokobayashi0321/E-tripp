@@ -14,7 +14,7 @@ class SpotsController < ApplicationController
   end
 
   def show
-    @comment = current_user.comments.build
+    @comment = current_user.comments.new
     @comments = @spot.comments
   end
 
