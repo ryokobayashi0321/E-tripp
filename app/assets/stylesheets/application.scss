@@ -16,6 +16,10 @@
 
 @import "bootstrap/scss/bootstrap";
 
+body {
+  padding-top: 70px;
+}
+
 // devise関連
 .mw-md {
   max-width: 576px;
@@ -36,3 +40,45 @@
   @extend .alert-danger;
 }
 
+.jumbotron-extend {
+  position: relative;
+  height: 50vh;
+  min-height: 200px;
+  background-size: cover;
+}
+
+.jumbotron-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.site-name {
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+.btn-black {
+  border-radius: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Avenir', serif;
+}
+.btn-black:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.bg-primary {
+  background-color: rgb(60, 72, 241) !important;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: rgb(60, 72, 241) !important;
+  color: #fff;
+}
+
+.btn-warning {
+  background-color: orange !important;
+  color: #fff;
+}

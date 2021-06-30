@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :prefectures, only: [:index]
 
-  resources :spots do
+  resources :spots, only: [:index, :show] do
     resource :comments, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]
   end
