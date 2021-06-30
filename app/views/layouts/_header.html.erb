@@ -10,10 +10,12 @@
           <% if user_signed_in? %>
             <%# ログイン時 %>
             <li class="nav-item active">
-              <h6 class="text-warning mx-5">ログイン中のアドレス<br><%= current_user.email %></h6>
+              <h6 class="text-warning mx-5"><i class="fas fa-envelope fa-lg"></i><br><%= current_user.email %></h6>
             </li>
             <li class="nav-item active">
-              <%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %>
+              <%= link_to user_path(current_user.id), class: "nav-link", method: :get do %>
+                <i class="fas fa-user-circle fa-2x"></i>
+              <% end %>
             </li>
             <li class="nav-item active">
               <div class="nav-item dropdown">

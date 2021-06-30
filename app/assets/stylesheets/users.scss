@@ -9,9 +9,8 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 15px;
+  margin: 10px;
 }
-
 
 .row-section h2 {
   float:left; width:100%;
@@ -56,16 +55,22 @@
 }
 .row-section .media .media-left img {
   width: 75px;
+  border-radius: 50%;
 }
 .row-section .media .media-body p {
   padding: 0 15px;
   font-size: 20px;
 }
 .row-section .media .media-body h4 {
-  color: orange;
+  color: black;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 0;
   padding-left: 14px;
   margin-top: 12px;
+}
+
+p span {
+  font-size: 24px;
+  padding-left: 15px;
 }

@@ -1,59 +1,78 @@
 <%# ユーザー情報変更画面 %>
-<div class="container">
-  <div class="row">
-    <h1 class="text-center text-warning font-weight-bold">アカウント編集</h1>
-    <div class="card mx-auto w-100">
-      <div class="card-body">
-        <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
-          <div class="from-group">
-            <%= f.label :user_name, "ユーザー名" %><br />
+<div class="container contact">
+  <div class="row border">
+    <div class="col-md-3">
+      <div class="contact-info">
+        <h2>user edit</h2>
+        <h4>We would love to hear from you !</h4>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="contact-form">
+      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="form-group">
+          <%= f.label :user_name, "ユーザー名", class: "control-label col-sm-2" %><br />
+          <div class="col-sm-10">
             <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name", class: "form-control" %>
           </div>
-          <br class="my-5">
-          <div class="from-group">
-            <%= f.label :email, "メールアドレス" %><br />
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email, "メールアドレス", class: "control-label col-sm-2" %><br />
+          <div class="col-sm-10">
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
           </div>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
           <% end %>
-          <br class="my-5">
-          <div class="from-group">
-            <%= f.label :password, "パスワード変更" %> <i>(変更したい場合)</i>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password, "パスワード変更", class: "control-label col-sm-2" %> <i>(変更したい場合)</i>
+          <div class="col-sm-10">
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "半角英数6文字以上"  %>
           </div>
-          <br class="my-5">
-          <div class="from-group">
-            <%= f.label :password_confirmation, "パスワード変更(確認)" %><br />
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation, "パスワード変更(確認)", class: "control-label col-sm-2" %>
+          <div class="col-sm-10">
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "再度ご入力ください" %>
           </div>
-          <br class="my-5">
-          <div class="field">
-            <%= f.label :avatar, "【アイコン】" %>
-            <%= f.file_field :avatar %>
-          </div>
-          <br class="my-5">
-          <div class="from-group">
-            <%= f.label :current_password, "変更にはパスワードが必要です", class: "text-danger" %><br />
+        </div>
+
+        <div class="field">
+          <%= f.label :avatar, "【アイコン】" %>
+          <%= f.file_field :avatar %>
+        </div>
+
+        <div class="from-group">
+          <%= f.label :current_password, "変更にはパスワードが必要です", class: "text-danger control-label col-sm-2" %>
+          <div class="col-sm-10">
             <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "必須項目です" %>
           </div>
-          <br class="my-5">
-          <div class="from-group">
-            <%= f.submit t('.update'), class: 'form-control btn btn-primary' %>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= f.submit t('.update'), class: 'btn btn-primary' %>
           </div>
-          <br class="my-5">
-          <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-6">
-              <%= link_to "マイページ", users_path, class: 'btn btn-info btn-block mb-4' %>
-            </div>
-            <div class="col-lg-6 col-md-6">
-              <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete, class: 'btn btn-danger btn-block' %>
-            </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= link_to "マイページ", users_path, class: 'btn btn-info' %>
           </div>
-        <% end %>
-      </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+          <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete, class: 'btn btn-danger' %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-

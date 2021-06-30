@@ -1,9 +1,9 @@
 <%# マイページ %>
-<div class="container ">
+<div class="container">
   <% if user_signed_in? && @user == current_user %>
-    <h2 class="text-warning font-weight-bold"><i class="fas fa-user-circle fa-5x"></i></h2>
+    <h2 class="text-secondary font-weight-bold"><i class="fas fa-user-circle fa-4x mb-5"></i></h2>
   <% else %>
-    <h2 class="text-warning font-weight-bold">ユーザーページ</h2>
+    <h2 class="text-Dark font-weight-bold mb-5">ユーザーページ</h2>
   <% end %>
   <div class="card mb-3 mx-auto" style="max-width: 70%;">
     <div class="row no-gutters">
@@ -18,7 +18,7 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h3 class="card-tite border-bottom">プロフィール</h3><br>
+          <h3 class="card-tite border-bottom">profile</h3><br>
             <p class="card-text"><i class="fas fa-user fa-3x"></i>
               <% if @user.email == "guest@example.com" %>
                 <span>ゲストユーザー</span>
