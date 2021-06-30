@@ -27,7 +27,7 @@
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: "Password"  %>
           </div>
         <br class="my-5">
-        <%= f.submit t('.sign_up'), root_path, class: 'btn btn-warning text-white' %>
+        <%= f.submit t('.sign_up'), class: 'btn btn-warning text-white' %>
         <%= link_to "ログイン", new_session_path(resource_name), class: 'btn btn-primary' %><br />
       </form>
       <% end %>

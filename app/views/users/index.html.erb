@@ -1,12 +1,35 @@
 <%# ユーザー一覧 %>
-<h1>ユーザーリスト</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-
-<% @users.each do |user| %>
-  <hr>
-  <p><span>プロフィール画像: </span><%=link_to user.avatar, user_path(user.id) %></p>
-  <p><span>ユーザー名: </span><%=link_to user.user_name, user_path(user.id) %></p>
-  <p><span>メールアドレス: </span><%=link_to user.email, user_path(user.id) %></p>
-<% end %>
-<p><%= link_to "マイページへ", user_path(current_user.id) %></p>
+<section class="row-section">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center"><span>User List</span></h2>
+    </div>
+    <% @users.each do |user| %>
+      <div class="col-md-10 offset-md-1 row-block">
+        <ul id="sortable">
+          <li>
+            <div class="media">
+              <div class="media-left align-self-center">
+                <%= image_tag user.avatar.url, class: "rounded-circle" %>
+              </div>
+              <div class="media-body">
+                <h4><span><i class="fas fa-user"></i></span>
+                  <% if user.email == "guest@example.com" %>
+                    <span>ゲストユーザー</span>
+                  <% else %>
+                    <span><%= user.user_name %></span>
+                  <% end %>
+                </h4>
+                <p><i class="fas fa-envelope"></i> <span><%= user.email %></span></p>
+              </div>
+              <div class="media-right align-self-center">
+                <%= link_to "マイページ", user_path(current_user.id), class: "btn btn-primary"%>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</section>
 <p><%= link_to "プラン作成へ", new_plan_path %></p>
