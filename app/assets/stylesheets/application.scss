@@ -18,6 +18,7 @@
 
 body {
   padding-top: 70px;
+  background-color:#EEFFFF;
 }
 
 // devise関連
@@ -38,6 +39,23 @@ body {
 
 .alert-alert {
   @extend .alert-danger;
+}
+
+// タイトル
+.row-section h2 {
+  float:left; width:100%;
+  color: black;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+.row-section h2 span {
+  font-family: 'Libre Baskerville', serif;
+  display: block;
+  font-size: 45px;
+  text-transform: none;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  font-weight: 700;
 }
 
 .jumbotron-extend {
@@ -69,17 +87,21 @@ body {
 }
 
 .bg-primary {
-  background-color: rgb(60, 72, 241) !important;
+  background-color: #0000FF !important;
   color: #fff;
 }
-
 .btn-primary {
-  background-color: rgb(60, 72, 241) !important;
+  background-color: #0000FF !important;
   color: #fff;
 }
 
 .btn-warning {
-  background-color: rgb(238, 160, 14) !important;
+  background-color: #FF6928 !important;
+  color: #fff;
+}
+
+.warning {
+  background-color: #FF6928 !important;
   color: #fff;
 }
 

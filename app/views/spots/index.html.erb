@@ -1,17 +1,19 @@
 <%# スポットリスト %>
-<div class="container">
-  <h1 class="text-center text-warning font-weight-bold">スポットリスト</h1>
-  <div class="text-right">
-    <%= search_form_for @q do |f| %>
-      <%= f.label :spot_name_cont, "キーワード" %>
-      <%= f.search_field :spot_name_cont %>
-      <%= f.submit "検索" %>
-    <% end %>
+<section class="row-section">
+  <div class="container">
+    <h2 class="text-center"><span>Spot List</span></h2>
+    <div class="text-right">
+      <%= search_form_for @q do |f| %>
+        <%= f.label :spot_name_cont, "キーワード" %>
+        <%= f.search_field :spot_name_cont %>
+        <%= f.submit "検索" %>
+      <% end %>
+    </div>
+    <br class="my-5">
+    <%= render "prefecture" %>
+    <br class="my-5">
+    <%= render "spot" %>
   </div>
-  <br class="my-5">
-  <%= render "prefecture" %>
-  <br class="my-5">
-  <%= render "spot" %>
-</div>
+</section>
 
 
