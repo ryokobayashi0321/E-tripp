@@ -4,7 +4,7 @@
     <h2 class="text-center"><span>Spot List</span></h2>
     <div class="text-right">
       <%= search_form_for @q do |f| %>
-        <%= f.label :spot_name_cont, "キーワード" %>
+        <i class="fas fa-search"></i>
         <%= f.search_field :spot_name_cont %>
         <%= f.submit "検索" %>
       <% end %>

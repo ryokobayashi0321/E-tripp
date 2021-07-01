@@ -1,6 +1,5 @@
 <section class="row-section">
   <div class="container w-50">
-    <div class="row">
       <h2 class="text-center"><span><%= @spot.spot_name %></span></h2>
       <div class="card mb-3">
       <%= image_tag @spot.photo, class: "card-img-top" %>
@@ -28,7 +27,7 @@
 
       <%# コメント %>
       <div class="card mb-3 w-100">
-        <div>
+        <div class="row">
           <div class="comment-create">
             <h3 class="text-left title">コメント</h3>
           </div>

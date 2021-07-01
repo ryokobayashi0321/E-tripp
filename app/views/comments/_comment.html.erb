@@ -31,9 +31,9 @@
       <div class="comment-container">
         <div class="comment-box">
           <div class="comment-text">
-            <p><%= link_to "#{com.user.use_name}さん", users_path(com.user.id) %></p>
+            <p><%= link_to "#{com.user.user_name}さん", users_path(com.user.id) %></p>
             <div class="comment-entry">
-              <%= com.commnt %>
+              <%= com.comment %>
               <% if com.user == current_user %>
                 <%= link_to spot_comments_path(com.spot_id, com.id), method: :delete, remote: true, class: "comment_destroy" do %>
                   <i class="fas fa-trash" style="color: black;"></i>

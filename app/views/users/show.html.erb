@@ -30,7 +30,7 @@
               <% if @user.email == "guest@example.com" %>
                 <span>ゲストユーザー</span>
               <% else %>
-                <span><%= @user.user_name %></span>
+                <span><%= @user.user_name %>さん</span>
               <% end %>
             </p>
             <p class="card-text"><i class="fas fa-envelope fa-2x"></i><span><%= @user.email %></span></p>
