@@ -30,9 +30,13 @@
               </div>
               <div class="media-right align-self-center">
                 <% if user_signed_in? && user == current_user %>
-                  <%= link_to "マイページ", user_path(current_user.id), class: "btn btn-primary"%>
+                  <%= link_to user_path(current_user.id), method: :get do %>
+                    <i class="fas fa-user-circle fa-2x"></i>
+                  <% end %>
                 <% else %>
-                  <%= link_to "ユーザーページ", user_path(user.id), class: "btn btn-primary"%>
+                  <%= link_to user_path(user.id), method: :get do %>
+                    <i class="fas fa-user-circle fa-2x"></i>
+                  <% end %>
                 <% end %>
               </div>
             </div>
@@ -43,3 +47,4 @@
   </div>
 </section>
 <p><%= link_to "プラン作成へ", new_plan_path %></p>
+

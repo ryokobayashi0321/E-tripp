@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
   end
 
-  resources :users
+  resources :users, only: [:index, :show]
   resources :plans
   post "/add_spot" => "plans#add_spot"
   delete "/delete_spot" => "plans#delete_spot"
