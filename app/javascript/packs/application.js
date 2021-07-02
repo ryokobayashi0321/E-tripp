@@ -12,7 +12,7 @@ import "jquery"
 
 
 Rails.start()
-Turbolinks.start()
+// Turbolinks.start()
 ActiveStorage.start()
 
 $(document).on('turbolinks:load', function () {
