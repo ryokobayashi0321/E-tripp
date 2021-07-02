@@ -11,11 +11,12 @@ import "bootstrap/dist/js/bootstrap"
 import "jquery"
 
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-$(document).on("ready", function () {
+$(document).on("turbolinks:load", function () {
     function filterTableRows() {
         const value = $(this).val().toLowerCase();
         $("#language-tbody tr").filter(function () {
