@@ -16,7 +16,7 @@ gem "rails", "~> 6.1.3", ">= 6.1.3.2"
 gem "rails-i18n", "~> 6.0"
 gem "ransack"
 gem "sass-rails", ">= 6"
-# gem "turbolinks", "~> 5"
+gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
 group :development, :test do
