@@ -5,7 +5,8 @@
       <div class="card h-100">
         <%= image_tag spot.photo, class: "card-img-top"%>
         <div class="card-body">
-        <h5 class="card-title text-center font-weight-bold"><span><%= spot.id %>.</span><%= spot.spot_name %></h5>
+        <h5 class="card-title text-center font-weight-bold"><%= spot.spot_name %></h5>
+        <p class="text-right"><%= link_to spot.prefecture.prefecture_name %></p>
         <p class="card-text"><%= spot.content %></p>
         </div>
         <div class="card-footer">

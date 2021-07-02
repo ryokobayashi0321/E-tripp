@@ -18,7 +18,7 @@ class Spot < ApplicationRecord
 
   validates :spot_name, presence: true
   validates :content, presence: true
-  validates :photo, presence:
+  validates :photo, presence: true
 
   # csv
   def self.generate_csv

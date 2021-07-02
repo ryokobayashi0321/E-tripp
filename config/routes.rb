@@ -19,8 +19,7 @@ Rails.application.routes.draw do
   post "/add_spot" => "plans#add_spot"
   delete "/delete_spot" => "plans#delete_spot"
 
-  resources :prefectures, only: [:index]
-
+  resource :prefectures, only: :index
   resources :spots, only: [:index, :show] do
     resource :comments, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]

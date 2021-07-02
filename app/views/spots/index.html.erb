@@ -5,14 +5,16 @@
     <div class="text-right">
       <%= search_form_for @q do |f| %>
         <i class="fas fa-search"></i>
-        <%= f.search_field :spot_name_cont %>
+        <%= f.search_field :spot_name_cont, placeholder: "キーワードを入力" %>
         <%= f.submit "検索" %>
       <% end %>
     </div>
     <br class="my-5">
     <%= render "prefecture" %>
     <br class="my-5">
-    <%= render "spot" %>
+    <div class="card">
+      <%= render "spot" %>
+    </div>
   </div>
 </section>
 
