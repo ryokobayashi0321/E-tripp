@@ -14,7 +14,7 @@
               <%= render "dislike", post: @spot %>
             <% end %>
           </p>
-          <p class="text-right">【作成日時】 <%= l @spot.created_at %></p>
+          <p class="text-right"><i class="far fa-clock"></i> <%= l @spot.created_at %></p>
 
           <div class="card-footer">
             <%= link_to '登録',"#", class: 'form-control btn btn-warning text-white btn-block' %>
@@ -26,21 +26,25 @@
       </div>
 
       <%# コメント %>
-      <div class="card mb-3 w-100">
+      <div class="card mb-3">
         <div class="row">
-          <div class="comment-create">
-            <h3 class="text-left title">コメント</h3>
-          </div>
-          <div id="comments_area">
-            <%= render partial: "comments/comment", local: { comments: @comments } %>
+          <div>
+            <div class="comment-create">
+              <h4 class="text-left"><i class="fas fa-comments "></i> <%= @comments.count %>件のコメント</h4>
+            </div>
+              <br>
+            <div id="comments_area">
+              <%= render partial: "comments/index", local: { comments: @comments } %>
+            </div>
           </div>
         </div>
-        <hr>
-        <div class="comment-create">
+          <h6 class="more" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">もっと見る....</h6>
+          <hr>
           <% if user_signed_in? %>
-            <%= render partial: "comments/form", loacl: { comments: @comments, spot: @spot } %>
+            <div class="comment-area">
+              <%= render partial: "comments/form", loacl: { comments: @comments, spot: @spot } %>
+            </div>
           <% end %>
-        </div>
       </div>
     </div>
   </div>

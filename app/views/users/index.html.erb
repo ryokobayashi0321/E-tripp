@@ -12,9 +12,9 @@
               <div class="media-left align-self-center">
                 <div class="img img-rounded img-fluid">
                   <% if user.avatar? %>
-                    <%= image_tag user.avatar.url %>
+                    <%= image_tag user.avatar.url, size: "50x50", class: "rounded-circle" %>
                   <% else %>
-                    <%= image_tag src="/assets/default.png" %>
+                    <%= image_tag src="/assets/default.png", size: "50x50", class: "rounded-circle" %>
                   <% end %>
                 </div>
               </div>

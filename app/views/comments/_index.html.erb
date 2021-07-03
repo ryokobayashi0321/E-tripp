@@ -1,0 +1,52 @@
+<%# コメント内容(２件) %>
+<% @comments.first(2).each do |com| %>
+  <% unless com.id.nil? %>
+    <div class="col-md">
+      <div class="col-md">
+        <div class="imag">
+          <% if current_user.avatar? %>
+            <%= image_tag user.avatar.url, size: "40x40", class: "rounded-circle" %>
+          <% else %>
+            <%= image_tag src="/assets/default.png", size: "40x40", class: "rounded-circle" %>
+          <% end %>
+          <span><%= link_to "#{com.user.user_name}さん", user_path(com.user.id) %></span>
+          <span><%= l com.created_at %></span>
+          <% if com.user == current_user %>
+            <%= link_to spot_comments_path(com.spot_id, com.id), method: :delete, remote: true do %>
+              <i class="fas fa-trash" style="color: black;"></i>
+            <% end %>
+          <% end %>
+        </div>
+        <br><p><%= com.comment %></p><hr>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%# コメント内容(3件目以降) %>
+<div class="collapse" id="collapseExample">
+  <% @comments.offset(2).each do |com| %>
+    <% unless com.id.nil? %>
+      <div class="col-md">
+        <div class="col-md">
+          <div class="img">
+            <% if current_user.avatar? %>
+              <%= image_tag user.avatar.url, size: "40x40", class: "rounded-circle"  %>
+            <% else %>
+              <%= image_tag src="/assets/default.png", size: "40x40", class: "rounded-circle"  %>
+            <% end %>
+            <span><%= link_to "#{com.user.user_name}さん", users_path(com.user.id) %></span>
+            <span><%= l com.created_at %></span>
+            <% if com.user == current_user %>
+              <%= link_to spot_comments_path(com.spot_id, com.id), method: :delete, remote: true, class: "comment_destroy" do %>
+                <i class="fas fa-trash" style="color: black;"></i>
+              <% end %>
+            <% end %>
+          </div>
+          <br><p><%= com.comment %></p><hr>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
