@@ -13,7 +13,7 @@ class Spot < ApplicationRecord
   # spot.commented_usersで spot を「コメント」したスポットの一覧を取得できるようになる
   has_many :commented_users, through: :comments, source: :user
 
-  # spot.liked_users で post を「いいね!」しているユーザーの一覧を取得できるようになる
+  # spot.liked_users で sopt を「いいね!」しているユーザーの一覧を取得できるようになる
   has_many :liked_users, through: :likes, source: :user
 
   validates :spot_name, presence: true
