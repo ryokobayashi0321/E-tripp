@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root "homes#index"
+  root "homes#home"
+  get "session_homes/index", to: "session_homes#index"
 
   # ゲストユーザーを削除・パスワード再設定できないようにする
   devise_for :users, controllers: {

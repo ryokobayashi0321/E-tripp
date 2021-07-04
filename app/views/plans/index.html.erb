@@ -3,4 +3,4 @@
 <%= render @plans %>
 <p><%= link_to "プラン作成へ", new_plan_path %></p>
 <p><%= link_to "マイページ", user_path(current_user.id) %></p>
-<p><%= link_to "トップページ", root_path %></p>
+<p><%= link_to "トップページ", session_homes_index_path %></p>

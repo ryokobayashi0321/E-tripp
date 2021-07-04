@@ -1,0 +1,2 @@
+module SessionHomesHelper
+end

@@ -4,7 +4,7 @@ module Users
     before_action :configure_account_update_params, only: [:update]
 
     def ensure_normal_user
-      redirect_to root_path, alert: "ゲストユーザーは更新・削除できません。" if resource.email == "guest@example.com"
+      redirect_to user_path, alert: "ゲストユーザーは更新・削除できません。" if resource.email == "guest@example.com"
     end
 
     protected
