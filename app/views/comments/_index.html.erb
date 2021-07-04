@@ -12,7 +12,7 @@
           <span><%= link_to "#{com.user.user_name}さん", user_path(com.user.id) %></span>
           <span><%= l com.created_at %></span>
           <% if com.user == current_user %>
-            <%= link_to spot_comments_path(com.spot_id, com.id), method: :delete, remote: true do %>
+            <%= link_to spot_comments_path(com.spot_id, com.id), remote: true, method: :delete do %>
               <i class="fas fa-trash" style="color: black;"></i>
             <% end %>
           <% end %>
