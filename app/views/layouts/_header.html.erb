@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
   <div class="container-fluid">
     <%= link_to "旅行プラン", session_homes_index_path, class: 'navbar-brand' %>
@@ -23,8 +22,8 @@
           </li>
           <li class="nav-item active mx-3">
             <div class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">プラン</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">プラン</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <%= link_to "プラン作成", new_plan_path, class: "dropdown-item" %>
                 <%= link_to "plan list", plans_path, class: "dropdown-item" %>
                 <%= link_to "users list", users_path, class: "dropdown-item" %>

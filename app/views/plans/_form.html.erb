@@ -12,7 +12,7 @@
         <%= form_with model: @plan, local: true do |f| %>
 
           <div class="form-group">
-            <i class="fas fa-plane"></i></i><%= f.label :title, "タイトル", class: "control-label col-sm-3" %>
+            <i class="fas fa-plane"></i><%= f.label :title, "タイトル", class: "control-label col-sm-3" %>
             <div class="col-sm-9">
               <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control", placeholder: "タイトルを入力してください"  %>
             </div>
