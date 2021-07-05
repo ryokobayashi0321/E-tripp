@@ -14,7 +14,7 @@
             <%= schedule.specified_time %>
           <% end %>
           <p><i class="fas fa-pen"></i> <%= @plan.note %></p>
-          <p><%= l @plan.created_at %></p>
+          <p><i class="far fa-clock"></i><%= l @plan.created_at %></p>
           <% if current_user.id == @plan.user_id %>
             <p class="text-right">
                 <%= link_to edit_plan_path(@plan), class: "btn btn-primary" do %>
@@ -24,6 +24,7 @@
                 <i class="fas fa-trash fa-2x"></i>
               <% end %>
             </p>
+            <p class="text-left"><%= link_to "戻る", plans_path, class: "btn btn-info btn-lg rounded-pill" %></p>
           <% end %>
         </div>
       </div>
@@ -86,7 +87,6 @@
         </div>
       </div>
     </div>
-  <p class="text-right"><%= link_to "戻る", plans_path, class: "btn btn-secondary btn-lg rounded-pill" %></p>
   </div>
 </section>
 

@@ -2,7 +2,7 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <% @spots.each do |spot| %>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100 border-primary">
         <%= image_tag spot.photo, class: "card-img-top"%>
         <div class="card-body">
         <h5 class="card-title text-center font-weight-bold"><%= spot.spot_name %></h5>

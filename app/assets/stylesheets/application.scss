@@ -17,8 +17,8 @@
 @import "bootstrap/scss/bootstrap";
 
 body {
-  padding-top: 60px;
-  background-color:#EEFFFF;
+  padding-top: 45px;
+  background-color: #EEFFFF;
 }
 
 // devise関連
@@ -60,30 +60,33 @@ body {
 
 .jumbotron-extend {
   position: relative;
-  height: 50vh;
+  height: 100vh;
+  height: 70vh;
   min-height: 200px;
+  background: url(/assets/jeshoots-com-LKREcvZeoJQ-unsplash.jpg);
   background-size: cover;
+  opacity: 0.7;
 }
 
 .jumbotron-container {
   position: relative;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.text-up {
+  height: 100%;
+  color: rgba(252, 246, 246, 0.63);
 }
 
 .site-name {
   margin-bottom: 40px;
   font-family: 'Playfair Display', serif;
-}
-.btn-black {
-  border-radius: 0;
-  background-color: #000;
-  color: #fff;
-  font-family: 'Avenir', serif;
-}
-.btn-black:hover {
-  background-color: #fff;
-  color: #000;
+  font-weight: bold;
 }
 
 .bg-primary {
