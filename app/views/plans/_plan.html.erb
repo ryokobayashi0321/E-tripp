@@ -1,24 +1,29 @@
 <%# プラン一覧の部分テンプレ %>
-<div class="container">
-  <div class="row">
-    <div class="card mx-auto w-100">
-      <div class="card-body">
-        <div>
-          <p>【ユーザー名】<%= plan.user.email %></p>
-          <p>【タイトル】<%= plan.title %></p>
-          <p>【日付】<%= plan.day %></p>
-          <p>【予定時刻】
-          <%= plan.schedules.each do |schedule| %>
-            <%= schedule.specified_time %>
-            【スポット】<%= schedule.spot_id %>
-          <% end %>
-          </p>
-          <p>【メモ】<%= plan.note %></p>
-          <p>
-          <%= link_to "詳細", plan %>
-          </p>
+<section class="row-section">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center"><span>Plan List</span></h2>
+      <% @plans.each do |plan| %>
+      <div class="card mx-auto w-100 rounded-lg">
+        <div class="card-body">
+          <div>
+            <p><i class="fas fa-user fa-lg"></i> <%= plan.user.email %></p>
+            <p><i class="fas fa-plane"></i> <%= plan.title %></p>
+            <p><i class="fas fa-calendar-alt"></i> <%= plan.day %></p>
+            <p><i class="fas fa-clock"></i>
+            <%= plan.schedules.each do |schedule| %>
+              <%= schedule.specified_time %> <br>
+              <i class="fas fa-map-marked-alt"></i><%= schedule.spot_id %>
+            <% end %>
+            </p>
+            <p><i class="fas fa-pen"></i> <%= plan.note %></p>
+            <p class="text-right">
+            <%= link_to "詳しく！！", plan, class: "btn btn-primary btn-lg rounded-pill" %>
+            </p>
+          </div>
         </div>
       </div>
+      <% end %>
     </div>
   </div>
-</div>
+</section>

@@ -1,6 +1,4 @@
 <%# プラン一覧 %>
-<h1>プラン一覧</h1>
-<%= render @plans %>
-<p><%= link_to "プラン作成へ", new_plan_path %></p>
-<p><%= link_to "マイページ", user_path(current_user.id) %></p>
-<p><%= link_to "トップページ", session_homes_index_path %></p>
+<%= render "plan" %>
+<br>
+<p class="text-center"><%= link_to "New plan", new_plan_path, class: "btn btn-primary btn-lg rounded-pill" %></p>
