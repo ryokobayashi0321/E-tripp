@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
+<nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top pt-0">
   <div class="container-fluid">
-    <%= link_to "旅行プラン", session_homes_index_path, class: 'navbar-brand' %>
+    <%= link_to "E-tripp", session_homes_index_path, class: 'navbar-brand font-weight-bold' %>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,29 +8,36 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <%# ログイン時 %>
-          <li class="nav-item active mx-5"><i class="fas fa-user fa-lg"></i>
-            <% if current_user.email == "guest@example.com" %>
-              <span>ゲストユーザー</span>
-            <% else %>
-              <span><%= current_user.user_name %>さん</span>
+          <li class="nav-item active mx-5 pt-3"><i class="fas fa-user fa-lg"></i>
+            <span><%= current_user.user_name %>さん</span>
+          </li>
+          <li class="nav-item active mx-3 pt-1">
+            <%= link_to session_homes_index_path , class: 'nav-link', method: :get do %>
+              <i class="fas fa-home fa-2x"></i>
             <% end %>
           </li>
-          <li class="nav-item active mx-3">
+          <li class="nav-item active mx-3 pt-1">
             <%= link_to user_path(current_user.id), class: "nav-link", method: :get do %>
               <i class="fas fa-user-circle fa-2x"></i>
             <% end %>
           </li>
           <li class="nav-item active mx-3">
-            <div class="nav-item dropdown">
-              <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">プラン</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <div class="nav-item dropdown pt-2">
+              <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">プラン</a>
+              <div class="dropdown-menu rounded" aria-labelledby="dropdownMenuLink">
+                <h6 class="dropdown-header text-primary">userメニュー</h6>
+                <%= link_to "ユーザーリスト", users_path, class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header text-success">planメニュー</h6>
                 <%= link_to "プラン作成", new_plan_path, class: "dropdown-item" %>
-                <%= link_to "plan list", plans_path, class: "dropdown-item" %>
-                <%= link_to "users list", users_path, class: "dropdown-item" %>
+                <%= link_to "プランリスト", plans_path, class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header text-info">spotメニュー</h6>
+                <%= link_to "スポットリスト", spots_path, class: "dropdown-item" %>
               </div>
             </div>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item active pt-2">
           <%= link_to "ログアウト", destroy_user_session_path, class:"nav-link", method: :delete, data: { confirm: "ログアウトしますか？" } %>
           </li>
         <% else %>

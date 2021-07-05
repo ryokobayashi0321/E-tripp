@@ -1,7 +1,7 @@
 <section class="row-section">
   <div class="container w-50">
       <h2 class="text-center"><span><%= @spot.spot_name %></span></h2>
-      <div class="card mb-3">
+      <div class="card mb-3 border-primary">
       <%= image_tag @spot.photo, class: "card-img-top" %>
         <div class="card-body">
           <h5 class="card-title text-center font-weight-bold"><%= @spot.spot_name %></h5>
@@ -17,16 +17,16 @@
           <p class="text-right"><i class="far fa-clock"></i> <%= l @spot.created_at %></p>
 
           <div class="card-footer">
-            <%= link_to '登録',"#", class: 'form-control btn btn-warning text-white btn-block' %>
+            <%= link_to 'スポットを追加！！',"#", class: 'btn btn-add btn-lg rounded-pill btn-block' %>
             <br class="my-7">
-            <p><%= link_to "スポット一覧へ", spots_path, class: 'form-control btn btn-primary btn-block' %></p>
+            <p><%= link_to "spot list", spots_path, class: 'btn btn-primary btn-lg rounded-pill btn-block' %></p>
           </div>
           <br class="my-7">
         </div>
       </div>
 
       <%# コメント %>
-      <div class="card mb-3">
+      <div class="card mb-3 border-primary">
         <div class="row">
           <div>
             <div class="comment-create">
@@ -50,5 +50,5 @@
   </div>
 </section>
 
+<p class="text-center"><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
 
-<%= link_to "プラン作成へ", new_plan_path %>
