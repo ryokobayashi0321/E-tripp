@@ -1,13 +1,15 @@
 class SpotsController < ApplicationController
+  PER_PAGE = 5
+
   def index
     @prefectures = Prefecture.all
     @q = Spot.ransack(params[:q])
-    @spots = Spot.includes(:likes).order(id: :asc)
+    @spots = Spot.includes(:likes).order(id: :asc).page(params[:page]).per(PER_PAGE)
   end
 
   def show
     @spot = Spot.find(params[:id])
-    @comment = current_user.comments.new
+    @comment = Comment.new
     @comments = @spot.comments.order(created_at: :desc)
   end
 

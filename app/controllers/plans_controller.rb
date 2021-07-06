@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+  PER_PAGE = 6
   before_action :setup_schdule!, only: [:add_spot, :delete_spot]
 
   def new
@@ -27,7 +28,7 @@ class PlansController < ApplicationController
   end
 
   def index
-    @plans = Plan.includes(:user).order(:created_at)
+    @plans = Plan.includes(:user).order(:created_at).page(params[:page]).per(PER_PAGE)
   end
 
   def show

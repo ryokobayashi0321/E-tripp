@@ -2,3 +2,4 @@
 <%= render "plan" %>
 <br>
 <p class="text-center"><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
+<p><%= paginate @plans %></p>
