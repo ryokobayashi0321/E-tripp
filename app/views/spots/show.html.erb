@@ -34,7 +34,7 @@
             </div>
               <br>
             <div id="comments_area">
-              <%= render partial: "comments/index", local: { comments: @comments } %>
+              <%= render partial: "comments/index", locals: { comments: @comments } %>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
           <hr>
           <% if user_signed_in? %>
             <div class="comment-area">
-              <%= render partial: "comments/form", loacl: { comments: @comments, spot: @spot } %>
+              <%= render partial: "comments/form", loacls: { comments: @comments, spot: @spot } %>
             </div>
           <% end %>
       </div>

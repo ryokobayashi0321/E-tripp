@@ -1,6 +1,6 @@
 <%# コメント内容(２件) %>
-<% @comments.first(2).each do |com| %>
-  <% unless com.id.nil? %>
+<% comments.first(2).each do |comment| %>
+  <% unless comment.id.nil? %>
     <div class="col-md">
       <div class="col-md">
         <div class="imag">
@@ -9,15 +9,15 @@
           <% else %>
             <%= image_tag src="/assets/default.png", size: "40x40", class: "rounded-circle" %>
           <% end %>
-          <span><%= link_to "#{com.user.user_name}さん", user_path(com.user.id) %></span>
-          <span><%= l com.created_at %></span>
-          <% if com.user == current_user %>
-            <%= link_to spot_comments_path(com.spot_id, com.id), remote: true, method: :delete do %>
-              <i class="fas fa-trash" style="color: black;"></i>
+          <span><%= link_to "#{comment.user.user_name}さん", user_path(comment.user.id) %></span>
+          <span><%= l comment.created_at %></span>
+          <% if comment.user == current_user %>
+            <%= link_to spot_comments_path(comment.spot_id, comment.id), method: :delete, data: { confirm: '削除しますか?', remote: true }  do %>
+              <i class="fas fa-trash" style="color: red;"></i>
             <% end %>
           <% end %>
         </div>
-        <br><p><%= com.comment %></p><hr>
+        <br><p><%= comment.comment %></p><hr>
       </div>
     </div>
   <% end %>
@@ -25,8 +25,8 @@
 
 <%# コメント内容(3件目以降) %>
 <div class="collapse" id="collapseExample">
-  <% @comments.offset(2).each do |com| %>
-    <% unless com.id.nil? %>
+  <% comments.offset(3).each do |comment| %>
+    <% unless comment.id.nil? %>
       <div class="col-md">
         <div class="col-md">
           <div class="img">
@@ -35,15 +35,15 @@
             <% else %>
               <%= image_tag src="/assets/default.png", size: "40x40", class: "rounded-circle"  %>
             <% end %>
-            <span><%= link_to "#{com.user.user_name}さん", users_path(com.user.id) %></span>
-            <span><%= l com.created_at %></span>
-            <% if com.user == current_user %>
-              <%= link_to spot_comments_path(com.spot_id, com.id), method: :delete, remote: true, class: "comment_destroy" do %>
+            <span><%= link_to "#{comment.user.user_name}さん", users_path(comment.user.id) %></span>
+            <span><%= l comment.created_at %></span>
+            <% if comment.user == current_user %>
+              <%= link_to spot_comments_path(comment.spot_id, comment.id), method: :delete, data: { confirm: '削除しますか?', remote: true }  do %>
                 <i class="fas fa-trash" style="color: black;"></i>
               <% end %>
             <% end %>
           </div>
-          <br><p><%= com.comment %></p><hr>
+          <br><p><%= comment.comment %></p><hr>
         </div>
       </div>
     <% end %>
