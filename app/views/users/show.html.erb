@@ -59,8 +59,12 @@
   </div>
   <% end %>
 <br>
-<p class="text-center"><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
-<p class="text-right"><%= link_to "Spot list", spots_path, class: "btn btn-primary btn-lg rounded-pill" %></p>
+<% if user_signed_in? && @user == current_user %>
+  <p class="text-center"><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
+  <p class="text-right"><%= link_to "Spot list", spots_path, class: "btn btn-primary btn-lg rounded-pill" %></p>
+<% else %>
+  <p class="text-center"><%= link_to "戻る", users_path, class: "btn btn-primary btn-lg rounded-pill" %></p>
+<% end %>
 </div>
 
 
