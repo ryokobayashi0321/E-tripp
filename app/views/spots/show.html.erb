@@ -38,7 +38,7 @@
             </div>
           </div>
         </div>
-          <h6 class="more" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">もっと見る....</h6>
+          <p><%= paginate @comments %></p>
           <hr>
           <% if user_signed_in? %>
             <div class="comment-area">

@@ -1,5 +1,5 @@
 <%# コメント内容(２件) %>
-<% comments.first(2).each do |comment| %>
+<% comments.each do |comment| %>
   <% unless comment.id.nil? %>
     <div class="col-md">
       <div class="col-md">
@@ -23,30 +23,5 @@
   <% end %>
 <% end %>
 
-<%# コメント内容(3件目以降) %>
-<div class="collapse" id="collapseExample">
-  <% comments.offset(3).each do |comment| %>
-    <% unless comment.id.nil? %>
-      <div class="col-md">
-        <div class="col-md">
-          <div class="img">
-            <% if current_user.avatar? %>
-              <%= image_tag user.avatar.url, size: "40x40", class: "rounded-circle"  %>
-            <% else %>
-              <%= image_tag src="/assets/default.png", size: "40x40", class: "rounded-circle"  %>
-            <% end %>
-            <span><%= link_to "#{comment.user.user_name}さん", users_path(comment.user.id) %></span>
-            <span><%= l comment.created_at %></span>
-            <% if comment.user == current_user %>
-              <%= link_to spot_comments_path(comment.spot_id, comment.id), method: :delete, data: { confirm: '削除しますか?', remote: true }  do %>
-                <i class="fas fa-trash" style="color: black;"></i>
-              <% end %>
-            <% end %>
-          </div>
-          <br><p><%= comment.comment %></p><hr>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+
 
