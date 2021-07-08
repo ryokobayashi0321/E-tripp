@@ -11,8 +11,8 @@ class PlansController < ApplicationController
 
   def new
     @plan = current_user.plans.new
-    @plan.schedules.new
-    @spots = Spot.all
+    @schdules = @plan.schedules.new
+    @spot = Spot.all
   end
 
   def create
@@ -47,11 +47,11 @@ class PlansController < ApplicationController
 
   def plan_params
     params.require(:plan).permit(:title, :day, :note,
-                                 schedules_attributes: [:id, :specified_time,
-                                                        { spots_attributes: [:id, :spot_name, :content, :photo] }]).merge(user_id: current_user.id, spot_id: params[:spot_id])
+                                 { schedules_attributes: [:id, :specified_time,
+                                                          { spots_attributes: [:id, :spot_name, :content, :photo] }] }).merge(user_id: current_user.id, spot_id: params[:spot_id])
   end
 
-  # def spot_up_params
-  #   params.permit(:schedules, :spot_id)
-  # end
+  def spot_up_params
+    params.permit(:schedules, :spot_id)
+  end
 end
