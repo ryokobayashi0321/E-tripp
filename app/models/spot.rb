@@ -1,7 +1,6 @@
 class Spot < ApplicationRecord
   belongs_to :prefecture
   has_many :schedules, dependent: :destroy
-  has_many :plans, through: :schedules
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 

@@ -16,13 +16,12 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :show]
-  resources :plans
-  post "/add_spot" => "plans#add_spot"
-  delete "/delete_spot" => "plans#delete_spot"
-
+  resources :schedules
   resource :prefectures, only: :index
   resources :spots, only: [:index, :show] do
     resource :comments, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]
   end
+
+  resources :plans
 end

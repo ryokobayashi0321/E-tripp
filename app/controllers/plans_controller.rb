@@ -1,31 +1,5 @@
 class PlansController < ApplicationController
   PER_PAGE = 6
-  before_action :setup_schdule!, only: [:add_spot, :delete_spot]
-
-  def new
-    @plan = Plan.new
-    @plan.schedules.build
-    @plan.spots.build
-  end
-
-  def add_spot
-    @schedule = current_plan.schedules.build(spot_id: params[:spot_id]) if @schedule.blank?
-    @schedule.save
-    redirect_to new_plan_path
-  end
-
-  def delete_spot
-    render :new if @schedule.destroy
-  end
-
-  def create
-    @plan = Plan.new(plan_params)
-    if @plan.save
-      redirect_to plans_path
-    else
-      render :new
-    end
-  end
 
   def index
     @plans = Plan.includes(:user).order(:created_at).page(params[:page]).per(PER_PAGE)
@@ -33,6 +7,34 @@ class PlansController < ApplicationController
 
   def show
     @plan = Plan.find(params[:id])
+  end
+
+  def new
+    @plan = current_user.plans.new
+    @schdules = @plan.schedules.new
+    @spot = Spot.all
+  end
+
+  def create
+    @plan = current_user.plans.new(plan_params)
+    if @plan.save
+      redirect_to plans_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @plan = Plan.find(params[:id])
+  end
+
+  def update
+    @plan = Plan.find(params[:id])
+    if @plan.update(plan_params)
+      redirect_to plan_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -45,12 +47,11 @@ class PlansController < ApplicationController
 
   def plan_params
     params.require(:plan).permit(:title, :day, :note,
-                                 schedules_attributes: [:specified_time, {
-                                   spots_attributes: [:spot_name, :content, :photo]
-                                 }]).merge(user_id: current_user.id)
+                                 { schedules_attributes: [:id, :specified_time,
+                                                          { spots_attributes: [:id, :spot_name, :content, :photo] }] }).merge(user_id: current_user.id, spot_id: params[:spot_id])
   end
 
-  def setup_schdule!
-    @schedule = current_plan.schedules.find_by(spot_id: params[:spot_id])
+  def spot_up_params
+    params.permit(:schedules, :spot_id)
   end
 end
