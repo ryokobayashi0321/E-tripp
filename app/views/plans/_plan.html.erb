@@ -7,16 +7,29 @@
       <div class="card mx-auto w-100 rounded-lg border-primary">
         <div class="card-body">
           <div>
-            <p class="text-primary"><i class="fas fa-user fa-lg"></i> <%= plan.user.user_name %>さん</p>
+            <p class="text-primary"><i class="fas fa-user fa-lg"></i> <%= link_to plan.user.user_name, user_path(plan.user_id) %>さん</p>
             <p><i class="fas fa-plane"></i> <%= plan.title %></p>
-            <p><i class="fas fa-calendar-alt"></i> <%= plan.day %></p>
-            <p><i class="fas fa-clock"></i>
-            <%= plan.schedules.each do |schedule| %>
-              <%= schedule.specified_time %> <br>
-              <i class="fas fa-map-marked-alt"></i><%= schedule.spot_id %>
-            <% end %>
-            </p>
-            <p><i class="fas fa-pen"></i> <%= plan.note %></p>
+            <p class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day %></p>
+            <table class="table w-50">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col"><i class="fas fa-clock info"></i></th>
+                  <th scope="col"><i class="fas fa-map-marked-alt info"></i></th>
+                </tr>
+              </thead>
+              <tbody class="table-info table-striped">
+                <% plan.schedules.each do |schedule| %>
+                  <tr>
+                    <td><%= schedule.specified_time.strftime( "%H:%M" ) %></td>
+                    <td><%= schedule.spot.spot_name %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <p><i class="fas fa-pen"></i></p>
+            <div class="card w-75 border-primary">
+              <%= plan.note %>
+            </div>
             <p class="text-right">
             <%= link_to "詳しく！！", plan, class: "btn btn-info btn-lg rounded-pill" %>
             </p>

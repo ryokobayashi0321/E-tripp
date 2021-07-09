@@ -2,7 +2,7 @@ class PlansController < ApplicationController
   PER_PAGE = 6
 
   def index
-    @plans = Plan.includes(:user).order(:created_at).page(params[:page]).per(PER_PAGE)
+    @plans = Plan.includes(:user).order(id: :desc).page(params[:page]).per(PER_PAGE)
   end
 
   def show
@@ -12,6 +12,7 @@ class PlansController < ApplicationController
   def new
     @plan = current_user.plans.new
     @schdules = @plan.schedules.new
+    @spots = @plan.spots.new(params[:id])
     @spot = Spot.all
   end
 
@@ -20,6 +21,7 @@ class PlansController < ApplicationController
     if @plan.save
       redirect_to plans_path
     else
+      @plan = current_user.plans.new(plan_params)
       render :new
     end
   end
@@ -47,11 +49,10 @@ class PlansController < ApplicationController
 
   def plan_params
     params.require(:plan).permit(:title, :day, :note,
-                                 { schedules_attributes: [:id, :specified_time,
-                                                          { spots_attributes: [:id, :spot_name, :content, :photo] }] }).merge(user_id: current_user.id, spot_id: params[:spot_id])
+                                 schedules_attributes: [:id, :specified_time, :spot_id, :plan_id, :_destroy]).merge(user_id: current_user.id)
   end
 
   def spot_up_params
-    params.permit(:schedules, :spot_id)
+    params.permit(:schedules, :spots)
   end
 end

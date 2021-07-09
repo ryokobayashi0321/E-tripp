@@ -4,19 +4,34 @@
     <h2 class="text-center"><span>Plan</span></h2>
     <div class="row">
 
-      <div class="card  col-md-4 rounded-lg">
+      <div class="card  col-md-4 rounded-lg border-primary">
         <div class="card-body">
-          <p class="text-primary"><i class="fas fa-user fa-lg"></i> <%= @plan.user.user_name %>さん</p>
-          <p><i class="fas fa-plane"></i> <%= @plan.title %></p>
-          <p><i class="fas fa-calendar-alt"></i> <%= @plan.day %></p>
-          <p><i class="fas fa-clock"></i>
-          <%= @plan.schedules.each do |schedule| %>
-            <%= schedule.specified_time %>
-          <% end %>
-          <p><i class="fas fa-pen"></i> <%= @plan.note %></p>
-          <p><i class="far fa-clock"></i><%= l @plan.created_at %></p>
-          <% if current_user.id == @plan.user_id %>
+          <div class="text-primary"><i class="fas fa-user fa-lg text-primary"></i> <%= link_to @plan.user.user_name, user_path(@plan.user_id) %>さん</div>
+            <div class="text-dark text-right"><i class="far fa-clock"></i> <%= l @plan.created_at %></div> <br>
+
+            <p><i class="fas fa-plane"></i> <%= @plan.title %></p>
+            <p class="warning"><i class="fas fa-calendar-alt"></i> <%= @plan.day %></p>
+            <table class="table">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col"><i class="fas fa-clock info"></i></th>
+                  <th scope="col"><i class="fas fa-map-marked-alt info"></i></th>
+                </tr>
+              </thead>
+              <tbody class="table-info table-striped">
+                <% @plan.schedules.each do |schedule| %>
+                  <tr>
+                    <td><%= schedule.specified_time.strftime( "%H:%M" ) %></td>
+                    <td><%= schedule.spot.spot_name %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <p><i class="fas fa-pen"></i></p>
+            <p class="card border-primary"><%= @plan.note %></p> <br>
+
             <p class="text-right">
+              <% if current_user.id == @plan.user_id %>
                 <%= link_to edit_plan_path(@plan), class: "btn btn-primary" do %>
                   <i class="fas fa-edit fa-2x"></i>
               <% end %>
@@ -29,61 +44,23 @@
         </div>
       </div>
 
-      <div class="card col-md-8  rounded-lg">
+      <div class="card col-md-8  rounded-lg border-primary">
         <div class="card-body">
-          <div class="timeline-centered">
-            <article class="timeline-entry">
-              <div class="timeline-entry-inner">
-                <time class="timeline-time" datetime="2014-01-10T03:45"><span>03:45 AM</span> <span>Today</span></time>
-                <div class="timeline-icon bg-success">
-                  <i class="entypo-feather"></i>
+          <% @plan.schedules.each do |schedule| %>
+            <div class="timeline-centered">
+              <article class="timeline-entry">
+                <div class="timeline-entry-inner">
+                  <time class="timeline-time text-right"><%= schedule.specified_time.strftime( "%H:%M" ) %></time>
+                  <div class="timeline-icon bg-success">
+                  </div>
+                  <div class="timeline-label">
+                      <%= link_to schedule.spot.spot_name %>
+                      <%= image_tag schedule.spot.photo, class: "bd-placeholder-img featurette-image img-fluid mx-auto", width: "300", height: "300"%>
+                  </div>
                 </div>
-                <div class="timeline-label">
-                  <h3><a href="#">Art Ramadani</a> <span>posted a status update</span></h3>
-                </div>
-              </div>
-            </article>
-            <article class="timeline-entry left-aligned">
-              <div class="timeline-entry-inner">
-                <time class="timeline-time" datetime="2014-01-10T03:45"><span>03:45 AM</span> <span>Today</span></time>
-                <div class="timeline-icon bg-secondary">
-                  <i class="entypo-suitcase"></i>
-                </div>
-                <div class="timeline-label">
-                  <h3><a href="#">Job Meeting</a></h3>
-                </div>
-              </div>
-            </article>
-            <article class="timeline-entry">
-              <div class="timeline-entry-inner">
-                <time class="timeline-time" datetime="2014-01-09T13:22"><span>03:45 AM</span> <span>Today</span></time>
-                <div class="timeline-icon bg-info">
-                  <i class="entypo-location"></i>
-                </div>
-                <div class="timeline-label">
-                  <h3><a href="#">Arlind Nushi</a> <span>checked in at</span> <a href="#">Laborator</a></h3>
-                </div>
-              </div>
-            </article>
-            <article class="timeline-entry left-aligned">
-              <div class="timeline-entry-inner">
-                <time class="timeline-time" datetime="2014-01-10T03:45"><span>03:45 AM</span> <span>Today</span></time>
-                <div class="timeline-icon bg-warning">
-                  <i class="entypo-camera"></i>
-                </div>
-                <div class="timeline-label">
-                  <h3><a href="#">Arber Nushi</a> <span>changed his</span> <a href="#">Profile Picture</a></h3>
-                </div>
-              </div>
-            </article>
-            <article class="timeline-entry begin">
-              <div class="timeline-entry-inner">
-                <div class="timeline-icon" style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);">
-                <i class="entypo-flight"></i>
-                </div>
-              </div>
-            </article>
-          </div>
+              </article>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

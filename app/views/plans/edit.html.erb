@@ -4,52 +4,12 @@
     <div class="col-md-3">
       <div class="contact-info">
         <h2>Edit Plan</h2>
-        <h4>Let's edit a plan for yourself !</h4>
+        <h4>Let's edit a plan for yourself !</h4> <br>
+          <div class="text-left">
+            <%= link_to "キャンセル", plan_path, class: "btn btn-info" %>
+          </div>
       </div>
     </div>
-    <div class="col-md-9">
-      <div class="contact-form">
-        <%= form_with model: @plan, local: true do |f| %>
-
-          <div class="form-group">
-            <i class="fas fa-plane"></i><%= f.label :title, "タイトル", class: "control-label col-sm-3" %>
-            <div class="col-sm-9">
-              <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control", placeholder: "タイトルを入力してください"  %>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <i class="fas fa-calendar-alt"></i><%= f.label :day, class: "control-label col-sm-3" %><br />
-            <div class="col-sm-9">
-              <%= f.date_field :day, autofocus: true, autocomplete: "day", class: "form-control", placeholder: "日付を選択してください"  %>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <%= f.fields_for :schedules do |sf| %>
-              <div class="field">
-                <%= render "schedules_fields", f: sf %>
-              </div>
-            <% end %>
-          </div>
-
-          <div class="form-group">
-            <i class="fas fa-pen"></i><%= f.label :note, "メモ", class: "control-label col-sm-3" %>
-            <div class="col-sm-9">
-              <%= f.text_area :note, class: "form-control", placeholder: "例) 集合時間..." %>
-            </div>
-          </div>
-
-          <br class="my-5">
-          <div class="text-center">
-            <%= link_to "Let's Go!!", "#", class: 'rounded-pill btn btn-warning text-white btn-lg' %>
-          </div>
-
-          <div class="text-right">
-            <%= link_to "戻る", plan_path, class: "btn btn-info" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+      <%= render "form" %>
   </div>
 </div>
