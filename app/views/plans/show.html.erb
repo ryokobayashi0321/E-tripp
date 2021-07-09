@@ -10,8 +10,9 @@
           <p><i class="fas fa-plane"></i> <%= @plan.title %></p>
           <p><i class="fas fa-calendar-alt"></i> <%= @plan.day %></p>
           <p><i class="fas fa-clock"></i>
-          <%= @plan.schedules.each do |schedule| %>
-            <%= schedule.specified_time %>
+          <% @plan.schedules.each do |schedule| %>
+            <%= schedule.specified_time.strftime( "%H:%M" ) %> <br>
+          <i class="fas fa-map-marked-alt"></i><%= schedule.spot.spot_name %>
           <% end %>
           <p><i class="fas fa-pen"></i> <%= @plan.note %></p>
           <p><i class="far fa-clock"></i><%= l @plan.created_at %></p>

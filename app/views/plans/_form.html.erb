@@ -25,12 +25,14 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <%= f.fields_for :schedules do |sf| %>
-              <div class="field">
-                <%= render "schedules_fields", f: sf %>
-              </div>
-            <% end %>
+          <div class="form-area">
+            <div class="form-group">
+              <%= f.fields_for :schedules do |sf| %>
+                <div class="field">
+                  <%= render "schedules_fields", f: sf %>
+                </div>
+              <% end %>
+            </div>
           </div>
 
           <div class="form-group">
