@@ -2,7 +2,7 @@ class PlansController < ApplicationController
   PER_PAGE = 6
 
   def index
-    @plans = Plan.includes(:user).order(:created_at).page(params[:page]).per(PER_PAGE)
+    @plans = Plan.includes(:user).order(id: :desc).page(params[:page]).per(PER_PAGE)
   end
 
   def show
@@ -21,6 +21,7 @@ class PlansController < ApplicationController
     if @plan.save
       redirect_to plans_path
     else
+      @plan = current_user.plans.new(plan_params)
       render :new
     end
   end
