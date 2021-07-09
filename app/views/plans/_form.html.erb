@@ -29,10 +29,13 @@
             <div class="form-group">
               <%= f.fields_for :schedules do |sf| %>
                 <div class="field">
-                  <%= render "schedules_fields", f: sf %>
+                  <%= render "schedule_fields", f: sf %>
                 </div>
               <% end %>
             </div>
+              <div class="links">
+                <%= link_to_add_association "スポットを追加", f, :schedules, class: 'btn btn-success' %>
+              </div>
           </div>
 
           <div class="form-group">

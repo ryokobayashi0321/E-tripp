@@ -1,0 +1,16 @@
+<div class="nested-fields field">
+  <div class="form-group">
+    <div class="col-md-3">
+      <i class="fas fa-clock"></i><%= f.label :pecified_time, "指定時刻", class: "control-label col-sm-9"%>
+      <%= f.time_select :specified_time, class: 'form-control', placeholder: "時刻を選択してください" %> <br>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-3">
+      <i class="fas fa-clock"></i><%= f.label :spot_name, "スポット", class: "control-label col-sm-9"%>
+      <%= f.collection_select :spot_id, Spot.all, :id, :spot_name, class: 'form-control', :prompt => "スポットを選択" %> <br>
+    </div>
+  </div>
+  <%= link_to_remove_association "削除", f, class: "btn btn-danger" %>
+</div>

@@ -7,6 +7,7 @@ gem "activeadmin"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.3.6"
 gem "carrierwave", "~> 2.0"
+gem "cocoon"
 gem "devise"
 gem "devise-bootstrap-views", "~> 1.0"
 gem "devise-i18n"
