@@ -12,8 +12,8 @@
             <p><i class="fas fa-calendar-alt"></i> <%= plan.day %></p>
             <p><i class="fas fa-clock"></i>
             <%= plan.schedules.each do |schedule| %>
-              <%= schedule.specified_time %> <br>
-              <i class="fas fa-map-marked-alt"></i><%= schedule.spot_id %>
+              <%= schedule.specified_time.strftime( "%H:%M" ) %> <br>
+              <i class="fas fa-map-marked-alt"></i><%= schedule.spot.spot_name %>
             <% end %>
             </p>
             <p><i class="fas fa-pen"></i> <%= plan.note %></p>
