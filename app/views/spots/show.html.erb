@@ -17,7 +17,7 @@
           <p class="text-right"><i class="far fa-clock"></i> <%= l @spot.created_at %></p>
 
           <div class="card-footer">
-            <%= link_to 'Go new plan !!', new_plan_path, class: 'btn btn-add btn-lg rounded-pill btn-block' %>
+            <%= link_to 'Go new plan !!', new_plan_path, class: 'btn btn-warning btn-lg rounded-pill btn-block' %>
             <br class="my-7">
             <p><%= link_to "Spot List", spots_path, class: 'btn btn-primary btn-lg rounded-pill btn-block' %></p>
           </div>
@@ -49,6 +49,4 @@
     </div>
   </div>
 </section>
-
-<p class="text-center"><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
 

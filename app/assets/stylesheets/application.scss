@@ -78,6 +78,10 @@ body {
   padding-right: 30px;
 }
 
+.row {
+  border-radius: 1rem;
+}
+
 .text-up {
   height: 100%;
   color: rgba(252, 246, 246, 0.63);
@@ -103,10 +107,6 @@ body {
   color: #fff;
 }
 
-.warning {
-  background-color: #FF6928 !important;
-  color: #fff;
-}
 
 .btn-info {
   background-color: #6de6b7 !important;
@@ -115,13 +115,17 @@ body {
 }
 
 .btn-add {
-    background-color: #ffac5e !important;
+  background-color: #ffac5e !important;
   color: #fff;
 }
 
-.row {
-  border-radius: 1rem;
+.info {
+  color: #6de6b7;
+  border: #6de6b7;
 }
 
+.warning {
+  color: #FF6928;
+}
 
 
