@@ -6,10 +6,10 @@
 
       <div class="card  col-md-4 rounded-lg border-primary">
         <div class="card-body">
-          <div class="text-primary"><i class="fas fa-user fa-lg text-primary"></i> <%= link_to @plan.user.user_name, user_path(@plan.user_id) %>さん</div>
+          <h3 class="text-primary"><i class="fas fa-user fa-lg text-primary"></i> <%= link_to @plan.user.user_name, user_path(@plan.user_id) %>さん</h3>
             <div class="text-dark text-right"><i class="far fa-clock"></i> <%= l @plan.created_at %></div> <br>
 
-            <p><i class="fas fa-plane"></i> <%= @plan.title %></p>
+            <h4><i class="fas fa-plane"></i> <%= @plan.title %></h4> <br>
             <p class="warning"><i class="fas fa-calendar-alt"></i> <%= @plan.day %></p>
             <table class="table">
               <thead class="table-light">
@@ -21,7 +21,7 @@
               <tbody class="table-info table-striped">
                 <% @plan.schedules.each do |schedule| %>
                   <tr>
-                    <td><%= schedule.specified_time.strftime( "%H:%M" ) %></td>
+                    <td ><%= schedule.specified_time.strftime( "%H:%M" ) %></td>
                     <td><%= schedule.spot.spot_name %></td>
                   </tr>
                 <% end %>
@@ -46,6 +46,9 @@
 
       <div class="card col-md-8  rounded-lg border-primary">
         <div class="card-body">
+          <div class="timeline-icon">
+            <%= image_tag "/assets//travel_happy_couple.png", class: "bd-placeholder-img featurette-image img-fluid mx-auto", width: "200", height: "200"%>
+          </div>
           <% @plan.schedules.each do |schedule| %>
             <div class="timeline-centered">
               <article class="timeline-entry">
@@ -56,7 +59,7 @@
                   <div class="timeline-label">
                     <%= link_to spot_path(schedule.spot.id, schedule.id) do %>
                       <%= schedule.spot.spot_name%>
-                      <%= image_tag schedule.spot.photo, class: "bd-placeholder-img featurette-image img-fluid mx-auto", width: "300", height: "300"%>
+                      <%= image_tag schedule.spot.photo, class: "bd-placeholder-img featurette-image img-fluid mx-auto", width: "250", height: "250"%>
                     <% end %>
                   </div>
                 </div>
