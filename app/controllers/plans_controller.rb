@@ -2,7 +2,7 @@ class PlansController < ApplicationController
   PER_PAGE = 6
 
   def index
-    @plans = Plan.includes(:user).order(id: :desc).page(params[:page]).per(PER_PAGE)
+    @plans = Plan.includes(:user, :spots, :schedules).order(id: :desc).page(params[:page]).per(PER_PAGE)
   end
 
   def show
@@ -12,7 +12,6 @@ class PlansController < ApplicationController
   def new
     @plan = current_user.plans.new
     @schdules = @plan.schedules.new
-    @spots = @plan.spots.new(params[:id])
     @spot = Spot.all
   end
 
