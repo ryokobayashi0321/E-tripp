@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :show]
-  resources :schedules
   resource :prefectures, only: :index
   resources :spots, only: [:index, :show] do
+    resources :schedules
     resource :comments, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]
   end
