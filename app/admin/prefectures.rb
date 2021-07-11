@@ -1,5 +1,5 @@
 ActiveAdmin.register Prefecture do
-  permit_params :prefecture_name
+  permit_params :prefecture_name, :number
 
   # permit_params do
   #   permitted = [:prefecture_name]

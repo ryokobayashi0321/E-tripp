@@ -39,7 +39,7 @@ ja:
         prefecture: 都道府県
       prefecture:
         prefecture_name: 都道府県
-        number: 都道府県ナンバー
+        number: 都道府県
       schedule:
         specified_time: 指定時刻
         plan: プラン
