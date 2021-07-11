@@ -6,4 +6,5 @@ class Comment < ApplicationRecord
     scope: :spot_id,
     message: "は同じスポットに2回以上コメントはできません"
   }
+  validates :comment, presence: true, length: { maximum: 125 }
 end
