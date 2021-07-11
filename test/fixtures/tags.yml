@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spot: one
+  prefecture: one
+
+two:
+  spot: two
+  prefecture: two

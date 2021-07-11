@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resource :prefectures, only: :index
   resources :spots, only: [:index, :show] do
-    resources :schedules
     resource :comments, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]
   end
