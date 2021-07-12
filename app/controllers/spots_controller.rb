@@ -1,11 +1,11 @@
 class SpotsController < ApplicationController
-  PER_PAGE_SPOT = 6
+  PER_PAGE_SPOT = 9
   PER_PAGE_COMMENT = 3
 
   def index
     @prefectures = Prefecture.all
     @q = Spot.ransack(params[:q])
-    @spots = Spot.includes(:likes).order(id: :desc)
+    @spots = Spot.includes(:likes).order(id: :asc)
     @spots = @q.result.page(params[:page]).per(PER_PAGE_SPOT)
   end
 

@@ -18,7 +18,8 @@
 
 body {
   padding-top: 45px;
-  background-color: #EEFFFF;
+  background-color: #e2f8ff;
+  color: rgb(107, 107, 107);
 }
 
 // devise関連
@@ -39,6 +40,13 @@ body {
 
 .alert-alert {
   @extend .alert-danger;
+}
+
+div.field_with_errors {
+  display: contents;
+  input {
+    border: 2px solid red;
+  }
 }
 
 // タイトル
@@ -128,4 +136,10 @@ body {
   color: #FF6928;
 }
 
+.primary {
+  color: #0000FF;
+}
 
+h5 {
+  font-weight: bold;
+}

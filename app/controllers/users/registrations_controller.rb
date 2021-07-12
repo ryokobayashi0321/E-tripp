@@ -12,5 +12,14 @@ module Users
     def configure_account_update_params
       devise_parameter_sanitizer.permit(:account_update, keys: [:user_name, :avatar])
     end
+
+    def after_sign_up_path_for(resource)
+      session_homes_index_path(resource)
+    end
+
+    def after_update_path_for(_resource)
+      # 自分で設定した「マイページ」へのパス
+      user_path(current_user)
+    end
   end
 end

@@ -4,7 +4,7 @@
     <div class="container-fluid jumbotron-container">
       <div class="text-up">
         <h1 class="site-name">E-tripp</h1>
-        <p>text</p>
+        <p>さぁ、簡単に旅行プランを作ろう！！</p>
         <p><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
       </div>
     </div>
@@ -15,10 +15,10 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="card border-primary">
-          <div class="card-body">
-            <svg class="bd-placeholder-img featurette-image img-fluid mx-auto" width="300" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 300x250"><rect width="100%" height="100%" fill="#777"/></svg>
-            <h2>見出し</h2>
-            <p>text</p>
+          <div class="card-body text-center ml-10">
+            <%= video_tag "/assets/videos/plan_list.mp4", playsinline: true, controls: true, width: "300", height: "250" %>
+            <h5 class="text-center info">作った旅行プランを見れるよ！</h5><br>
+            <br><p><%= link_to "Plan List", plans_path, class: "btn btn-info btn-lg rounded-pill btn-block" %></p>
           </div>
         </div>
       </div>
@@ -26,9 +26,9 @@
       <div class="col-lg-4">
         <div class="card border-primary">
           <div class="card-body">
-            <svg class="bd-placeholder-img featurette-image img-fluid mx-auto" width="300" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 300x250"><rect width="100%" height="100%" fill="#777"/></svg>
-            <h2>見出し</h2>
-            <p>text</p>
+            <%= video_tag "/assets/videos/new_plan.mp4", playsinline: true, controls: true, width: "300", height: "250" %>
+            <h5 class="text-center warning">旅行プランを簡単に作ろう！！</h5><br>
+            <br><p><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill btn-block" %></p>
           </div>
         </div>
       </div>
@@ -36,9 +36,9 @@
       <div class="col-lg-4">
         <div class="card border-primary">
           <div class="card-body">
-            <svg class="bd-placeholder-img featurette-image img-fluid mx-auto" width="300" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 300x250"><rect width="100%" height="100%" fill="#777"/></svg>
-            <h2>見出し</h2>
-            <p>text</p>
+            <%= video_tag "/assets/videos/spot_list.mp4", playsinline: true, controls: true, width: "300", height: "250" %>
+            <h5 class="text-center primary">行きたい場所が見つかるかも！</h5><br>
+            <br><p><%= link_to "Spot List", spots_path, class: 'btn btn-primary btn-lg rounded-pill btn-block' %></p>
           </div>
         </div>
       </div>
@@ -48,49 +48,77 @@
 
     <hr class="featurette-divider border-primary">
 
-    <div class="row featurette">
+    <div class="row featurette bg-light">
       <div class="col-md-7">
-        <h2 class="featurette-heading">title</h2>
-        <p class="lead">text</p>
+        <h2 class="featurette-heading primary">No.1 プランの詳細ページ</h2><br>
+        <h3>【工夫した点】</h3><br>
+        <h3>①プランが見やすいようタイムライン化</h3><hr>
+        <p class="lead">
+            ユーザーが<span class="text-primary">すぐに時間と場所を確認</span>できたらいいと思い、タイムライン化で実装しました。
+            編集機能で順番を入れ替えることもできます。
+        </p> <br>
+        <h3>②画像をクリックでスポット詳細ページ</h3><hr>
+        <p class="lead">
+          ユーザーはすぐに場所の情報を知りたいと思い、<span class="text-primary">行く場所をクリックすることで詳細ページに移動</span> できるよう実装しました。
+        </p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+        <%= video_tag "/assets/videos/plan_show.mp4", playsinline: true, controls: true, width: "450", height: "500" %>
       </div>
     </div>
 
     <hr class="featurette-divider border-primary">
 
-    <div class="row featurette">
+    <div class="row featurette bg-light">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">title</h2>
-        <p class="lead">text</p>
+        <h2 class="featurette-heading warning text-right">No.2 スポット追加機能</h2>
+        <h3>【工夫した点】</h3><br>
+        <h3>①プランに複数のスポットを追加可能に</h3><hr>
+        <p class="lead">
+            ユーザーが<span class="text-warning">複数のスポットを登録</span>できたら良いと思い、スポットのフォームを追加できるよう実装しました。
+            <span class="text-warning">時間も一緒</span>に登録できます。
+        </p> <br>
+        <h3>②既存のスポットをセレクトボックスで選択</h3><hr>
+        <p class="lead">
+          ユーザーの<span class="text-warning">入力負担を減らそう</span> と思い、スポットをセレクトボックスで選択できるよう実装しました。
+          <span class="text-danger">今後は画像をクリックで登録</span>できるよう実装していきたいと考えています。
+        </p>
       </div>
       <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+        <%= video_tag "/assets/videos/plan.mp4", playsinline: true, controls: true, width: "450", height: "500" %>
       </div>
     </div>
 
     <hr class="featurette-divider border-primary">
 
-    <div class="row featurette">
+    <div class="row featurette bg-light">
       <div class="col-md-7">
-        <h2 class="featurette-heading">title</h2>
-        <p class="lead">text</p>
+        <h2 class="featurette-heading info">No.3 スポット詳細</h2><br>
+        <h3>【工夫した点】</h3><br>
+        <h3>①いいねボタンとコメント機能をAjax化</h3><hr>
+        <p class="lead">
+            いいねボタンとコメント機能を<span class="text-info">Ajax化</span>したことで、ページが切り替わる時の<span class="text-info">ユーザーの待ち時間とサーバーへの負担を減す</span>ようにしました。
+        </p> <br>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+        <%= video_tag "/assets/videos/ajax.mp4", playsinline: true, controls: true, width: "450", height: "500" %>
+        </div>
       </div>
+    <hr class="featurette-divider border-primary">
     </div>
 
-    <hr class="featurette-divider">
 
     <!-- /END THE FEATURETTES -->
 
+    <p class="text-center"><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
   </div><!-- /.container -->
+  <br>
+  <footer>
+    <p>&copy; 2021 k-ryo</p>
 
+  </footer>
 </main>
+
+
 
 

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  PER_PAGE = 1
+  PER_PAGE_USER = 5
 
   def index
-    @users = User.page(params[:page]).per(PER_PAGE)
+    @users = User.page(params[:page]).per(PER_PAGE_USER)
   end
 
   def show
