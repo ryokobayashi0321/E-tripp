@@ -19,6 +19,7 @@ class PlansController < ApplicationController
     if @plan.save
       redirect_to plans_path, notice: "作成しました！"
     else
+      flash.now[:alert] = "作成に失敗しました"
       @plan = current_user.plans.new(plan_params)
       render :new
     end
@@ -30,6 +31,7 @@ class PlansController < ApplicationController
     if @plan.update!(plan_params)
       redirect_to plan_path, notice: "更新しました"
     else
+      flash.now[:alert] = "更新に失敗しました"
       render :edit
     end
   end
