@@ -2,7 +2,7 @@
   <div class="container w-50">
       <h2 class="text-center"><span><%= @spot.spot_name %></span></h2>
       <div class="card mb-3 border-primary">
-      <%= image_tag asset_path(@spot.photo), class: "card-img-top", width: "400", height: "400" %>
+      <%= image_tag @spot.photo, class: "card-img-top", width: "400", height: "400" %>
         <div class="card-body">
           <h5 class="card-title text-center font-weight-bold"><%= @spot.spot_name %></h5>
           <p><%= @spot.content %></p>
