@@ -59,7 +59,7 @@
                   <div class="timeline-label">
                     <%= link_to spot_path(schedule.spot.id, schedule.id) do %>
                       <%= schedule.spot.spot_name%>
-                      <%= image_tag schedule.spot.photo, class: "bd-placeholder-img featurette-image img-fluid mx-auto", width: "250", height: "250"%>
+                      <%= image_tag asset_path(schedule.spot.photo), class: "bd-placeholder-img featurette-image img-fluid mx-auto", width: "250", height: "250"%>
                     <% end %>
                   </div>
                 </div>
