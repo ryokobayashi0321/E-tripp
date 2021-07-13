@@ -16,7 +16,7 @@
       <div class="col-lg-4">
         <div class="card border-primary">
           <div class="card-body text-center ml-10">
-            <%= video_tag "/assets/videos/plan_list.mp4", playsinline: true, controls: true, width: "300", height: "250" %>
+            <%= video_tag asset_path("/assets/videos/plan_list.mp4"), playsinline: true, controls: true, width: "300", height: "250" %>
             <h5 class="text-center info">作った旅行プランを見れるよ！</h5><br>
             <br><p><%= link_to "Plan List", plans_path, class: "btn btn-info btn-lg rounded-pill btn-block" %></p>
           </div>
@@ -26,7 +26,7 @@
       <div class="col-lg-4">
         <div class="card border-primary">
           <div class="card-body text-center ml-10">
-            <%= video_tag "/assets/videos/new_plan.mp4", playsinline: true, controls: true, width: "300", height: "250" %>
+            <%= video_tag asset_path("/assets/videos/new_plan.mp4"), playsinline: true, controls: true, width: "300", height: "250" %>
             <h5 class="text-center warning">旅行プランを簡単に作ろう！！</h5><br>
             <br><p><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill btn-block" %></p>
           </div>
@@ -36,7 +36,7 @@
       <div class="col-lg-4">
         <div class="card border-primary">
           <div class="card-body text-center ml-10">
-            <%= video_tag "/assets/videos/spot_list.mp4", playsinline: true, controls: true, width: "300", height: "250" %>
+            <%= video_tag asset_path("/assets/videos/spot_list.mp4"), playsinline: true, controls: true, width: "300", height: "250" %>
             <h5 class="text-center primary">行きたい場所が見つかるかも！</h5><br>
             <br><p><%= link_to "Spot List", spots_path, class: 'btn btn-primary btn-lg rounded-pill btn-block' %></p>
           </div>
@@ -63,7 +63,7 @@
         </p>
       </div>
       <div class="col-md-6">
-        <%= video_tag "/assets/videos/plan_show.mp4", playsinline: true, controls: true, width: "450", height: "500" %>
+        <%= video_tag asset_path("/assets/videos/plan_show.mp4"), playsinline: true, controls: true, width: "450", height: "500" %>
       </div>
     </div>
 
@@ -85,7 +85,7 @@
         </p>
       </div>
       <div class="col-md-5 order-md-1">
-        <%= video_tag "/assets/videos/plan.mp4", playsinline: true, controls: true, width: "450", height: "500" %>
+        <%= video_tag asset_path("/assets/videos/plan.mp4"), playsinline: true, controls: true, width: "450", height: "500" %>
       </div>
     </div>
 
@@ -101,7 +101,7 @@
         </p> <br>
       </div>
       <div class="col-md-6">
-        <%= video_tag "/assets/videos/ajax.mp4", playsinline: true, controls: true, width: "450", height: "500" %>
+        <%= video_tag asset_path("/assets/videos/ajax.mp4"), playsinline: true, controls: true, width: "450", height: "500" %>
         </div>
       </div>
     <hr class="featurette-divider border-primary">
