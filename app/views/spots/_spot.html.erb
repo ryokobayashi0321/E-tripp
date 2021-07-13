@@ -3,7 +3,7 @@
   <% @spots.each do |spot| %>
     <div class="col">
       <div class="card h-100 border-primary">
-        <%= image_tag spot.photo, class: "card-img-top", width: "250", height: "250"%>
+        <%= image_tag asset_path(spot.photo), class: "card-img-top", width: "250", height: "250"%>
         <div class="card-body">
           <h5 class="card-title text-center font-weight-bold"><%= spot.spot_name %></h5>
           <p class="text-right text-primary"><%= spot.prefecture.prefecture_name %></p>
