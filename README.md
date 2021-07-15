@@ -29,12 +29,8 @@
 - パートナーの要望を叶える、笑顔にさせる
 - 継続的なサービス展開(ビジネス)
 
-
-
-
 # 🗾トップページ
-
-
+![E-tripp_top](https://user-images.githubusercontent.com/80377991/125796420-ff0cc0a9-24cf-4316-8169-405a2c1af82c.gif)
 
 # ✈️実装機能
 
@@ -52,10 +48,13 @@
 | ⑩ | 管理者機能 | activeadmin |
 
 # 🗓プラン作成画面
+![plan](https://user-images.githubusercontent.com/80377991/125779845-6398774c-7f9d-4c4e-9b32-aabbe90890a6.gif)
 
 # 🔍プラン詳細画面
+![plan_show](https://user-images.githubusercontent.com/80377991/125780905-0bc78667-f34e-4d02-b95f-addd9847a1b0.gif)
 
 # 🏰スポット詳細画面
+![spot_list](https://user-images.githubusercontent.com/80377991/125780437-aa016554-3f46-4b03-b6aa-8e5b9d6cd043.gif)
 
 # ⚙️使用したGem
 
@@ -79,10 +78,10 @@
 - gem "turbolinks", "~> 5"
 - gem "webpacker", "~> 5.0"
 
-# ER図
+# ✏️ER図
 <img width="940" alt="ER図" src="https://user-images.githubusercontent.com/80377991/125774810-ee446f91-3312-43b1-b061-dff96ddb2509.png">
 
-# テーブル設計
+# 🗒テーブル設計
 
 ### usersテーブル（ユーザー情報を管理するテーブル）
 | カラム | データ型 | 備考 |
@@ -140,6 +139,14 @@
 | like_id | integer | PK |
 | user_id | integer | FK |
 | spot_id | integer | FK |
+
+# 💪今後実装予定
+
+- AWSへデプロイ
+- テスト(Rspec)
+- 無限スクロール機能
+
+
 
 
 
