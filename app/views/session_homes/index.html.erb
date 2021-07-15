@@ -13,43 +13,44 @@
   <div class="container marketing">
 
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-xs-4">
         <div class="card border-primary">
-          <div class="card-body text-center ml-10">
-            <%= video_tag asset_path("/assets/plan_list.mp4"), playsinline: true, controls: true, width: "300", height: "250" %>
+          <div class="card-body text-center">
+            <%= video_tag asset_path("/assets/plan_list.mp4"), playsinline: true, controls: true, width: "250", height: "250" %>
             <h5 class="text-center info">作った旅行プランを見れるよ！</h5><br>
             <br><p><%= link_to "Plan List", plans_path, class: "btn btn-info btn-lg rounded-pill btn-block" %></p>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-xs-4">
         <div class="card border-primary">
           <div class="card-body text-center ml-10">
-            <%= video_tag asset_path("/assets/new_plan.mp4"), playsinline: true, controls: true, width: "300", height: "250" %>
+            <%= video_tag asset_path("/assets/new_plan.mp4"), playsinline: true, controls: true, width: "250", height: "250" %>
             <h5 class="text-center warning">旅行プランを簡単に作ろう！！</h5><br>
             <br><p><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill btn-block" %></p>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-xs-4">
         <div class="card border-primary">
           <div class="card-body text-center ml-10">
-            <%= video_tag asset_path("/assets/spot_list.mp4"), playsinline: true, controls: true, width: "300", height: "250" %>
+            <%= video_tag asset_path("/assets/spot_list.mp4"), playsinline: true, controls: true, width: "250", height: "250" %>
             <h5 class="text-center primary">行きたい場所が見つかるかも！</h5><br>
             <br><p><%= link_to "Spot List", spots_path, class: 'btn btn-primary btn-lg rounded-pill btn-block' %></p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
     <!-- START THE FEATURETTES -->
 
+  <div class="container">
     <hr class="featurette-divider border-primary">
-
-    <div class="row featurette bg-light">
-      <div class="col-md-6">
+    <div class="row bg-light">
+      <div class="col-md-6 col-sx-3">
         <h2 class="featurette-heading primary">No.1 プランの詳細ページ</h2><br>
         <h3>【工夫した点】</h3><br>
         <h3>①プランが見やすいようタイムライン化</h3><hr>
@@ -62,15 +63,15 @@
           ユーザーはすぐに場所の情報を知りたいと思い、<span class="text-primary">行く場所をクリックすることで詳細ページに移動</span> できるよう実装しました。
         </p>
       </div>
-      <div class="col-md-6">
-        <%= video_tag asset_path("/assets/plan_show.mp4"), playsinline: true, controls: true, width: "450", height: "500" %>
+      <div class="col-md-6 col-sx-9 text-center">
+        <%= video_tag asset_path("/assets/plan_show.mp4"), playsinline: true, controls: true, width: "350", height: "350" %>
       </div>
     </div>
 
     <hr class="featurette-divider border-primary">
 
     <div class="row featurette bg-light">
-      <div class="col-md-6">
+      <div class="col-md-6 col-sx-3">
         <h2 class="featurette-heading warning">No.2 スポット追加機能</h2>
         <h3>【工夫した点】</h3><br>
         <h3>①プランに複数のスポットを追加可能に</h3><hr>
@@ -84,15 +85,15 @@
           <span class="text-danger">今後は画像をクリックで登録</span>できるよう実装していきたいと考えています。
         </p>
       </div>
-      <div class="col-md-5 order-md-1">
-        <%= video_tag asset_path("/assets/plan.mp4"), playsinline: true, controls: true, width: "450", height: "500" %>
+      <div class="col-md-6 col-sx-9 text-center">
+        <%= video_tag asset_path("/assets/plan.mp4"), playsinline: true, controls: true, width: "350", height: "350" %>
       </div>
     </div>
 
     <hr class="featurette-divider border-primary">
 
     <div class="row featurette bg-light">
-      <div class="col-md-6">
+      <div class="col-md-6 col-sx-3">
         <h2 class="featurette-heading info">No.3 スポット詳細</h2><br>
         <h3>【工夫した点】</h3><br>
         <h3>①いいねボタンとコメント機能をAjax化</h3><hr>
@@ -100,8 +101,8 @@
             いいねボタンとコメント機能を<span class="text-info">Ajax化</span>したことで、ページが切り替わる時の<span class="text-info">ユーザーの待ち時間とサーバーへの負担を減す</span>ようにしました。
         </p> <br>
       </div>
-      <div class="col-md-6">
-        <%= video_tag asset_path("/assets/ajax.mp4"), playsinline: true, controls: true, width: "450", height: "500" %>
+      <div class="col-md-6 col-sx-9 text-center">
+        <%= video_tag asset_path("/assets/ajax.mp4"), playsinline: true, controls: true, width: "350", height: "350" %>
         </div>
       </div>
     <hr class="featurette-divider border-primary">
