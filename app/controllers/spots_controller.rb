@@ -5,7 +5,7 @@ class SpotsController < ApplicationController
   def index
     @prefectures = Prefecture.all
     @q = Spot.ransack(params[:q])
-    @spots = Spot.includes(:likes).order(id: :asc)
+    @spots = Spot.includes(:user, :likes).order(id: :asc)
     @spots = @q.result.page(params[:page]).per(PER_PAGE_SPOT)
   end
 
