@@ -15,9 +15,9 @@
     <div class="row">
       <div class="col-lg-4 col-xs-4">
         <div class="card border-primary">
-          <div class="card-body text-center">
-            <%= video_tag asset_path("/assets/plan_list.mp4"), playsinline: true, controls: true, width: "250", height: "250" %>
-            <h5 class="text-center info">作った旅行プランを見れるよ！</h5><br>
+          <div class="card-body text-center ml-10 bg-top">
+            <%= image_tag asset_path("/assets/plan_list.gif"), playsinline: true, controls: true, width: "250", height: "250" %> <br>
+            <br><h5 class="text-center info">作った旅行プランを見れるよ！</h5>
             <br><p><%= link_to "Plan List", plans_path, class: "btn btn-info btn-lg rounded-pill btn-block" %></p>
           </div>
         </div>
@@ -25,9 +25,9 @@
 
       <div class="col-lg-4 col-xs-4">
         <div class="card border-primary">
-          <div class="card-body text-center ml-10">
-            <%= video_tag asset_path("/assets/new_plan.mp4"), playsinline: true, controls: true, width: "250", height: "250" %>
-            <h5 class="text-center warning">旅行プランを簡単に作ろう！！</h5><br>
+          <div class="card-body text-center ml-10 bg-top">
+            <%= image_tag asset_path("/assets/new_plan.gif"), playsinline: true, controls: true, width: "250", height: "250" %> <br>
+            <br><h5 class="text-center warning">旅行プランを簡単に作ろう！！</h5>
             <br><p><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill btn-block" %></p>
           </div>
         </div>
@@ -35,9 +35,9 @@
 
       <div class="col-lg-4 col-xs-4">
         <div class="card border-primary">
-          <div class="card-body text-center ml-10">
-            <%= video_tag asset_path("/assets/spot_list.mp4"), playsinline: true, controls: true, width: "250", height: "250" %>
-            <h5 class="text-center primary">行きたい場所が見つかるかも！</h5><br>
+          <div class="card-body text-center ml-10 bg-top">
+            <%= image_tag asset_path("/assets/spot_list.gif"), playsinline: true, controls: true, width: "250", height: "250" %> <br>
+            <br><h5 class="text-center primary">行きたい場所が見つかるかも！</h5>
             <br><p><%= link_to "Spot List", spots_path, class: 'btn btn-primary btn-lg rounded-pill btn-block' %></p>
           </div>
         </div>
@@ -45,12 +45,10 @@
     </div>
   </div>
 
-    <!-- START THE FEATURETTES -->
-
   <div class="container">
     <hr class="featurette-divider border-primary">
     <div class="row bg-light">
-      <div class="col-md-6 col-sx-3">
+      <div class="col-md-7 col-sx-3">
         <h2 class="featurette-heading primary">No.1 プランの詳細ページ</h2><br>
         <h3>【工夫した点】</h3><br>
         <h3>①プランが見やすいようタイムライン化</h3><hr>
@@ -58,20 +56,20 @@
             ユーザーが<span class="text-primary">すぐに時間と場所を確認</span>できたらいいと思い、タイムライン化で実装しました。
             編集機能で順番を入れ替えることもできます。
         </p> <br>
-        <h3>②画像をクリックでスポット詳細ページ</h3><hr>
+        <h3>②画像をクリックでスポット詳細ページへ</h3><hr>
         <p class="lead">
           ユーザーはすぐに場所の情報を知りたいと思い、<span class="text-primary">行く場所をクリックすることで詳細ページに移動</span> できるよう実装しました。
         </p>
       </div>
-      <div class="col-md-6 col-sx-9 text-center">
-        <%= video_tag asset_path("/assets/plan_show.mp4"), playsinline: true, controls: true, width: "300", height: "350" %>
+      <div class="col-md-5 col-sx-9 text-center bg-top bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
+        <br><br><br><%= image_tag asset_path("/assets/plan_show.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
       </div>
     </div>
 
     <hr class="featurette-divider border-primary">
 
     <div class="row featurette bg-light">
-      <div class="col-md-6 col-sx-3">
+      <div class="col-md-7 col-sx-3">
         <h2 class="featurette-heading warning">No.2 スポット追加機能</h2>
         <h3>【工夫した点】</h3><br>
         <h3>①プランに複数のスポットを追加可能に</h3><hr>
@@ -82,18 +80,18 @@
         <h3>②既存のスポットをセレクトボックスで選択</h3><hr>
         <p class="lead">
           ユーザーの<span class="text-warning">入力負担を減らそう</span> と思い、スポットをセレクトボックスで選択できるよう実装しました。
-          <span class="text-danger">今後は画像をクリックで登録</span>できるよう実装していきたいと考えています。
+          <br><span class="text-danger">今後は画像をクリックで登録</span>できるよう実装していきたいと考えています。
         </p>
       </div>
-      <div class="col-md-6 col-sx-9 text-center">
-        <%= video_tag asset_path("/assets/plan.mp4"), playsinline: true, controls: true, width: "300", height: "350" %>
+      <div class="col-md-5 col-sx-9 text-center bg-top bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
+        <br><br><br><%= image_tag asset_path("/assets/plan.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
       </div>
     </div>
 
     <hr class="featurette-divider border-primary">
 
     <div class="row featurette bg-light">
-      <div class="col-md-6 col-sx-3">
+      <div class="col-md-7 col-sx-3">
         <h2 class="featurette-heading info">No.3 スポット詳細</h2><br>
         <h3>【工夫した点】</h3><br>
         <h3>①いいねボタンとコメント機能をAjax化</h3><hr>
@@ -101,22 +99,18 @@
             いいねボタンとコメント機能を<span class="text-info">Ajax化</span>したことで、ページが切り替わる時の<span class="text-info">ユーザーの待ち時間とサーバーへの負担を減す</span>ようにしました。
         </p> <br>
       </div>
-      <div class="col-md-6 col-sx-9 text-center">
-        <%= video_tag asset_path("/assets/ajax.mp4"), playsinline: true, controls: true, width: "300", height: "350" %>
+      <div class="col-md-5 col-sx-9 text-center bg-top bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
+        <br><%= image_tag asset_path("/assets/ajax.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
         </div>
       </div>
     <hr class="featurette-divider border-primary">
     </div>
-
-
-    <!-- /END THE FEATURETTES -->
-
     <p class="text-center"><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
-  </div><!-- /.container -->
+  </div>
   <br>
   <footer>
+    <p class="float-right"><a href="#">トップに戻る</a></p>
     <p>&copy; 2021 k-ryo</p>
-
   </footer>
 </main>
 
