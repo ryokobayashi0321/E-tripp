@@ -3,7 +3,7 @@ class PlansController < ApplicationController
   before_action :set_plan, only: %i[show edit update destroy]
 
   def index
-    @plans = Plan.includes(:user, :spots, :schedules).order(id: :desc).page(params[:page]).per(PER_PAGE)
+    @plans = Plan.all.includes(:user, :spots, :schedules).order(id: :desc).page(params[:page]).per(PER_PAGE)
   end
 
   def show; end
