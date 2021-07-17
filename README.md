@@ -1,15 +1,24 @@
 # E-tripp
 
-## サイトURL
-##
+<br>
+
+# サイトURL 
+
+### https://arcane-forest-90597.herokuapp.com/
+
+<br>
 
 # 🗾はじめに
 - 今回のこのポートフォリオは**転職を目的**として作成しました。ただ作成するのではなく、**現場を意識してdevelopからブランチを切り最後にmasterでデプロイをする開発工程**で行いました。
 
 - また、だらだら作っていてはいつまで経っても転職活動ができないと考え、自分で**納期日(完成予定日)と、工程をAプラン(終わったら転職活動スタート)・Bプラン(転職活動中)と分けて取り組む**ようにしました。以下はAプランの実装です。
 
+<br>
+
 # 🗺アプリ概要
 - クリックするだけで簡単に旅行プランを制作できるアプリ
+
+<br>
 
 # 💻開発環境
 
@@ -21,6 +30,8 @@
 - JavaScript
 - jQuery
 - Heroku
+
+<br>
 
 # 💡制作背景
 ### 課題
@@ -34,8 +45,12 @@
 - パートナーの**要望を叶える、笑顔にさせる**
 - 継続的なサービス展開(ビジネス)
 
+<br>
+
 # 🗻トップページ
 ![E-tripp_top](https://user-images.githubusercontent.com/80377991/125796420-ff0cc0a9-24cf-4316-8169-405a2c1af82c.gif)
+
+<br>
 
 # ✈️実装機能
 
@@ -52,14 +67,22 @@
 | ⑨ | 画像アップロード機能　　| carriewave |
 | ⑩ | 管理者機能 | activeadmin |
 
+<br>
+
 # 🗓プラン作成画面
 ![plan](https://user-images.githubusercontent.com/80377991/125779845-6398774c-7f9d-4c4e-9b32-aabbe90890a6.gif)
+
+<br>
 
 # 🔍プラン詳細画面
 ![plan_show](https://user-images.githubusercontent.com/80377991/125780905-0bc78667-f34e-4d02-b95f-addd9847a1b0.gif)
 
+<br>
+
 # 🏰スポット詳細画面
 ![spot_list](https://user-images.githubusercontent.com/80377991/125780437-aa016554-3f46-4b03-b6aa-8e5b9d6cd043.gif)
+
+<br>
 
 # ⚙️使用したGem
 
@@ -83,8 +106,12 @@
 - gem "turbolinks", "~> 5"
 - gem "webpacker", "~> 5.0"
 
+<br>
+
 # ✏️ER図
 <img width="940" alt="ER図" src="https://user-images.githubusercontent.com/80377991/125774810-ee446f91-3312-43b1-b061-dff96ddb2509.png">
+
+<br>
 
 # 🗒テーブル設計
 
@@ -145,7 +172,9 @@
 | user_id | integer | FK |
 | spot_id | integer | FK |
 
-# 💪今後実装予定
+<br>
+
+# 💪今後実装予定(Bプラン)
 
 - テスト(Rspec)
 - N+1問題
