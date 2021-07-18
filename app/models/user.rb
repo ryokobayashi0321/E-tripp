@@ -1,13 +1,13 @@
 class User < ApplicationRecord
   has_many :plans, dependent: :destroy
   accepts_nested_attributes_for :plans
-  has_many :comments, dependent: :destroy
-  has_many :likes, dependent: :destroy
 
   # user.commented_spots で user が「コメント」しているスポットの一覧を取得できるようになる
+  has_many :comments, dependent: :destroy
   has_many :commented_spots, through: :comments, source: :spot
 
   # user.liked_spots で user が「いいね!」しているスポットの一覧を取得できるようになる
+  has_many :likes, dependent: :destroy
   has_many :liked_spots, through: :likes, source: :spot
 
   # Include default devise modules. Others available are:
