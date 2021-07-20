@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :schedule do
-    specified_time { "18:00" }
+    specified_time { Faker::Time.forward }
     association :plan
     association :spot
   end
