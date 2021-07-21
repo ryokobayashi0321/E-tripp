@@ -23,6 +23,10 @@ class User < ApplicationRecord
                        length: { minimum: 6 },
                        format: { with: VALID_PASSWORD_REGEX,
                                  message: ": 半角英数字を入力" }
+  validates :password_confirmation, presence: true,
+                                    length: { minimum: 6 },
+                                    format: { with: VALID_PASSWORD_REGEX,
+                                              message: ": 半角英数字を入力" }
 
   # アカウントを取得する
   def self.guest
