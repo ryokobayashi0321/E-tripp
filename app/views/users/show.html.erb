@@ -27,7 +27,7 @@
         <div class="card-body">
           <h3 class="card-tite border-bottom">Profile</h3><br>
             <p class="card-text text-primary"><i class="fas fa-user fa-3x"></i>
-              <span><%= @user.user_name %>さん</span>
+              <span><%= @user.user_name || "あなた" %>さん</span>
             </p>
             <p class="card-text"><i class="fas fa-envelope fa-2x"></i><span><%= @user.email %></span></p>
         </div>

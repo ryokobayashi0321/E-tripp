@@ -7,4 +7,5 @@ class Schedule < ApplicationRecord
     message: "は同じプランに同じ時間を登録できません"
   }
   validates :specified_time, presence: true
+  validates :spot_id, presence: true
 end

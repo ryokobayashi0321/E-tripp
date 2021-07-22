@@ -16,17 +16,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
-  VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i.freeze
 
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
-  validates :password, presence: true,
-                       length: { minimum: 6 },
-                       format: { with: VALID_PASSWORD_REGEX,
-                                 message: ": 半角英数字を入力" }
-  validates :password_confirmation, presence: true,
-                                    length: { minimum: 6 },
-                                    format: { with: VALID_PASSWORD_REGEX,
-                                              message: ": 半角英数字を入力" }
 
   # アカウントを取得する
   def self.guest
