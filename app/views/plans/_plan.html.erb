@@ -9,7 +9,7 @@
           <div>
             <div class="row">
               <div class="col-6">
-                <h3 class="text-primary"><i class="fas fa-user fa-lg"></i> <%= link_to plan.user.user_name, user_path(plan.user_id) %>さん</h3>
+                <h3 class="text-primary"><i class="fas fa-user fa-lg"></i> <%= link_to plan.user.user_name || "あなた", user_path(plan.user_id) %>さん</h3>
               </div>
               <div class="col-6 text-right">
                 <% if plan.user.avatar? %>

@@ -35,37 +35,5 @@ RSpec.describe User, type: :model do
         expect(user.errors.messages[:email]).to include "は不正な値です"
       end
     end
-
-    context "password が空のとき" do
-      let(:user) { build(:user, password: "") }
-      it "エラーが発生する" do
-        expect(subject).to eq false
-        expect(user.errors.messages[:password]).to include "を入力してください"
-      end
-    end
-
-    context "password が6文字以下のとき" do
-      let(:user) { build(:user, password: "a" * 5) }
-      it "エラーが発生する" do
-        expect(subject).to eq false
-        expect(user.errors.messages[:password]).to include "は6文字以上で入力してください"
-      end
-    end
-
-    context "password_confirmation が空のとき" do
-      let(:user) { build(:user, password_confirmation: "") }
-      it "エラーが発生する" do
-        expect(subject).to eq false
-        expect(user.errors.messages[:password_confirmation]).to include "を入力してください"
-      end
-    end
-
-    context "password_confirmation が6文字以下のとき" do
-      let(:user) { build(:user, password_confirmation: "a" * 5) }
-      it "エラーが発生する" do
-        expect(subject).to eq false
-        expect(user.errors.messages[:password_confirmation]).to include "は6文字以上で入力してください"
-      end
-    end
   end
 end
