@@ -1,5 +1,7 @@
 # E-tripp
 
+<img width="1680" alt="e-trrip_readme" src="https://user-images.githubusercontent.com/80377991/126860385-922d7ada-d863-4dbf-98ca-dda032f736b9.png">
+
 <br>
 
 # サイトURL 
