@@ -4,8 +4,8 @@
     <div class="col-md">
       <div class="col-md">
         <div class="imag">
-          <% if current_user.avatar? %>
-            <%= image_tag user.avatar.url, size: "40x40", class: "rounded-circle" %>
+          <% if comment.user.avatar? %>
+            <%= image_tag comment.user.avatar.url, size: "40x40", class: "rounded-circle" %>
           <% else %>
             <%= image_tag src="/assets/default.png", size: "40x40", class: "rounded-circle" %>
           <% end %>
