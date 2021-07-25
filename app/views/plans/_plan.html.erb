@@ -13,7 +13,7 @@
               </div>
               <div class="col-6 text-right">
                 <% if plan.user.avatar? %>
-                  <%= image_tag @user.avatar.url, size: "120x120", class: "rounded-circle" %>
+                  <%= image_tag plan.user.avatar.url, size: "120x120", class: "rounded-circle" %>
                 <% else %>
                   <%= image_tag src="/assets/default.png", size: "120x120", class: "rounded-circle" %>
                 <% end %>
