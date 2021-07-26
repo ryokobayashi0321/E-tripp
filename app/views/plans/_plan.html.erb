@@ -21,18 +21,18 @@
             </div>
             <h4><i class="fas fa-plane"></i> <%= plan.title %></h4> <br>
             <% if current_user.id == plan.user_id %>
-              <p class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day %></p>
+              <p class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day.strftime( "%Y年 %m月 %d日" ) %></p>
             <% else %>
-              <p class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day.strftime( "%Y-%m" ) %></p>
+              <p class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day.strftime( "%Y年 %m月" ) %></p>
             <% end %>
             <table class="table w-50">
               <thead class="table-light">
                 <tr>
-                  <th scope="col"><i class="fas fa-clock info"></i></th>
-                  <th scope="col"><i class="fas fa-map-marked-alt info"></i></th>
+                  <th scope="col"><i class="fas fa-clock primary"></i></th>
+                  <th scope="col"><i class="fas fa-map-marked-alt primary"></i></th>
                 </tr>
               </thead>
-              <tbody class="table-info table-striped">
+              <tbody class="table-primary table-striped">
                 <% plan.schedules.each do |schedule| %>
                   <tr>
                     <td><%= schedule.specified_time.strftime( "%H:%M" ) %></td>
