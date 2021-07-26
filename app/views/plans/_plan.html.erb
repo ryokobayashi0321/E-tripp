@@ -20,7 +20,11 @@
               </div>
             </div>
             <h4><i class="fas fa-plane"></i> <%= plan.title %></h4> <br>
-            <p class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day %></p>
+            <% if current_user.id == plan.user_id %>
+              <p class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day %></p>
+            <% else %>
+              <p class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day.strftime( "%Y-%m" ) %></p>
+            <% end %>
             <table class="table w-50">
               <thead class="table-light">
                 <tr>
