@@ -7,7 +7,7 @@
       ユーザーページ
     <% end %>
   </h3>
-  <div class="card mb-3 mx-auto border-primary rounded" style="max-width: 70%;">
+  <div class="card mb-3 mx-auto border-primary rounded shadow p-3 mb-5 bg-white rounded" style="max-width: 70%;">
     <div class="row no-gutters">
       <div class="col-md-4">
         <div class="circle-avatar text-center">
@@ -40,7 +40,7 @@
   <div class="row">
     <% @user.plans.each do |plan| %>
     <div class="col-sm-3">
-      <div class="card rounded-pill">
+      <div class="card rounded-pill shadow p-3 mb-5 bg-white rounded">
         <div class="card-body text-center">
           <h5 class="card-title"><%= plan.title %></h5>
           <p class="card-text"><%= plan.day %></p>

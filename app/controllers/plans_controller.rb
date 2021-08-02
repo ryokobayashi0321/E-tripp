@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  PER_PAGE = 6
+  PER_PAGE = 3
   before_action :set_plan, only: %i[show edit update destroy]
 
   def index

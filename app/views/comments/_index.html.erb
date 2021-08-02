@@ -9,7 +9,7 @@
           <% else %>
             <%= image_tag src="/assets/default.png", size: "40x40", class: "rounded-circle" %>
           <% end %>
-          <span><%= link_to "#{comment.user.user_name}さん", user_path(comment.user.id) %></span>
+          <span class="link_line"><%= link_to "#{comment.user.user_name}さん", user_path(comment.user.id) %></span>
           <span><%= l comment.created_at %></span>
           <% if comment.user == current_user %>
             <%= link_to spot_comments_path(comment.spot_id, comment.id), method: :delete, data: { confirm: '削除しますか?', remote: true }  do %>
