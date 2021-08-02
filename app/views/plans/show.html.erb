@@ -1,15 +1,13 @@
 <%# プラン詳細 %>
 <section class="row-section">
   <div class="container">
-    <h2 class="text-center"><span>Plan</span></h2>
+    <h2 class="text-center"><span><i class="fas fa-plane"></i> <%= @plan.title %></span></h2>
     <div class="row">
 
       <div class="card  col-md-4 rounded-lg border-primary">
         <div class="card-body">
           <h3 class="text-primary"><i class="fas fa-user fa-lg text-primary"></i> <%= link_to @plan.user.user_name, user_path(@plan.user_id) %>さん</h3>
-            <div class="text-dark text-right"><i class="far fa-clock"></i> <%= l @plan.created_at %></div> <br>
 
-            <h4><i class="fas fa-plane"></i> <%= @plan.title %></h4> <br>
             <% if current_user.id == @plan.user_id %>
               <p class="warning"><i class="fas fa-calendar-alt"></i> <%= @plan.day.strftime( "%Y年 %m月 %d日" )  %></p>
             <% else %>
@@ -73,6 +71,7 @@
         </div>
       </div>
     </div>
+    <div class="text-dark text-right"><i class="far fa-clock"></i> <%= l @plan.created_at %> 作成</div>
   </div>
 </section>
 

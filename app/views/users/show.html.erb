@@ -52,14 +52,18 @@
     <% end %>
   </div>
   <% end %>
-<br>
-<% if user_signed_in? && @user == current_user %>
-  <p class="text-center"><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
-  <p class="text-right"><%= link_to "Spot list", spots_path, class: "btn btn-primary btn-lg rounded-pill" %></p>
-<% else %>
-  <p class="text-center"><%= link_to "戻る", plans_path, class: "btn btn-primary btn-lg rounded-pill" %></p>
-<% end %>
 </div>
+<br class="my-7">
+<p>
+  <% if user_signed_in? && @user == current_user %>
+    <p class="text-center">
+      <%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %>
+      <%= link_to "スポットを見に行く！", spots_path, class: "btn btn-primary btn-lg rounded-pill" %>
+    </p>
+  <% else %>
+    <p class="text-center"><%= link_to "戻る", plans_path, class: "btn btn-primary btn-lg rounded-pill" %></p>
+  <% end %>
+<p>
 
 
 

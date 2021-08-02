@@ -5,7 +5,7 @@
       <div class="text-up">
         <h1 class="site-name">E-tripp</h1>
         <p>さぁ、簡単に旅行プランを作ろう！！</p>
-        <p><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
+        <p><%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
           <div class="card-body text-center ml-10 bg-top">
             <%= image_tag asset_path("/assets/plan_list.gif"), playsinline: true, controls: true, width: "250", height: "250" %> <br>
             <br><h5 class="text-center info-c">作った旅行プランを見れるよ！</h5>
-            <br><p><%= link_to "Plan List", plans_path, class: "btn btn-info btn-lg rounded-pill btn-block" %></p>
+            <br><p><%= link_to "プランを見に行く！", plans_path, class: "btn btn-info btn-lg rounded-pill btn-block" %></p>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@
           <div class="card-body text-center ml-10 bg-top">
             <%= image_tag asset_path("/assets/new_plan.gif"), playsinline: true, controls: true, width: "250", height: "250" %> <br>
             <br><h5 class="text-center warning">旅行プランを簡単に作ろう！！</h5>
-            <br><p><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill btn-block" %></p>
+            <br><p><%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill btn-block" %></p>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
           <div class="card-body text-center ml-10 bg-top">
             <%= image_tag asset_path("/assets/spot_list.gif"), playsinline: true, controls: true, width: "250", height: "250" %> <br>
             <br><h5 class="text-center primary">行きたい場所が見つかるかも！</h5>
-            <br><p><%= link_to "Spot List", spots_path, class: 'btn btn-primary btn-lg rounded-pill btn-block' %></p>
+            <br><p><%= link_to "スポットを見に行く！", spots_path, class: 'btn btn-primary btn-lg rounded-pill btn-block' %></p>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@
       </div>
     <hr class="featurette-divider border-primary">
     </div>
-    <p class="text-center"><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
+    <p class="text-center"><%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
   </div>
   <br>
   <footer>
