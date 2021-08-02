@@ -9,102 +9,104 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="container marketing">
-
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card border-primary">
-          <div class="card-body text-center ml-10 bg-top">
-            <%= image_tag asset_path("/assets/plan_list.gif"), playsinline: true, controls: true, width: "250", height: "250" %>
-            <p><h5 class="text-center info-c">作った旅行プランを見れるよ！</h5></p><br>
-          </div>
+  <div class="container marketing">
+    <div>
+      <section class="contents text-center">
+        <div class="description bg-light">
+          <h3>E-tippとは</h3>
+            <p>
+              簡単にプランを立てて、楽しく旅行が<br>
+              できる計画投稿サービスです。
+            </p>
         </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card border-primary">
-          <div class="card-body text-center ml-10 bg-top">
-            <%= image_tag asset_path("/assets/new_plan.gif"), playsinline: true, controls: true, width: "250", height: "250" %>
-            <p><h5 class="text-center warning">旅行プランを簡単に作ろう！！</h5></p><br>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card border-primary">
-          <div class="card-body text-center ml-10 bg-top">
-            <%= image_tag asset_path("/assets/spot_list.gif"), playsinline: true, controls: true, width: "250", height: "250" %>
-            <p><h5 class="text-center primary">行きたい場所が見つかるかも！</h5></p><br>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
 
-  <div class="container">
-    <hr class="featurette-divider border-primary">
-    <div class="row featurette bg-light">
-      <div class="col-md-7 col-sx-3">
-        <h2 class="featurette-heading primary">No.1 プランの詳細ページ</h2><br>
-        <h3>【工夫した点】</h3><br>
-        <h3>①プランが見やすいようタイムライン化</h3><hr>
-        <p class="lead">
-            ユーザーが<span class="text-primary">すぐに時間と場所を確認</span>できたらいいと思い、タイムライン化で実装しました。
-            編集機能で順番を入れ替えることもできます。
-        </p> <br>
-        <h3>②画像をクリックでスポット詳細ページ</h3><hr>
-        <p class="lead">
-          ユーザーはすぐに場所の情報を知りたいと思い、<span class="text-primary">行く場所をクリックすることで詳細ページに移動</span> できるよう実装しました。
-        </p>
-      </div>
-      <p class="col-md-5 col-sx-9 text-center bg-top bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
-        <br><br><br><%= image_tag asset_path("/assets/plan_show.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
-      </p>
-    </div>
+    <div class="container-fluid py-5 mw-md">
+      <%# プラン作成 %>
+      <section>
+        <div class="row bg-light">
+          <div class="col-md-6">
+            <h3 class="featurette-heading">
+            <span class="warning">
+              簡単に<br>
+              旅行プランを作成
+            </span>
+            </h3>
+            <p>
+              タイトルをつけた後は、<br>
+              時間とスポットを選ぶだけ。<br>
+              「スポットを追加」ボタンで複数登録可能！ <br>
+              簡単に、自分だけの旅行プランの作成ができます。
+            </p>
+          </div>
+          <div class="col-md-6">
+            <%= image_tag asset_path("/assets/new_plan.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
+          </div>
+          <div class="col-md-12 bg-light">
+            <br><h5 class="text-center warning">旅行プランを簡単に作ろう！！</h5><br>
+          </div>
+        </div>
+      </section>
 
-    <hr class="featurette-divider border-primary">
+      <hr class="featurette-divider border-primary">
 
-    <div class="row featurette bg-light">
-      <div class="col-md-7 col-sx-3">
-        <h2 class="featurette-heading warning">No.2 スポット追加機能</h2>
-        <h3>【工夫した点】</h3><br>
-        <h3>①プランに複数のスポットを追加可能に</h3><hr>
-        <p class="lead">
-            ユーザーが<span class="text-warning">複数のスポットを登録</span>できたら良いと思い、スポットのフォームを追加できるよう実装しました。
-            <span class="text-warning">時間も一緒</span>に登録できます。
-        </p> <br>
-        <h3>②既存のスポットをセレクトボックスで選択</h3><hr>
-        <p class="lead">
-          ユーザーの<span class="text-warning">入力負担を減らそう</span> と思い、スポットをセレクトボックスで選択できるよう実装しました。
-          <br><span class="text-danger">今後は画像をクリックで登録</span>できるよう実装していきたいと考えています。
-        </p>
-      </div>
-      <p class="col-md-5 col-sx-9 text-center bg-top bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
-        <br><br><br><%= image_tag asset_path("/assets/plan.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
-      </p>
-    </div>
+      <%# プラン詳細 %>
+      <section>
+        <div class="row bg-light">
+          <div class="col-md-6">
+            <h3 class="featurette-heading">
+            <span class="info-c">
+              作ったプランを<br>
+              タイムラインで確認
+            </span>
+            </h3>
+            <p>
+              作ったプランを見てみよう。<br>
+              タイムラインで <br>
+              いきたい場所をすぐに確認。<br>
+              写真を押して、<br>
+              スポットの確認もできます。
+            </p>
+          </div>
+          <div class="col-md-6">
+            <%= image_tag asset_path("/assets/plan_list.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
+          </div>
+          <div class="col-md-12 bg-light">
+            <br><h5 class="text-center info-c">作った旅行プランを見れるよ！</h5><br>
+          </div>
+        </div>
+      </section>
 
-    <hr class="featurette-divider border-primary">
+      <hr class="featurette-divider border-primary">
 
-    <div class="row featurette bg-light">
-      <div class="col-md-7 col-sx-3">
-        <h2 class="featurette-heading info-c">No.3 スポット詳細</h2><br>
-        <h3>【工夫した点】</h3><br>
-        <h3>①いいねボタンとコメント機能をAjax化</h3><hr>
-        <p class="lead">
-            いいねボタンとコメント機能を<span class="text-info">Ajax化</span>したことで、ページが切り替わる時の<span class="text-info">ユーザーの待ち時間とサーバーへの負担を減す</span>ようにしました。
-        </p> <br>
-      </div>
-      <p class="col-md-5 col-sx-9 text-center bg-top bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
-        <br><%= image_tag asset_path("/assets/ajax.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
-        </p>
-      </div>
-    <hr class="featurette-divider border-primary">
+      <%# スポット詳細 %>
+      <section>
+        <div class="row bg-light">
+          <div class="col-md-6">
+            <h3 class="featurette-heading"><span class="primary">スポットを探す</span></h3>
+            <p>
+              スポットを見てみよう。<br>
+              お気に入りのスポットがあったら、<br>
+              いいね！とコメントをつけて <br>
+              他のユーザーと共有もできます。
+            </p>
+          </div>
+          <div class="col-md-6">
+            <%= image_tag asset_path("/assets/spot_list.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
+          </div>
+          <div class="col-md-12 bg-light">
+            <br><h5 class="text-center primary">行きたいスポットを見つけよう！</h5><br>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
-  <br>
-  <footer>
+
+  <hr class="featurette-divider border-primary">
+
+  <footer><br>
     <p class="float-right"><a href="#">トップに戻る</a></p>
     <p>&copy; 2021 k-ryo</p>
   </footer>
