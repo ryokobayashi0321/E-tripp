@@ -32,6 +32,7 @@
           <br class="my-5">
           <%= link_to "ログイン", new_session_path(resource_name), class: 'btn btn-primary'%>
           <%= f.submit t('.sign_up'), class: 'btn btn-warning text-white' %>
+          <p class="text-center mt-5"><%= link_to "ゲストログイン", users_guest_sign_in_path, class: "btn btn-warning btn-lg rounded-pill", method: :post %></p>
         <% end %>
     </div>
   </div>
