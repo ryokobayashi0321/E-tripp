@@ -20,7 +20,7 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h3 class="card-tite border-bottom">プロフィール</h3><br>
+          <h4 class="card-tite border-bottom">プロフィール</h4><br>
             <p class="card-text text-primary"><i class="fas fa-user fa-3x"></i>
               <span><%= @user.user_name || "あなた" %>さん</span>
             </p>
@@ -37,9 +37,8 @@
       </div>
     </div>
   </div>
-  <% if user_signed_in? && @user == current_user %>
   <div class="row">
-    <% current_user.plans.each do |plan| %>
+    <% @user.plans.each do |plan| %>
     <div class="col-sm-3">
       <div class="card rounded-pill">
         <div class="card-body text-center">
@@ -51,14 +50,16 @@
     </div>
     <% end %>
   </div>
-  <% end %>
 </div>
 <br class="my-7">
 <p>
   <% if user_signed_in? && @user == current_user %>
     <p class="text-center">
       <%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %>
-      <%= link_to "スポットを見に行く！", spots_path, class: "btn btn-primary btn-lg rounded-pill" %>
+      <p class="text-center">
+        <%= link_to "プランを見に行く！", plans_path, class: "btn btn-info btn-lg rounded-pill" %>
+        <%= link_to "スポットを見に行く！", spots_path, class: "btn btn-primary btn-lg rounded-pill" %>
+      </p>
     </p>
   <% else %>
     <p class="text-center"><%= link_to "戻る", plans_path, class: "btn btn-primary btn-lg rounded-pill" %></p>
