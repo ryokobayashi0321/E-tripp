@@ -4,7 +4,7 @@
     <div class="col-md-3">
       <div class="contact-info">
         <h2>user edit</h2>
-        <h4>You can edit your account !</h4>
+      <h6>アカウントを変更できます！</h6>
       </div>
     </div>
     <div class="col-md-9">
@@ -13,7 +13,7 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="form-group">
-          <i class="fas fa-user"></i><%= f.label :user_name, "Name", class: "control-label col-sm-3", placeholder: "名前を変更できます" %>
+          <i class="fas fa-user"></i><%= f.label :user_name, "アカウント名", class: "control-label col-sm-3", placeholder: "名前を変更できます" %>
           <div class="col-sm-9">
             <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name", class: "form-control" %>
           </div>

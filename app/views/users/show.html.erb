@@ -2,17 +2,12 @@
 <div class="container">
   <h3 class="text-primary font-weight-bold pt-3"><i class="fas fa-user-circle fa-4x mb-5"></i>
     <% if user_signed_in? && @user == current_user %>
-      ~Mine~
+      マイページ
     <% else %>
       ユーザーページ
     <% end %>
   </h3>
-  <div class="text-right display-4 col-10">
-    <%= link_to users_path, lass: 'btn btn-primary btn-lg', method: :get do %>
-      <i class="fas fa-users"></i>
-    <% end %>
-  </div>
-  <div class="card mb-3 mx-auto border-primary rounded" style="max-width: 70%;">
+  <div class="card mb-3 mx-auto border-primary rounded shadow p-3 mb-5 bg-white rounded" style="max-width: 70%;">
     <div class="row no-gutters">
       <div class="col-md-4">
         <div class="circle-avatar text-center">
@@ -25,11 +20,10 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h3 class="card-tite border-bottom">Profile</h3><br>
+          <h4 class="card-tite border-bottom">プロフィール</h4><br>
             <p class="card-text text-primary"><i class="fas fa-user fa-3x"></i>
               <span><%= @user.user_name || "あなた" %>さん</span>
             </p>
-            <p class="card-text"><i class="fas fa-envelope fa-2x"></i><span><%= @user.email %></span></p>
         </div>
       </div>
       <div class="container">
@@ -43,11 +37,10 @@
       </div>
     </div>
   </div>
-  <% if user_signed_in? && @user == current_user %>
   <div class="row">
-    <% current_user.plans.each do |plan| %>
+    <% @user.plans.each do |plan| %>
     <div class="col-sm-3">
-      <div class="card rounded-pill">
+      <div class="card rounded-pill shadow p-3 mb-5 bg-white rounded">
         <div class="card-body text-center">
           <h5 class="card-title"><%= plan.title %></h5>
           <p class="card-text"><%= plan.day %></p>
@@ -57,15 +50,21 @@
     </div>
     <% end %>
   </div>
-  <% end %>
-<br>
-<% if user_signed_in? && @user == current_user %>
-  <p class="text-center"><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
-  <p class="text-right"><%= link_to "Spot list", spots_path, class: "btn btn-primary btn-lg rounded-pill" %></p>
-<% else %>
-  <p class="text-center"><%= link_to "戻る", users_path, class: "btn btn-primary btn-lg rounded-pill" %></p>
-<% end %>
 </div>
+<br class="my-7">
+<p>
+  <% if user_signed_in? && @user == current_user %>
+    <p class="text-center">
+      <%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %>
+      <p class="text-center">
+        <%= link_to "プランを見に行く！", plans_path, class: "btn btn-info btn-lg rounded-pill" %>
+        <%= link_to "スポットを見に行く！", spots_path, class: "btn btn-primary btn-lg rounded-pill" %>
+      </p>
+    </p>
+  <% else %>
+    <p class="text-center"><%= link_to "戻る", plans_path, class: "btn btn-primary btn-lg rounded-pill" %></p>
+  <% end %>
+<p>
 
 
 

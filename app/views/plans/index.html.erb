@@ -1,6 +1,5 @@
 <%# プラン一覧 %>
 <%= render "plan" %>
-<br>
-<p class="text-center"><%= link_to "Go new plan !!", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
-<p><%= paginate @plans %></p>
+<p><%= paginate @plans %></p><br>
+<p class="text-center"><%= link_to "プランを作る！！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
 

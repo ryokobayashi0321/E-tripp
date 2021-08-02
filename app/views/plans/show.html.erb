@@ -1,19 +1,18 @@
 <%# プラン詳細 %>
 <section class="row-section">
   <div class="container">
-    <h2 class="text-center"><span>Plan</span></h2>
+    <h2 class="text-center"><span><i class="fas fa-plane"></i> <%= @plan.title %></span></h2>
+    <div class="text-dark text-right"><i class="far fa-clock"></i> <%= l @plan.created_at %> 作成</div>
     <div class="row">
 
-      <div class="card  col-md-4 rounded-lg border-primary">
+      <div class="card  col-md-4 rounded-lg border-primary shadow p-3 mb-5 bg-white rounded">
         <div class="card-body">
-          <h3 class="text-primary"><i class="fas fa-user fa-lg text-primary"></i> <%= link_to @plan.user.user_name, user_path(@plan.user_id) %>さん</h3>
-            <div class="text-dark text-right"><i class="far fa-clock"></i> <%= l @plan.created_at %></div> <br>
+          <h5 class="text-primary link_line"><i class="fas fa-user fa-lg text-primary"></i> <%= link_to "#{@plan.user.user_name}さん", user_path(@plan.user_id) %></h5><br>
 
-            <h4><i class="fas fa-plane"></i> <%= @plan.title %></h4> <br>
             <% if current_user.id == @plan.user_id %>
-              <p class="warning"><i class="fas fa-calendar-alt"></i> <%= @plan.day.strftime( "%Y年 %m月 %d日" )  %></p>
+              <h5 class="warning"><i class="fas fa-calendar-alt"></i> <%= @plan.day.strftime( "%Y年 %m月 %d日" )  %></h5>
             <% else %>
-              <p class="warning"><i class="fas fa-calendar-alt"></i> <%= @plan.day.strftime( "%Y年 %m月" ) %></p>
+              <h5 class="warning"><i class="fas fa-calendar-alt"></i> <%= @plan.day.strftime( "%Y年 %m月" ) %></h5>
             <% end %>
             <table class="table">
               <thead class="table-light">
@@ -25,14 +24,14 @@
               <tbody class="table-primary table-striped">
                 <% @plan.schedules.each do |schedule| %>
                   <tr>
-                    <td ><%= schedule.specified_time.strftime( "%H:%M" ) %></td>
-                    <td><%= schedule.spot.spot_name %></td>
+                    <td ><h5><%= schedule.specified_time.strftime( "%H:%M" ) %></h5></td>
+                    <td><h5><%= schedule.spot.spot_name %></h5></td>
                   </tr>
                 <% end %>
               </tbody>
             </table>
             <p><i class="fas fa-pen"></i></p>
-            <p class="card border-primary"><%= @plan.note %></p> <br>
+            <h5 class="card border-light shadow-sm p-3 mb-5 bg-white rounded"><%= @plan.note %></h5> <br>
 
             <p class="text-right">
               <% if current_user.id == @plan.user_id %>
@@ -48,7 +47,7 @@
         </div>
       </div>
 
-      <div class="card col-md-8  rounded-lg border-primary">
+      <div class="card col-md-8  rounded-lg border-primary shadow p-3 mb-5 bg-white rounded">
         <div class="card-body">
           <div class="timeline-icon">
             <%= image_tag "/assets//travel_happy_couple.png", class: "bd-placeholder-img featurette-image img-fluid mx-auto", width: "200", height: "200"%>
@@ -62,7 +61,7 @@
                   </div>
                   <div class="timeline-label">
                     <%= link_to spot_path(schedule.spot.id, schedule.id) do %>
-                      <%= schedule.spot.spot_name%>
+                      <h5 class="link_line"><%= schedule.spot.spot_name%></h5>
                       <%= image_tag asset_path(schedule.spot.photo), class: "bd-placeholder-img featurette-image img-fluid mx-auto", width: "250", height: "250"%>
                     <% end %>
                   </div>
