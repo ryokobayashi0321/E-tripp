@@ -2,13 +2,21 @@
   <div class="card w-75">
   <div class="card-body">
     <div class="sehdule-field">
-      <i class="fas fa-clock"></i><%= f.label :pecified_time, "指定時刻", class: "control-label col-sm-2"%>
-      <%= f.time_select :specified_time, class: 'form-control', required: true, placeholder: "時刻を選択してください", minute_step: 15 %> <br>
-    </div>
+      <div class="col-sm-3">
+        <i class="fas fa-clock"></i> <%= f.label :pecified_time, "時間", class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.time_select :specified_time, class: 'form-control', required: true, placeholder: "時刻を選択してください", minute_step: 15 %> <br>
+      </div>
+    </div><br>
 
     <div class="spot-field">
-      <i class="fas fa-map-marked-alt"></i><%= f.label :spot_name, "スポット", class: "control-label col-sm-2"%>
-      <%= f.collection_select :spot_id, Spot.all, :id, :spot_name, class: 'form-control', :prompt => "スポットを選択", required: true, disabled: true %> <br>
+      <div class="col-sm-3">
+        <i class="fas fa-map-marked-alt"></i> <%= f.label :spot_name, "スポット", class: "control-label " %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.collection_select :spot_id, Spot.all, :id, :spot_name, class: 'form-control', :prompt => "スポットを選択", required: true, disabled: true %> <br>
+      </div>
     </div>
     <div class="col-sm-12 text-right">
   <%= link_to_remove_association "削除", f, class: "btn btn-danger text-right" %>

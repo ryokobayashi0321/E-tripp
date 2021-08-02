@@ -35,8 +35,8 @@
               <tbody class="table-primary table-striped">
                 <% plan.schedules.each do |schedule| %>
                   <tr>
-                    <td><h4><%= schedule.specified_time.strftime( "%H:%M" ) %></h4></td>
-                    <td><h4><%= schedule.spot.spot_name %></h4></td>
+                    <td><%= schedule.specified_time.strftime( "%H:%M" ) %></td>
+                    <td><%= schedule.spot.spot_name %></td>
                   </tr>
                 <% end %>
               </tbody>
