@@ -1,119 +1,117 @@
 <%# ログイン後トップページ（仮） %>
-<main>
-  <div class="jumbotron jumbotron-extend" aria-label="Placeholder: 1240x288" height="200">
-    <div class="container-fluid jumbotron-container">
-      <div class="text-up">
-        <h1 class="site-name">E-tripp</h1>
-        <p>さぁ、簡単に旅行プランを作ろう！！</p>
-        <p><%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
+<div class="jumbotron jumbotron-extend" aria-label="Placeholder: 1240x288" height="200">
+  <div class="container-fluid jumbotron-container">
+    <div class="text-up">
+      <h1 class="site-name">E-tripp</h1>
+      <p>さぁ、簡単に旅行プランを作ろう！！</p>
+      <p><%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
+    </div>
+  </div>
+</div>
+
+<div class="container marketing">
+  <div>
+    <section class="contents text-center">
+      <div class="description bg-light">
+        <h3>E-tippとは</h3>
+          <p>
+            簡単にプランを立てて、楽しく旅行が<br>
+            できる計画投稿サービスです。
+          </p>
       </div>
-    </div>
+    </section>
   </div>
 
-  <div class="container marketing">
-    <div>
-      <section class="contents text-center">
-        <div class="description bg-light">
-          <h3>E-tippとは</h3>
-            <p>
-              簡単にプランを立てて、楽しく旅行が<br>
-              できる計画投稿サービスです。
-            </p>
+  <div class="container-fluid py-5 mw-md">
+    <%# プラン作成 %>
+    <section>
+      <div class="row bg-light">
+        <div class="col-md-5">
+          <h3 class="featurette-heading pt-3">
+          <span class="warning">
+            簡単に<br>
+            プランを作成
+          </span>
+          </h3>
+          <p>
+            タイトルをつけた後は、<br>
+            時間とスポットを選ぶだけ。<br>
+            「スポットを追加」ボタンで複数登録可能！ <br>
+            簡単に、自分だけの旅行プランの作成ができます。
+          </p>
         </div>
-      </section>
-    </div>
-
-    <div class="container-fluid py-5 mw-md">
-      <%# プラン作成 %>
-      <section>
-        <div class="row bg-light">
-          <div class="col-md-5">
-            <h3 class="featurette-heading pt-3">
-            <span class="warning">
-              簡単に<br>
-              プランを作成
-            </span>
-            </h3>
-            <p>
-              タイトルをつけた後は、<br>
-              時間とスポットを選ぶだけ。<br>
-              「スポットを追加」ボタンで複数登録可能！ <br>
-              簡単に、自分だけの旅行プランの作成ができます。
-            </p>
-          </div>
-          <div class="col-md-7">
-            <br><%= image_tag asset_path("/assets/new_plan.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
-          </div>
-          <div class="col-md-12 bg-light">
-            <br><h5 class="text-center warning">旅行プランを簡単に作ろう！！</h5>
-            <br><p><%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill btn-block" %></p>
-          </div>
+        <div class="col-md-7 text-center">
+          <br><%= image_tag asset_path("/assets/new_plan.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
         </div>
-      </section>
-
-      <hr class="featurette-divider border-primary">
-
-      <%# プラン詳細 %>
-      <section>
-        <div class="row bg-light">
-          <div class="col-md-5">
-            <h3 class="featurette-heading pt-3">
-            <span class="info-c">
-              作ったプランを<br>
-              タイムラインで確認
-            </span>
-            </h3>
-            <p>
-              作ったプランを見てみよう。<br>
-              タイムラインで <br>
-              いきたい場所をすぐに確認。<br>
-              写真を押して、<br>
-              スポットの確認もできます。
-            </p>
-          </div>
-          <div class="col-md-7">
-            <br><%= image_tag asset_path("/assets/plan_list.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
-          </div>
-          <div class="col-md-12 bg-light">
-            <br><h5 class="text-center info-c">作った旅行プランを見れるよ！</h5>
-            <br><p><%= link_to "プランを見に行く！", plans_path, class: "btn btn-info btn-lg rounded-pill btn-block" %></p>
-          </div>
+        <div class="col-md-12 bg-light">
+          <br><h5 class="text-center warning">旅行プランを簡単に作ろう！！</h5>
+          <br><p><%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill btn-block" %></p>
         </div>
-      </section>
-
-      <hr class="featurette-divider border-primary">
-
-      <%# スポット詳細 %>
-      <section>
-        <div class="row bg-light">
-          <div class="col-md-5">
-            <h3 class="featurette-heading pt-3"><span class="primary">スポットを探す</span></h3>
-            <p>
-              スポットを見てみよう。<br>
-              お気に入りのスポットがあったら、<br>
-              いいね！とコメントをつけて <br>
-              他のユーザーと共有もできます。
-            </p>
-          </div>
-          <div class="col-md-7">
-            <br><%= image_tag asset_path("/assets/spot_list.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
-          </div>
-          <div class="col-md-12 bg-light">
-            <br><h5 class="text-center primary">行きたいスポットを見つけよう！</h5>
-            <br><p><%= link_to "スポットを見に行く！", spots_path, class: 'btn btn-primary btn-lg rounded-pill btn-block' %></p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
+      </div>
+    </section>
 
     <hr class="featurette-divider border-primary">
 
-  <footer><br>
-    <p class="float-right"><a href="#">トップに戻る</a></p>
-    <p>&copy; 2021 k-ryo</p>
-  </footer>
-</main>
+    <%# プラン詳細 %>
+    <section>
+      <div class="row bg-light">
+        <div class="col-md-5">
+          <h3 class="featurette-heading pt-3">
+          <span class="info-c">
+            作ったプランを<br>
+            タイムラインで確認
+          </span>
+          </h3>
+          <p>
+            作ったプランを見てみよう。<br>
+            タイムラインで <br>
+            いきたい場所をすぐに確認。<br>
+            写真を押して、<br>
+            スポットの確認もできます。
+          </p>
+        </div>
+        <div class="col-md-7 text-center">
+          <br><%= image_tag asset_path("/assets/plan_list.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
+        </div>
+        <div class="col-md-12 bg-light">
+          <br><h5 class="text-center info-c">作った旅行プランを見れるよ！</h5>
+          <br><p><%= link_to "プランを見に行く！", plans_path, class: "btn btn-info btn-lg rounded-pill btn-block" %></p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="featurette-divider border-primary">
+
+    <%# スポット詳細 %>
+    <section>
+      <div class="row bg-light">
+        <div class="col-md-5">
+          <h3 class="featurette-heading pt-3"><span class="primary">スポットを探す</span></h3>
+          <p>
+            スポットを見てみよう。<br>
+            お気に入りのスポットがあったら、<br>
+            いいね！とコメントをつけて <br>
+            他のユーザーと共有もできます。
+          </p>
+        </div>
+        <div class="col-md-7 text-center">
+          <br><%= image_tag asset_path("/assets/spot_list.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
+        </div>
+        <div class="col-md-12 bg-light">
+          <br><h5 class="text-center primary">行きたいスポットを見つけよう！</h5>
+          <br><p><%= link_to "スポットを見に行く！", spots_path, class: 'btn btn-primary btn-lg rounded-pill btn-block' %></p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+  <hr class="featurette-divider border-primary">
+
+<footer><br>
+  <p class="float-right"><a href="#">トップに戻る</a></p>
+  <p>&copy; 2021 k-ryo</p>
+</footer>
 
 
 
