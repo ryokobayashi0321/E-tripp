@@ -13,55 +13,43 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="form-group">
-          <i class="fas fa-user"></i><%= f.label :user_name, "アカウント名", class: "control-label col-sm-3", placeholder: "名前を変更できます" %>
-          <div class="col-sm-9">
+          <i class="fas fa-user"></i> <%= f.label :user_name, "アカウント名", class: "control-label", placeholder: "名前を変更できます" %>
             <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name", class: "form-control" %>
-          </div>
         </div>
 
         <div class="form-group">
-          <i class="fas fa-envelope"></i><%= f.label :email, class: "control-label col-sm-3" %><br />
-          <div class="col-sm-9">
+          <i class="fas fa-envelope"></i> <%= f.label :email, class: "control-label" %> <br>
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
           </div>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
           <% end %>
-        </div>
 
         <div class="form-group">
-          <i class="fas fa-unlock"></i><%= f.label :password, "パスワード変更", class: "control-label col-sm-3" %>
-          <div class="col-sm-9">
+          <i class="fas fa-unlock"></i> <%= f.label :password, "パスワード変更", class: "control-label" %>
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "半角英数6文字以上"  %>
-          </div>
         </div>
 
         <div class="form-group">
-          <i class="fas fa-unlock"></i><%= f.label :password_confirmation, "パスワード変更(確認)", class: "control-label col-sm-3" %>
-          <div class="col-sm-9">
+          <i class="fas fa-unlock"></i> <%= f.label :password_confirmation, "パスワード変更(確認)", class: "control-label" %>
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "再度ご入力ください" %>
-          </div>
         </div>
 
         <div class="field">
-          <i class="fas fa-camera"></i><%= f.label :avatar, class: "col-sm-3" %>
-          <div class="col-sm-9">
-            <%= f.file_field :avatar %>
-          </div>
+          <i class="fas fa-camera"></i><%= f.label :avatar %>
+            <p><%= f.file_field :avatar %></p>
         </div>
 
         <br class="my-5">
         <div class="from-group">
-          <i class="fas fa-lock text-danger"></i><%= f.label :current_password, "パスワード必須！！", class: "text-danger control-label col-sm-4" %>
-          <div class="col-sm-9">
+          <i class="fas fa-lock text-danger"></i><%= f.label :current_password, "パスワード必須！！", class: "text-danger control-label" %>
             <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "変更にはパスワードが必須です" %>
-          </div>
         </div>
 
         <br class="my-5">
         <div class="text-center">
-          <%= f.submit t('.update'), class: 'btn btn-primary btn-lg' %>
-        </div>
+          <%= f.submit t('.update'), class: 'btn btn-primary btn-lg rounded-pill' %>
+        </div><br>
 
         <div class="text-right">
           <%= link_to user_path(current_user.id), class: 'btn btn-secondary', method: :get do %>

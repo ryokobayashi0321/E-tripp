@@ -2,10 +2,10 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <% @spots.each do |spot| %>
     <div class="col">
-      <div class="card h-100 border-primary shadow p-3 mb-5 bg-white rounded">
-        <%= image_tag asset_path(spot.photo), class: "card-img-top", width: "250", height: "250"%>
+      <div class="card mx-auto h-100 w-100 rounded-lg border-primary mb-3 shadow mb-3 bg-white rounded" style="width: 18rem;">
+        <%= image_tag asset_path(spot.photo), class: "card-img-top", width: "250", height: "250" %>
         <div class="card-body">
-          <h5 class="card-title text-center font-weight-bold"><%= spot.spot_name %></h5>
+          <h4 class="card-title text-center font-weight-bold"><%= spot.spot_name %></h4>
           <p class="text-right text-primary"><%= spot.prefecture.prefecture_name %></p>
           <p class="card-text"><%= spot.content %></p>
         </div>
