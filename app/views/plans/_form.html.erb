@@ -1,8 +1,8 @@
 <%# プラン作成の部分テンプレ %>
 <div class="col-md-9">
   <div class="contact-form">
-    <%= render "layouts/error_messages" %>
     <%= form_with model: @plan, local: true do |f| %>
+    <%= render "layouts/error_messages" %>
 
       <div class="form-group">
         <i class="fas fa-plane"></i> <%= f.label :title, "タイトル", class: "control-label" %>
@@ -37,13 +37,13 @@
       </div>
     <% end %>
 
-      <br><div class="text-right">
-        <%= link_to user_path(current_user.id), class: 'btn btn-secondary', method: :get do %>
-          <i class="fas fa-user-circle fa-2x"></i>
-        <% end %>
-        <%= link_to session_homes_index_path , class: 'btn btn-primary', method: :get do %>
-          <i class="fas fa-home fa-2x"></i>
-        <% end %>
-      </div>
+    <br><div class="text-right">
+      <%= link_to user_path(current_user.id), class: 'btn btn-secondary', method: :get do %>
+        <i class="fas fa-user-circle fa-2x"></i>
+      <% end %>
+      <%= link_to session_homes_index_path , class: 'btn btn-primary', method: :get do %>
+        <i class="fas fa-home fa-2x"></i>
+      <% end %>
+    </div>
   </div>
 </div>
