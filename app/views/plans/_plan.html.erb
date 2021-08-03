@@ -25,7 +25,7 @@
             <% else %>
               <h4 class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day.strftime( "%Y年 %m月" ) %></h4>
             <% end %>
-            <table class="table w-50">
+            <table class="table">
               <thead class="table-light">
                 <tr>
                   <th scope="col"><i class="fas fa-clock primary"></i></th>
@@ -42,7 +42,7 @@
               </tbody>
             </table>
             <p><i class="fas fa-pen"></i></p>
-            <h4 class="card w-75 border-light shadow-sm p-3 mb-5 bg-white rounded">
+            <h4 class="card border-light shadow-sm p-3 mb-5 bg-white rounded">
               <%= plan.note %>
             </h4>
             <p class="text-right">

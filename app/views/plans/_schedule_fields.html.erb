@@ -1,5 +1,5 @@
 <div class="nested-fields">
-  <div class="card w-75">
+  <div class="card">
   <div class="card-body">
     <div class="sehdule-field">
       <div class="col-sm-3">
@@ -17,7 +17,7 @@
       <div class="col-sm-9">
         <%= f.collection_select :spot_id, Spot.all, :id, :spot_name, class: 'form-control', :prompt => "スポットを選択", required: true, disabled: true %> <br>
       </div>
-    </div>
+    </div><br>
     <div class="col-sm-12 text-right">
   <%= link_to_remove_association "削除", f, class: "btn btn-danger text-right" %>
     </div>

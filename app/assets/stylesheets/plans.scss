@@ -97,6 +97,7 @@
     line-height: 40px;
     font-size: 15px;
     float: left;
+    margin-bottom: 10px;
 }
 
 // 丸の色
@@ -120,6 +121,9 @@
     font-weight: bold;
 }
 
+.box-color {
+    background: rgb(229, 255, 229);
+}
 // 吹き出し
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
     content: '';
@@ -134,3 +138,5 @@
     top: 10px;
     margin-left: -9px;
 }
+
+
