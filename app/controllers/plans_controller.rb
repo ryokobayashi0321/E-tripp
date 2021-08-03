@@ -19,7 +19,7 @@ class PlansController < ApplicationController
     if @plan.save
       redirect_to plans_path, notice: "作成しました！"
     else
-      flash.now[:alert] = "作成に失敗しました"
+      flash.now[:alert] = "作成に失敗しました。スポットを入力してください"
       @plan = current_user.plans.new(plan_params)
       render :new
     end
