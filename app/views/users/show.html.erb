@@ -22,7 +22,7 @@
         <div class="card-body">
           <p class="card-tite border-bottom">プロフィール</p><br>
             <p class="card-text text-primary"><i class="fas fa-user fa-3x"></i>
-              <span><%= @user.user_name || "あなた" %>さん</span>
+              <span><%= @user.user_name || "あなた" %></span>
             </p>
         </div>
       </div>
@@ -42,7 +42,7 @@
     <div class="col-sm-3">
       <div class="card rounded-pill shadow p-3 mb-5 bg-white rounded">
         <div class="card-body text-center">
-          <h4 class="card-title"><%= plan.title %></h4>
+          <p class="card-title"><%= plan.title %></p>
           <p class="card-text"><%= plan.day %></p>
           <%= link_to "詳しく", plan, class: "btn btn-info btn-lg rounded-pill text-center" %>
         </div>
