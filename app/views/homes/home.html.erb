@@ -24,9 +24,9 @@
 
   <div class="container-fluid py-5 mw-md">
     <%# プラン作成 %>
-    <section>
-      <div class="row bg-light">
-        <div class="col-md-5">
+    <section class="card mb-3 mx-auto" style="max-width: 512px;">
+      <div class="row bg-light border border-2 rounded">
+        <div class="col-md-6">
           <h2 class="featurette-heading pt-3">
           <span class="warning">
             簡単に<br>
@@ -40,21 +40,19 @@
             簡単に、自分だけの旅行プランの作成ができます。
           </p>
         </div>
-        <div class="col-md-7 text-center">
-          <br><%= image_tag asset_path("/assets/new_plan.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
+        <div class="col-md-6 text-center">
+          <br><%= image_tag asset_path("/assets/new_plan.gif"), playsinline: true, controls: true, width: "250", height: "250" %>
         </div>
         <div class="col-md-12 bg-light">
           <br><h4 class="text-center warning">旅行プランを簡単に作ろう！！</h4><br>
         </div>
       </div>
-    </section>
-
-    <hr class="featurette-divider border-primary">
+    </section><br>
 
     <%# プラン詳細 %>
-    <section>
-      <div class="row bg-light">
-        <div class="col-md-5">
+    <section class="card mb-3 mx-auto" style="max-width: 512px;">
+      <div class="row bg-light border border-2 rounded">
+        <div class="col-md-6">
           <h2 class="featurette-heading pt-3">
           <span class="info-c">
             プランを<br>
@@ -69,21 +67,19 @@
             スポットの確認もできます。
           </p>
         </div>
-        <div class="col-md-7 text-center">
-          <br><%= image_tag asset_path("/assets/plan_list.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
+        <div class="col-md-6 text-center">
+          <br><%= image_tag asset_path("/assets/plan_list.gif"), playsinline: true, controls: true, width: "250", height: "250" %>
         </div>
         <div class="col-md-12 bg-light">
           <br><h4 class="text-center info-c">作った旅行プランを見れるよ！</h4><br>
         </div>
       </div>
-    </section>
-
-    <hr class="featurette-divider border-primary">
+    </section><br>
 
     <%# スポット詳細 %>
-    <section>
-      <div class="row bg-light">
-        <div class="col-md-5">
+    <section class="card mb-3 mx-auto" style="max-width: 512px;">
+      <div class="row bg-light border border-2 rounded">
+        <div class="col-md-6">
           <h2 class="featurette-heading pt-3">
           <span class="primary">
           スポット<br>
@@ -97,8 +93,8 @@
             他のユーザーと共有もできます。
           </p>
         </div>
-        <div class="col-md-7 text-center">
-          <br><%= image_tag asset_path("/assets/spot_list.gif"), playsinline: true, controls: true, width: "270", height: "270" %>
+        <div class="col-md-6 text-center">
+          <br><%= image_tag asset_path("/assets/spot_list.gif"), playsinline: true, controls: true, width: "250", height: "250" %>
         </div>
         <div class="col-md-12 bg-light">
           <br><h4 class="text-center primary">行きたいスポットを見つけよう！</h4><br>
