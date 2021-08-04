@@ -10,7 +10,7 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @comment = Comment.new
-    @comments = @spot.comments.order(created_at: :asc).page(params[:page]).per(PER_PAGE_COMMENT)
+    @comments = @spot.comments.order(created_at: :desc).page(params[:page]).per(PER_PAGE_COMMENT)
     @comments_count = Comment.where(spot_id: @spot.id).count
   end
 

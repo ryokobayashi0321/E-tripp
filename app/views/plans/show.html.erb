@@ -31,7 +31,7 @@
               </tbody>
             </table>
             <p><i class="fas fa-pen"></i></p>
-            <h4 class="card border-light shadow-sm p-3 mb-5 bg-white rounded"><%= @plan.note %></h4> <br>
+            <p class="card border-light shadow-sm p-3 mb-5 bg-white rounded"><%= @plan.note %></p> <br>
 
             <p class="text-right">
               <% if current_user.id == @plan.user_id %>
@@ -61,8 +61,8 @@
                   </div>
                   <div class="card m-10 border-primary shadow p-3 mb-5 bg-white rounded mx-auto w-100">
                     <%= link_to spot_path(schedule.spot.id, schedule.id) do %>
-                      <p class="link_line"><%= schedule.spot.spot_name%></p>
-                      <%= image_tag asset_path(schedule.spot.photo), class: "card-img", width: "200", height: "200"%>
+                      <p class="link_line"><%= schedule.spot.spot_name %></p>
+                      <%= image_tag asset_path(schedule.spot.photo), class: "card-img", width: "200", height: "200" %>
                     <% end %>
                   </div>
                 </div>
