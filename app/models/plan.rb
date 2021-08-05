@@ -2,7 +2,7 @@ class Plan < ApplicationRecord
   belongs_to :user
   has_many :schedules, dependent: :destroy
   has_many :spots, through: :schedules
-  accepts_nested_attributes_for :spots, :schedules
+  accepts_nested_attributes_for :spots, :schedules, reject_if: :all_blank, allow_destroy: true
 
   # plan.scheduled_spots で plan が「指定した時間」でspotsの一覧を取得できるようになる
   has_many :scheduled_spots, through: :schedules, source: :spot
