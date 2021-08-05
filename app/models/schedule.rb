@@ -1,6 +1,6 @@
 class Schedule < ApplicationRecord
   belongs_to :spot, optional: true
-  belongs_to :plan, optional: true
+  belongs_to :plan
 
   validates :plan_id, uniqueness: {
     scope: :spot_id,
