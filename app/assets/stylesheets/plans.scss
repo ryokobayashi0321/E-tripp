@@ -106,37 +106,3 @@
     color: #fff;
 }
 
-// スポットの枠
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
-    position: relative;
-    background: rgb(229, 255, 229);
-    padding: 1.7em;
-    margin-left: 70px;
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    font-weight: bold;
-}
-
-.box-color {
-    background: rgb(229, 255, 229);
-}
-// 吹き出し
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 9px 9px 9px 0;
-    border-color: transparent rgb(229, 255, 229) transparent transparent;
-    left: 0;
-    top: 10px;
-    margin-left: -9px;
-}
-
-
