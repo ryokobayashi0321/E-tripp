@@ -11,7 +11,6 @@ class PlansController < ApplicationController
   def new
     @plan = current_user.plans.new
     @schdules = @plan.schedules.new
-    @spot = Spot.all
   end
 
   def create
