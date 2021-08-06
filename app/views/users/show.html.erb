@@ -34,17 +34,7 @@
     </div>
   </div>
   <div class="row">
-    <% @user.plans.each do |plan| %>
-    <div class="col-sm-3">
-      <div class="card rounded-pill shadow p-3 mb-5 bg-white rounded">
-        <div class="card-body text-center">
-          <p class="card-title"><%= plan.title %></p>
-          <p class="card-text"><%= plan.day %></p>
-          <%= link_to "詳しく", plan, class: "btn btn-info btn-lg rounded-pill text-center" %>
-        </div>
-      </div>
-    </div>
-    <% end %>
+    <%= render "user_plans" %>
   </div>
 </div>
 <br class="my-7">
