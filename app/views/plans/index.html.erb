@@ -1,5 +1,12 @@
 <%# プラン一覧 %>
-<%= render "plan" %>
+<section class="row-section">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center"><span>Plan List</span></h2>
+        <%= render "plan" %>
+    </div>
+  </div>
+</section>
 <p><%= paginate @plans %></p><br>
 <p class="text-center"><%= link_to "プランを作る！！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %></p>
 

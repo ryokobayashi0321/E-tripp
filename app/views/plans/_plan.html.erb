@@ -1,57 +1,50 @@
 <%# プラン一覧の部分テンプレ %>
-<section class="row-section">
-  <div class="container">
-    <div class="row">
-      <h2 class="text-center"><span>Plan List</span></h2>
-      <% @plans.each do |plan| %>
-      <div class="card mx-auto w-100 rounded-lg border-primary mb-5 shadow mb-5 bg-white rounded">
-        <div class="card-body">
-          <div>
-            <div class="row">
-              <div class="col-6">
-                <h4 class="text-primary link_line"><i class="fas fa-user fa-lg"></i> <%= link_to "#{plan.user.user_name}さん" || "あなたさん", user_path(plan.user_id) %></h4><br>
-                <h4><i class="fas fa-plane"></i> <%= plan.title %></h4> <br>
-              </div>
-              <div class="col-6 text-right">
-                <% if plan.user.avatar? %>
-                  <%= image_tag plan.user.avatar.url, size: "120x120", class: "rounded-circle" %>
-                <% else %>
-                  <%= image_tag src="/assets/default.png", size: "120x120", class: "rounded-circle" %>
-                <% end %>
-              </div>
-            </div>
-            <% if current_user.id == plan.user_id %>
-              <h4 class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day.strftime( "%Y年 %m月 %d日" ) %></h4>
+<% @plans.each do |plan| %>
+  <div class="card mx-auto w-100 rounded-lg border-primary mb-5 shadow mb-5 bg-white rounded">
+    <div class="card-body">
+      <div>
+        <div class="row">
+          <div class="col-6">
+            <h4 class="text-primary link_line"><i class="fas fa-user fa-lg"></i> <%= link_to "#{plan.user.user_name}さん" || "あなたさん", user_path(plan.user_id) %></h4><br>
+            <h4><i class="fas fa-plane"></i> <%= plan.title %></h4> <br>
+          </div>
+          <div class="col-6 text-right">
+            <% if plan.user.avatar? %>
+              <%= image_tag plan.user.avatar.url, size: "120x120", class: "rounded-circle" %>
             <% else %>
-              <h4 class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day.strftime( "%Y年 %m月" ) %></h4>
+              <%= image_tag src="/assets/default.png", size: "120x120", class: "rounded-circle" %>
             <% end %>
-            <table class="table">
-              <thead class="table-light">
-                <tr>
-                  <th scope="col"><i class="fas fa-clock primary"></i></th>
-                  <th scope="col"><i class="fas fa-map-marked-alt primary"></i></th>
-                </tr>
-              </thead>
-              <tbody class="table-primary table-striped">
-                <% plan.schedules.each do |schedule| %>
-                  <tr>
-                    <td><%= schedule.specified_time.strftime( "%H:%M" ) %></td>
-                    <td><%= schedule.spot.spot_name %></td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-            <p><i class="fas fa-pen"></i></p>
-            <p class="card border-light shadow-sm p-3 mb-5 bg-white rounded">
-              <%= plan.note %>
-            </p>
-            <p class="text-right">
-            <%= link_to "詳しく！！", plan, class: "btn btn-info btn-lg rounded-pill" %>
-            </p>
           </div>
         </div>
+        <% if current_user.id == plan.user_id %>
+          <h4 class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day.strftime( "%Y年 %m月 %d日" ) %></h4>
+        <% else %>
+          <h4 class="warning"><i class="fas fa-calendar-alt"></i> <%= plan.day.strftime( "%Y年 %m月" ) %></h4>
+        <% end %>
+        <table class="table">
+          <thead class="table-light">
+            <tr>
+              <th scope="col"><i class="fas fa-clock primary"></i></th>
+              <th scope="col"><i class="fas fa-map-marked-alt primary"></i></th>
+            </tr>
+          </thead>
+          <tbody class="table-primary table-striped">
+            <% plan.schedules.each do |schedule| %>
+              <tr>
+                <td><%= schedule.specified_time.strftime( "%H:%M" ) %></td>
+                <td><%= schedule.spot.spot_name %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <p><i class="fas fa-pen"></i></p>
+        <p class="card border-light shadow-sm p-3 mb-5 bg-white rounded">
+          <%= plan.note %>
+        </p>
+        <p class="text-right">
+        <%= link_to "詳しく！！", plan, class: "btn btn-info btn-lg rounded-pill" %>
+        </p>
       </div>
-      <% end %>
     </div>
   </div>
-</section>
+<% end %>

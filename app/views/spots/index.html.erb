@@ -8,10 +8,12 @@
     <br class="my-5">
     <div class="card">
       <% if @spots.present? %>
-        <%= render "spot" %>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <%= render "spot" %>
       <% else %>
         <label class="text-center">検索結果がありません。</label>
       <% end %>
+      </div>
     </div>
   </div>
 </section>

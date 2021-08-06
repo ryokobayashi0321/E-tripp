@@ -1,11 +1,7 @@
 <%# マイページ %>
 <div class="container h-100">
   <h2 class="text-primary font-weight-bold pt-3"><i class="fas fa-user-circle fa-4x mb-5"></i>
-    <% if user_signed_in? && @user == current_user %>
-      マイページ
-    <% else %>
-      ユーザーページ
-    <% end %>
+    <%= user_page_title %>
   </h2>
   <div class="card mb-3 border-primary shadow p-3 mb-5 bg-white rounded mx-auto" style="max-width: 100%;">
     <div class="row no-gutters">
