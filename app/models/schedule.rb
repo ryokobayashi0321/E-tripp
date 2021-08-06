@@ -4,7 +4,7 @@ class Schedule < ApplicationRecord
 
   validates :plan_id, uniqueness: {
     scope: :spot_id,
-    message: "は同じプランに同じ時間を登録できません"
+    message: "同じスポットは登録できません"
   }
   validates :specified_time, presence: true
   validates :spot_id, presence: true

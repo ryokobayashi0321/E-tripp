@@ -40,10 +40,14 @@ ja:
       prefecture:
         prefecture_name: 都道府県
         number: 都道府県
-      schedule:
-        specified_time: 指定時刻
-        plan: プラン
-        spot: スポット
+      plan/schedules:
+        specified_time: 同じ時刻
+        plan_id: プランに
+        spot_id: スポット
+      schedules:
+        specified_time: 同じ時刻
+        plan_id: プランに
+        spot_id: スポット
       comment:
         comment: コメント
         user: ユーザー

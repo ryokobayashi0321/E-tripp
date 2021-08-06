@@ -11,7 +11,6 @@ class PlansController < ApplicationController
   def new
     @plan = current_user.plans.new
     @schdules = @plan.schedules.new
-    @spot = Spot.all
   end
 
   def create
@@ -19,8 +18,7 @@ class PlansController < ApplicationController
     if @plan.save
       redirect_to plans_path, notice: "作成しました！"
     else
-      flash.now[:alert] = "作成に失敗しました。スポットを入力してください"
-      @plan = current_user.plans.new(plan_params)
+      flash.now[:alert] = "作成に失敗しました。スポットを選択 or 正しい時間 を選択してください"
       render :new
     end
   end
@@ -28,7 +26,7 @@ class PlansController < ApplicationController
   def edit; end
 
   def update
-    if @plan.update!(plan_params)
+    if @plan.update(plan_params)
       redirect_to plan_path, notice: "更新しました"
     else
       flash.now[:alert] = "更新に失敗しました"
