@@ -7,7 +7,13 @@
     </div>
     <br class="my-5">
     <div class="card">
-      <%= render "spot" %>
+      <% if @spots.present? %>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <%= render "spot" %>
+      <% else %>
+        <label class="text-center">検索結果がありません。</label>
+      <% end %>
+      </div>
     </div>
   </div>
 </section>
@@ -15,7 +21,11 @@
 <p><%= paginate @spots %></p>
 
 <div class="text-center">
-  <%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %>
+  <% if @spots.present? %>
+    <%= link_to "プランを作る！", new_plan_path, class: "btn btn-warning btn-lg rounded-pill" %>
+  <% else %>
+    <%= link_to "戻る", spots_path, class: 'btn btn-primary btn-lg rounded-pill' %>
+  <% end %>
 </div>
 
 

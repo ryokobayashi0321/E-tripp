@@ -1,6 +1,6 @@
 class Plan < ApplicationRecord
   belongs_to :user
-  has_many :schedules, dependent: :destroy
+  has_many :schedules, inverse_of: :plan, dependent: :destroy
   has_many :spots, through: :schedules
   accepts_nested_attributes_for :spots, :schedules, reject_if: :all_blank, allow_destroy: true
 

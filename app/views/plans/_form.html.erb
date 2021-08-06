@@ -1,49 +1,46 @@
 <%# プラン作成の部分テンプレ %>
-<div class="col-md-9">
-  <div class="contact-form">
-    <%= form_with model: @plan, local: true do |f| %>
-    <%= render "layouts/error_messages" %>
+<%= form_with model: @plan, local: true do |f| %>
+<%= render "layouts/error_messages" %>
 
-      <div class="form-group">
-        <i class="fas fa-plane"></i> <%= f.label :title, "タイトル", class: "control-label" %>
-          <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control", required: true, placeholder: "タイトルを入力してください"  %>
-      </div>
+  <div class="form-group">
+    <i class="fas fa-plane"></i> <%= f.label :title, "タイトル", class: "control-label" %>
+      <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control", required: true, placeholder: "タイトルを入力してください"  %>
+  </div>
 
-      <div class="form-group">
-        <i class="fas fa-calendar-alt"></i> <%= f.label :day, class: "control-label" %><br />
-        <%= f.date_field :day, autofocus: true, autocomplete: "day", class: "form-control", required: true, placeholder: "日付を選択してください"  %>
-      </div>
+  <div class="form-group">
+    <i class="fas fa-calendar-alt"></i> <%= f.label :day, class: "control-label" %><br />
+    <%= f.date_field :day, autofocus: true, autocomplete: "day", class: "form-control", required: true, placeholder: "日付を選択してください"  %>
+  </div>
 
-        <div class="form-group">
-          <%= f.fields_for :schedules do |sf| %>
-            <div class="field">
-              <%= render "schedule_fields", f: sf %>
-            </div>
-          <% end %>
+    <div class="form-group">
+      <%= f.fields_for :schedules do |sf| %>
+        <div class="field">
+          <%= render "schedule_fields", f: sf %>
         </div>
-        <div class="links text-center">
-          <%= link_to_add_association "スポットを追加", f, :schedules, class: "btn btn-add mb-10" %>
-          <%= link_to "スポットを見に行く", spots_path, target: "_blank", rel: "norefferrer", class: "btn btn-info mb-10" %>
-        </div>
-
-      <div class="form-group">
-        <i class="fas fa-pen"></i> <%= f.label :note, "メモ", class: "control-label" %>
-        <%= f.text_area :note, class: "form-control", placeholder: "例) 集合時間..." %>
-      </div>
-
-      <br class="my-5">
-      <div class="text-center">
-        <%= f.submit "Let's Go!!", class: 'rounded-pill btn btn-warning text-white btn-lg' %>
-      </div>
-    <% end %>
-
-    <br><div class="text-right">
-      <%= link_to user_path(current_user.id), class: 'btn btn-secondary', method: :get do %>
-        <i class="fas fa-user-circle fa-2x"></i>
-      <% end %>
-      <%= link_to session_homes_index_path , class: 'btn btn-primary', method: :get do %>
-        <i class="fas fa-home fa-2x"></i>
       <% end %>
     </div>
+    <div class="links text-center">
+      <%= link_to_add_association "スポットを追加", f, :schedules, class: "btn btn-add mb-10" %>
+      <%= link_to "スポットを見に行く", spots_path, target: "_blank", rel: "norefferrer", class: "btn btn-info mb-10" %>
+    </div>
+
+  <div class="form-group">
+    <i class="fas fa-pen"></i> <%= f.label :note, "メモ", class: "control-label" %>
+    <%= f.text_area :note, class: "form-control", placeholder: "例) 集合時間..." %>
   </div>
+
+  <br class="my-5">
+  <div class="text-center">
+    <%= f.submit "Let's Go!!", class: 'rounded-pill btn btn-warning text-white btn-lg' %>
+  </div>
+<% end %>
+<br>
+<div class="text-right">
+  <%= link_to user_path(current_user.id), class: 'btn btn-secondary', method: :get do %>
+    <i class="fas fa-user-circle fa-2x"></i>
+  <% end %>
+  <%= link_to session_homes_index_path , class: 'btn btn-primary', method: :get do %>
+    <i class="fas fa-home fa-2x"></i>
+  <% end %>
 </div>
+
