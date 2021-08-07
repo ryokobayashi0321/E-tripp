@@ -27,5 +27,3 @@ $(document).on("turbolinks:load", function () {
 
     $("#language-search").on("input", filterTableRows);
 });
-
-
