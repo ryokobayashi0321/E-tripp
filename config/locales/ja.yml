@@ -6,12 +6,12 @@ ja:
     resource_id: リソースID
     author_type: 著者タイプ
     author_id: 著者ID
-    schedules: 指定時刻
+    schedules: 時間
     plans: プラン
     likes: いいね！
     liked_users: いいね！したユーザー
     liked_spots: いいね！したスポット
-    scheduled_plans: 指定時刻のプラン
+    scheduled_plans: 指定時間のプラン
     created_at: 作成日時
     updated_at: 更新日時
   activerecord:
@@ -20,7 +20,7 @@ ja:
       plan: プラン
       spot: スポット
       prefecture: 都道府県
-      schedule: 予定時間
+      schedule: 時間
       comment: コメント
       like: いいね！
     attributes:
@@ -41,11 +41,11 @@ ja:
         prefecture_name: 都道府県
         number: 都道府県
       plan/schedules:
-        specified_time: 同じ時刻
+        specified_time: 時間
         plan_id: プランに
         spot_id: スポット
       schedules:
-        specified_time: 同じ時刻
+        specified_time: 時間
         plan_id: プランに
         spot_id: スポット
       comment:

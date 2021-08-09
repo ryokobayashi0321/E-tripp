@@ -9,4 +9,10 @@ class Plan < ApplicationRecord
 
   validates :title, presence: true, length: { minimum: 1, maximum: 50 }
   validates :day, presence: true
+
+  validates :schedules,
+            length: {
+              minimum: 1,
+              message: "とスポットを1つ以上選択してください"
+            }
 end
