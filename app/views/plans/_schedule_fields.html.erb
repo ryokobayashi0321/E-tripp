@@ -6,7 +6,7 @@
         <i class="fas fa-clock"></i> <%= f.label :pecified_time, "時間", class: "control-label" %>
       </div>
       <div class="col-sm-9">
-        <%= f.time_select :specified_time, class: 'form-control', required: true, placeholder: "時刻を選択してください", minute_step: 15 %> <br>
+        <%= f.time_select :specified_time, class: 'form-control', required: true, placeholder: "時刻を選択してください", minute_step: 15, ignore_date: true, prompt: true %> <br>
       </div>
     </div><br>
 
